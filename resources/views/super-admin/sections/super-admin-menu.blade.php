@@ -7,8 +7,7 @@
                 <path fill-rule="evenodd"
                       d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
             </x-slot>
-        </x-menu-item>
-
+        </x-menu-item>  
         @if($sidebarSuperadminPermissions['view_packages'] != 5 && $sidebarSuperadminPermissions['view_packages'] != 'none')
             <x-menu-item icon="box2" :text="__('superadmin.menu.packages')" :link="route('superadmin.packages.index')">
                 <x-slot name="iconPath">

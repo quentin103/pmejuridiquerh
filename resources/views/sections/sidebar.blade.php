@@ -1,5 +1,5 @@
 <!-- SIDEBAR START -->
-<aside class="{{ !user()->dark_theme ? 'sidebar-' . $appTheme->sidebar_theme : '' }}">
+<aside>
     <!-- MOBILE CLOSE SIDEBAR PANEL START -->
     <div class="mobile-close-sidebar-panel w-100 h-100" onclick="closeMobileMenu()" id="mobile_close_panel"></div>
     <!-- MOBILE CLOSE SIDEBAR PANEL END -->
@@ -9,14 +9,14 @@
     <!-- MAIN SIDEBAR START -->
     <div class="main-sidebar" id="mobile_menu_collapse">
         <!-- SIDEBAR BRAND START -->
-        <div class="sidebar-brand-box dropdown cursor-pointer {{ user()->dark_theme ? 'bg-dark' : '' }}">
+        <div class="sidebar-brand-box dropdown cursor-pointer">
             <div class="dropdown-toggle sidebar-brand d-flex align-items-center justify-content-between  w-100"
                 type="link" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
                 @if (companyOrGlobalSetting()->sidebar_logo_style !== 'full')
                     <!-- SIDEBAR BRAND NAME START -->
                     <div class="sidebar-brand-name">
-                        <h1 class="mb-0 f-16 f-w-500 text-white-shade mt-0" data-placement="bottom" data-toggle="tooltip"
+                        <h1 class="mb-0 f-16 f-w-500  mt-0" data-placement="bottom" data-toggle="tooltip"
                             data-original-title="{{ $appName }}">{{ $appName }}
                             <i class="icon-arrow-down icons pl-2"></i>
                         </h1>
@@ -35,7 +35,7 @@
                 @else
                     <!-- SIDEBAR BRAND NAME START -->
                     <div class="sidebar-brand-name">
-                        <h1 class="mb-0 f-16 f-w-500 text-white-shade mt-0" data-placement="bottom"
+                        <h1 class="mb-0 f-16 f-w-500 mt-0" data-placement="bottom"
                             data-toggle="tooltip" data-original-title="{{ $appName }}">
                             <img src="{{ companyOrGlobalSetting()->logo_url }}">
                         </h1>
