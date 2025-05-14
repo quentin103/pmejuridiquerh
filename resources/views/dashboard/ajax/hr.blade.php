@@ -15,7 +15,7 @@
 
     @if (in_array('employees', user_modules()) && in_array('total_new_employee', $activeWidgets))
 
-        <div class="col-xl-4 col-lg-6 col-md-6 mb-3">
+        <div class="col-xl-4 col-lg-6 col-md-6 mb-2">
 
             <div class="card-quentin bg-white p-3 d-flex justify-content-between align-items-center mb-4 mb-md-0 mb-lg-0">
                 <div class="d-block ">

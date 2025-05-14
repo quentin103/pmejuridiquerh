@@ -1,4 +1,4 @@
-<ul>
+<ul class="tw-flex tw-flex-col tw-space-y-1  py-2">
     @if(user()->is_superadmin)
         <x-menu-item icon="box2" :text="__('app.menu.dashboard')" :link="route('superadmin.super_admin_dashboard')">
             <x-slot name="iconPath">

@@ -10,7 +10,7 @@
     <div class="px-4 py-0 py-lg-4  border-top-0 admin-dashboard">
         <div class="row">
             @if (in_array('projects', user_modules()))
-                <div class="col-xl-4 col-lg-6 col-md-6 mb-4">
+                <div class="col-xl-4 col-lg-6 col-md-6 mb-3">
                     <a href="{{ route('projects.index') }}?status=all">
                         <x-cards.widget :title="__('modules.dashboard.totalProjects')" :value="$counts->totalProjects"
                                         icon="layer-group"/>
@@ -19,7 +19,7 @@
             @endif
 
             @if (in_array('tickets', user_modules()))
-                <div class="col-xl-4 col-lg-6 col-md-6 mb-4">
+                <div class="col-xl-4 col-lg-6 col-md-6 mb-3">
                     <a href="{{ route('tickets.index') }}">
                         <x-cards.widget :title="__('modules.dashboard.totalUnresolvedTickets')"
                                         :value="floor($counts->totalUnResolvedTickets)" icon="ticket-alt"/>
@@ -28,7 +28,7 @@
             @endif
 
             @if (in_array('contracts', user_modules()))
-                <div class="col-xl-4 col-lg-6 col-md-6 mb-4">
+                <div class="col-xl-4 col-lg-6 col-md-6 mb-3">
                     <a href="{{ route('contracts.index') }}?signed=yes">
                         <x-cards.widget :title="__('modules.dashboard.totalContractsSigned')"
                                         :value="$totalContractsSigned"
@@ -71,7 +71,7 @@
 
         <div class="row">
             @if (in_array('projects', user_modules()))
-                <div class="col-sm-12 col-lg-6 mt-4">
+                <div class="col-sm-12 col-lg-6 mt-3">
                     <x-cards.data :title="__('modules.dashboard.statusWiseProject')">
                         @if (array_sum($statusWiseProject['values']) > 0)
                             <a href="javascript:;" class="text-darkest-grey f-w-500 piechart-full-screen" data-chart-id="status-wise-project" data-chart-data="{{ json_encode($statusWiseProject) }}"><i class="fas fa-expand float-right mr-3"></i></a>
@@ -85,7 +85,7 @@
             @endif
 
             @if (in_array('projects', user_modules()) && $viewMilestonePermission != 'none')
-                <div class="col-sm-12 col-lg-6 mt-4">
+                <div class="col-sm-12 col-lg-6 mt-3">
                     <x-cards.data :title="__('modules.dashboard.pendingMilestone')" padding="false"
                                   otherClasses="h-200">
                         <div class="table-responsive">

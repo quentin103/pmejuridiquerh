@@ -8,7 +8,7 @@
 
 <div class="row">
     @if (in_array('clients', user_modules()) && in_array('total_clients', $activeWidgets))
-        <div class="col-xl-4 col-lg-6 col-md-6 mb-3">
+        <div class="col-xl-4 col-lg-6 col-md-6 mb-2">
             <a href="javascript:;" id="totalClients">
                 <x-cards.widget :title="__('modules.dashboard.totalClients')" :value="$totalClient" icon="users"/>
             </a>
@@ -16,7 +16,7 @@
     @endif
 
     @if (in_array('leads', user_modules()) && in_array('total_leads', $activeWidgets))
-        <div class="col-xl-4 col-lg-6 col-md-6 mb-3">
+        <div class="col-xl-4 col-lg-6 col-md-6 mb-2">
             <a href="javascript:;" id="totalLeads">
                 <x-cards.widget :title="__('modules.dashboard.totalLeads')" :value="$totalLead" icon="users"/>
             </a>
@@ -24,7 +24,7 @@
     @endif
 
     @if (in_array('leads', user_modules()) && in_array('total_deals', $activeWidgets))
-        <div class="col-xl-4 col-lg-6 col-md-6 mb-3">
+        <div class="col-xl-4 col-lg-6 col-md-6 mb-2">
             <a href="javascript:;" id="totalDeals">
                 <x-cards.widget :title="__('modules.deal.totalDeals')" :value="$totalDeals" icon="file-contract"
                                 :info="__('messages.totalDealWidget')"/>
@@ -33,7 +33,7 @@
     @endif
 
     @if (in_array('leads', user_modules()) && in_array('total_lead_conversions', $activeWidgets))
-        <div class="col-xl-4 col-lg-6 col-md-6 mb-3">
+        <div class="col-xl-4 col-lg-6 col-md-6 mb-2">
             <a href="javascript:;" id="totalLeadConversions">
                 <div class="card-quentin p-20 d-flex justify-content-between align-items-center">
                     <div class="d-block ">
@@ -58,7 +58,7 @@
     @endif
 
     @if (in_array('contracts', user_modules()) && in_array('total_contracts_generated', $activeWidgets))
-        <div class="col-xl-4 col-lg-6 col-md-6 mb-3">
+        <div class="col-xl-4 col-lg-6 col-md-6 mb-2">
             <a href="javascript:;" id="totalContractsGenerated">
                 <x-cards.widget :title="__('modules.dashboard.totalContractsGenerated')"
                                 :value="$totalContractsGenerated" icon="file-contract"/>
@@ -67,7 +67,7 @@
     @endif
 
     @if (in_array('contracts', user_modules()) && in_array('total_contracts_signed', $activeWidgets))
-        <div class="col-xl-4 col-lg-6 col-md-6 mb-3">
+        <div class="col-xl-4 col-lg-6 col-md-6 mb-2">
             <a href="javascript:;" id="totalContractsSigned">
                 <x-cards.widget :title="__('modules.dashboard.totalContractsSigned')" :value="$totalContractsSigned"
                                 icon="file-signature"/>

@@ -60,7 +60,7 @@ $deletePackagesPermission = user()->permission('delete_packages');
                 @if($addPackagesPermission == 'all')
                 <x-forms.link-primary :link="route('superadmin.packages.create')" class="mr-3 float-left openRightModal"
                     icon="plus">
-                    @lang('superadmin.addPackage')
+                    @lang('superadmin.addPackage') 
                 </x-forms.link-primary>
                 @endif
             </div>

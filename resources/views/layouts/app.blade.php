@@ -28,6 +28,23 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="{{ asset('vendor/css/bootstrap-icons.css') }}" defer="defer">
 
+     <!-- Tailwind CSS via CDN -->
+     <script src="https://cdn.tailwindcss.com"></script>
+
+     <!-- Optionnel : config custom via CDN -->
+     <script>
+         tailwind.config = {
+             prefix: 'tw-', // pour éviter les conflits avec Bootstrap
+             theme: {
+                 extend: {
+                     colors: {
+                         primary: '#1E40AF',
+                     }
+                 }
+             }
+         }
+     </script>
+
     @stack('datatable-styles')
 
     <!-- Template CSS -->

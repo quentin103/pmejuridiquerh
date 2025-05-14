@@ -1,7 +1,7 @@
-<li {{ $attributes->merge(['class' => 'accordionItem closeIt']) }}>
+<li {{ $attributes->merge(['class' => 'closeIt tw-text-gray-800']) }}>
 
     @if (!is_null($link))
-        <a class="nav-item text-lightest f-15 sidebar-text-color" href="{{ $link }}"
+        <a class="tw-flex tw-items-center f-15 sidebar-text-color tw-p-2  hover:tw-bg-[#7366ffb3]/20" href="{{ $link }}"
            title="{{ $text }}">
             @isset($iconPath)
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -23,7 +23,7 @@
             @endif
         </a>
     @else
-        <a class="nav-item text-lightest f-15 sidebar-text-color accordionItemHeading {{ $active == 1 ? 'active' : '' }}"
+        <a class="tw-flex tw-items-center f-15 sidebar-text-color accordionItemHeading {{ $active == 1 ? 'active' : '' }}"
            title="{{ $text }}">
             @isset($iconPath)
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"

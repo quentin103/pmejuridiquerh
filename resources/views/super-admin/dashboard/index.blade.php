@@ -7,7 +7,7 @@
 @section('content')
 
     <!-- CONTENT WRAPPER START -->
-    <div class="px-4 py-0 py-lg-4 border-top-0 super-admin-dashboard">
+    <div class="px-3 py-0 py-lg-3 border-top-0 super-admin-dashboard">
         <div class="row">
             @include('dashboard.update-message-dashboard')
             @includeIf('dashboard.update-message-module-dashboard')
@@ -17,27 +17,27 @@
         @if(user()->permission('view_companies'))
             <div class="row">
                 @if($sidebarSuperadminPermissions['view_companies'] != 5 && $sidebarSuperadminPermissions['view_companies'] != 'none')
-                    <div class="col-xl-4 col-lg-6 col-md-6 mb-4">
+                    <div class="col-xl-4 col-lg-6 col-md-6 mb-2">
                         <x-cards.widget :title="__('superadmin.dashboard.totalCompany')" :value="$totalCompanies"
                                         icon="building"/>
                     </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6 mb-4">
+                    <div class="col-xl-4 col-lg-6 col-md-6 mb-2">
                         <x-cards.widget :title="__('superadmin.dashboard.activeCompany')" :value="$activeCompanies"
                                         icon="store"/>
                     </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6 mb-4">
+                    <div class="col-xl-4 col-lg-6 col-md-6 mb-2">
                         <x-cards.widget :title="__('superadmin.dashboard.licenseExpired')"
                                         :value="$expiredCompanies"
                                         icon="ban"/>
                     </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6 mb-4">
+                    <div class="col-xl-4 col-lg-6 col-md-6 mb-2">
                         <x-cards.widget :title="__('superadmin.dashboard.inactiveCompany')"
                                         :value="$inactiveCompanies"
                                         icon="store-slash"/>
                     </div>
                 @endif
                 @if($sidebarSuperadminPermissions['view_packages'] != 5 && $sidebarSuperadminPermissions['view_packages'] != 'none')
-                    <div class="col-xl-4 col-lg-6 col-md-6 mb-4">
+                    <div class="col-xl-4 col-lg-6 col-md-6 mb-2">
                         <x-cards.widget :title="__('superadmin.dashboard.totalPackages')"
                                         :value="$totalPackages"
                                         icon="boxes"/>
@@ -47,28 +47,28 @@
 
             <div class="row">
                 @if($sidebarSuperadminPermissions['view_companies'] != 5 && $sidebarSuperadminPermissions['view_companies'] != 'none')
-                    <div class="col-sm-12 col-lg-6 mt-4">
+                    <div class="col-sm-12 col-lg-6 mt-3">
                         @include('super-admin.dashboard.recent-registered-companies')
                     </div>
-                    <div class="col-sm-12 col-lg-6 mt-4">
+                    <div class="col-sm-12 col-lg-6 mt-3">
                         @include('super-admin.dashboard.top-user-count-companies')
                     </div>
                 @endif
                 @if($sidebarSuperadminPermissions['manage_billing'] != 5 && $sidebarSuperadminPermissions['manage_billing'] != 'none')
-                    <div class="col-sm-12 col-lg-6 mt-4">
+                    <div class="col-sm-12 col-lg-6 mt-3">
                         @include('super-admin.dashboard.recent-subscriptions')
                     </div>
-                    <div class="col-sm-12 col-lg-6 mt-4">
+                    <div class="col-sm-12 col-lg-6 mt-3">
                         @include('super-admin.dashboard.recent-license-expired')
                     </div>
                 @endif
                 @if($sidebarSuperadminPermissions['view_packages'] != 5 && $sidebarSuperadminPermissions['view_packages'] != 'none')
-                    <div class="col-sm-12 col-lg-6 mt-4">
+                    <div class="col-sm-12 col-lg-6 mt-3">
                         @include('super-admin.dashboard.package-company-count')
                     </div>
                 @endif
                 @if($sidebarSuperadminPermissions['view_companies'] != 5 && $sidebarSuperadminPermissions['view_companies'] != 'none')
-                    <div class="col-sm-12 col-lg-6 mt-4">
+                    <div class="col-sm-12 col-lg-6 mt-3">
                         @include('super-admin.dashboard.charts')
                     </div>
                 @endif

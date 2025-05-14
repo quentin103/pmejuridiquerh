@@ -77,21 +77,21 @@
                             <a class="dropdown-item f-14 text-dark openRightModal"
                             href="{{ route('superadmin.companies.create') }}">
                                 <i class="fa fa-plus f-w-500 mr-2 f-11"></i>
-                                @lang('superadmin.addCompany')
+                                @lang('superadmin.addCompany') 
                             </a>
                         @endif
                         @if($addPackagePermission == 'all')
                             <a class="dropdown-item f-14 text-dark openRightModal"
                             href="{{ route('superadmin.packages.create') }}">
                                 <i class="fa fa-plus f-w-500 mr-2 f-11"></i>
-                                @lang('superadmin.addPackage')
+                                @lang('superadmin.addPackage')  
                             </a>
                         @endif
                         @if($addSuperadminPermission == 'all')
                         <a class="dropdown-item f-14 text-dark openRightModal"
                            href="{{ route('superadmin.superadmin.create') }}">
                             <i class="fa fa-plus f-w-500 mr-2 f-11"></i>
-                            @lang('superadmin.addSuperAdmin')
+                            @lang('superadmin.addSuperAdmin') 
                         </a>
                         @endif
                     </div>

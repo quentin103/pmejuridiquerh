@@ -7,9 +7,9 @@
         $userName = (session()->has('clientContact') && session('clientContact')) ? session('clientContact')->contact_name : user()->name;
     @endphp
     <!-- MAIN SIDEBAR START -->
-    <div class="main-sidebar" id="mobile_menu_collapse">
+    <div class="main-sidebar tw-shadow-md tw-border-none tw-bg-white" id="mobile_menu_collapse">
         <!-- SIDEBAR BRAND START -->
-        <div class="sidebar-brand-box dropdown cursor-pointer">
+        <div class="tw-p-4 tw-shadow-sm dropdown cursor-pointer">
             <div class="dropdown-toggle sidebar-brand d-flex align-items-center justify-content-between  w-100"
                 type="link" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
@@ -114,7 +114,7 @@
         <!-- SIDEBAR BRAND END -->
 
         <!-- SIDEBAR MENU START -->
-        <div class="sidebar-menu {{ user()->dark_theme ? 'bg-dark' : '' }}" id="sideMenuScroll">
+        <div class="sidebar-menu" id="sideMenuScroll">
             {{-- SAAS --}}
             @if(user()->is_superadmin)
                 @include('super-admin.sections.super-admin-menu')
@@ -127,8 +127,8 @@
     <!-- MAIN SIDEBAR END -->
     <!-- Sidebar Toggler -->
     <div
-        class="text-center d-flex justify-content-between align-items-center position-fixed sidebarTogglerBox {{ user()->dark_theme ? 'bg-dark' : '' }}">
-        <button class="border-0 d-lg-block d-none text-lightest font-weight-bold" id="sidebarToggle"></button>
+        class="text-center d-flex justify-content-between align-items-center position-fixed sidebarTogglerBox !tw-border-none {{ user()->dark_theme ? 'bg-dark' : '' }}">
+        {{-- <button class="border-0 d-lg-block d-none text-lightest font-weight-bold" id="sidebarToggle"></button> --}}
 
         <div class="d-flex align-items-center">
             @if(isWorksuite() || user()->is_superadmin)

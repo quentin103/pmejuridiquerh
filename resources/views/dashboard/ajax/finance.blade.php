@@ -88,7 +88,7 @@
 
 <div class="row">
     @if (in_array('invoices', user_modules()) && in_array('invoice_overview', $activeWidgets))
-        <div class="col-sm-12 col-lg-6 mt-4">
+        <div class="col-sm-12 col-lg-6 mt-3">
             <x-cards.data
                 :title="__('modules.dashboard.invoiceOverview').' <i class=\'fa fa-question-circle\' data-toggle=\'popover\' data-placement=\'top\' data-content=\''.__('messages.invoicesWidgetMessage').'\' data-trigger=\'hover\'></i>'">
                 @if (array_sum($invoiceOverviewChartData['values']) > 0)
@@ -102,7 +102,7 @@
     @endif
 
     @if (in_array('estimates', user_modules()) && in_array('estimate_overview', $activeWidgets))
-        <div class="col-sm-12 col-lg-6 mt-4">
+        <div class="col-sm-12 col-lg-6 mt-3">
             <x-cards.data
                 :title="__('modules.dashboard.estimateOverview').' <i class=\'fa fa-question-circle\' data-toggle=\'popover\' data-placement=\'top\' data-content=\''.__('messages.estimatesWidgetMessage').'\' data-trigger=\'hover\'></i>'">
                 @if (array_sum($estimateOverviewChartData['values']) > 0)
@@ -116,7 +116,7 @@
     @endif
 
     @if (in_array('leads', user_modules()) && in_array('proposal_overview', $activeWidgets))
-        <div class="col-sm-12 col-lg-6 mt-4">
+        <div class="col-sm-12 col-lg-6 mt-3">
             <x-cards.data
                 :title="__('modules.dashboard.proposalOverview').' <i class=\'fa fa-question-circle\' data-toggle=\'popover\' data-placement=\'top\' data-content=\''.__('messages.proposalsWidgetMessage').'\' data-trigger=\'hover\'></i>'">
                 @if (array_sum($proposalOverviewChartData['values']) > 0)
@@ -130,7 +130,7 @@
     @endif
 
     @if (in_array('payments', user_modules()) && in_array('earnings_by_client', $activeWidgets))
-        <div class="col-sm-12 col-lg-6 mt-4">
+        <div class="col-sm-12 col-lg-6 mt-3">
             <x-cards.data
                 :title="__('modules.dashboard.clientWiseEarnings').' <i class=\'fa fa-question-circle\' data-toggle=\'popover\' data-placement=\'top\' data-content=\''.__('messages.earningChartNote').'\' data-trigger=\'hover\'></i>'">
                 <x-bar-chart id="task-chart4" :chartData="$clientEarningChart" height="300" />
@@ -139,7 +139,7 @@
     @endif
 
     @if (in_array('payments', user_modules()) && in_array('projects', user_modules()) && in_array('earnings_by_projects', $activeWidgets))
-        <div class="col-sm-12 col-lg-6 mt-4">
+        <div class="col-sm-12 col-lg-6 mt-3">
             <x-cards.data
                 :title="__('modules.dashboard.earningsByProjects').' <i class=\'fa fa-question-circle\' data-toggle=\'popover\' data-placement=\'top\' data-content=\''.__('messages.earningChartNote').'\' data-trigger=\'hover\'></i>'">
                 <x-bar-chart id="task-chart5" :chartData="$projectEarningChartData" height="300" />

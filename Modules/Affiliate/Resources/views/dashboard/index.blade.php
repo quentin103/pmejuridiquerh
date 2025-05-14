@@ -5,7 +5,7 @@
 
 @section('content')
     <!-- CONTENT WRAPPER START -->
-    <div class="px-4 py-0 py-lg-4 border-top-0 super-admin-dashboard">
+    <div class="px-3 py-0 py-lg-3 border-top-0 super-admin-dashboard">
 
         <div class="row">
             <div class="col-md-3 mb-4">
@@ -23,10 +23,10 @@
         </div>
 
         <div class="row">
-            <div class="col-sm-12 col-lg-6 mt-4">
+            <div class="col-sm-12 col-lg-6 mt-3">
                 @include('affiliate::dashboard.referrals')
             </div>
-            <div class="col-sm-12 col-lg-6 mt-4">
+            <div class="col-sm-12 col-lg-6 mt-3">
                 @include('affiliate::dashboard.companies')
             </div>
         </div>
