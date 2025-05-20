@@ -53,7 +53,7 @@
                                {{ $payment->gateway ? $payment->gateway : '--' }}
                             @endif
                            </td>
-                           <td class="text-right">
+                           <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                                {{-- If payment done from payment gateway, then payment cannot be removed.  --}}
                                @if (((is_null($payment->transaction_id) && is_null($payment->payload_id) && !$invoice->credit_note && $payment->gateway) || ($payment->gateway == 'Offline' || $payment->gateway == '')) && !in_array('client', user_roles()))
                                     <x-forms.button-secondary

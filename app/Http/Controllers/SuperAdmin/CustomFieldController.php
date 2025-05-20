@@ -81,8 +81,8 @@ class CustomFieldController extends AccountBaseController
                     'action',
                     function ($row) {
 
-                        return '<div class="task_view"> <a data-user-id="' . $row->id . '" class="task_view_more d-flex align-items-center justify-content-center edit-custom-field" href="javascript:;" data-id="{{ $permission->id }}" > <i class="fa fa-edit icons mr-2"></i>' . __('app.edit') . '</a> </div>
-                    <div class="task_view"> <a data-user-id="' . $row->id . '" class="task_view_more d-flex align-items-center justify-content-center sa-params" href="javascript:;" data-id="{{ $permission->id }}"  >
+                        return '<div class="task_view-quentin"> <a data-user-id="' . $row->id . '" class="task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin edit-custom-field" href="javascript:;" data-id="{{ $permission->id }}" > <i class="fa fa-edit icons mr-2"></i>' . __('app.edit') . '</a> </div>
+                    <div class="task_view-quentin"> <a data-user-id="' . $row->id . '" class="task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin sa-params" href="javascript:;" data-id="{{ $permission->id }}"  >
                             <i class="fa fa-trash icons mr-2"></i> ' . __('app.delete') . ' </a> </div>';
                     }
                 )

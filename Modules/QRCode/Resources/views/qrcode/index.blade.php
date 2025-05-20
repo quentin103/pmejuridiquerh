@@ -68,7 +68,8 @@
 
         <!-- Add Task Export Buttons End -->
         <!-- Task Box Start -->
-        <div class="d-flex flex-column w-tables rounded mt-3 bg-white w-100 table-responsive">
+        <div class="quentin  d-flex flex-column w-tables tw-rounded-xl mt-3 bg-white tw-shadow-lg  
+tw-border-none quentin w-100 table-responsive">
 
             {!! $dataTable->table(['class' => 'table table-hover border-0 w-100']) !!}
 

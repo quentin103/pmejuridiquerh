@@ -39,7 +39,7 @@
                                 @if (isset($weekShifts[$key]->shift))
                                     @if (attendance_setting()->allow_shift_change && !$weekDate->isPast())
                                         @if (!is_null($weekShifts[$key]->requestChange) && $weekShifts[$key]->requestChange->status == 'waiting')
-                                            <div class="task_view">
+                                            <div class="task_view-quentin">
                                                 <a href="javascript:;"
                                                    data-shift-schedule-id="{{ $weekShifts[$key]->id }}"
                                                    data-shift-schedule-date="{{ $weekDate->translatedFormat('Y-m-d') }}"
@@ -47,7 +47,7 @@
                                                    class="taskView border-right-0 request-shift-change f-11">@lang('modules.attendance.requestPending')</a>
                                             </div>
                                         @else
-                                            <div class="task_view">
+                                            <div class="task_view-quentin">
                                                 <a href="javascript:;"
                                                    data-shift-schedule-id="{{ $weekShifts[$key]->id }}"
                                                    data-shift-schedule-date="{{ $weekDate->translatedFormat('Y-m-d') }}"

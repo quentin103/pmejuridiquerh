@@ -37,7 +37,7 @@
                     <td>
                         {{ $item->details }}
                     </td>
-                    <td class="text-right">
+                    <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                         @if ($item->submitted_by == user()->id)
                             <div class="dropdown ml-auto message-action">
                                 <button

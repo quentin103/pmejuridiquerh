@@ -129,14 +129,15 @@ $manageRecurringInvoicesPermission = user()->permission('manage_recurring_invoic
             </div>
             @if(user()->permission('manage_finance_setting') == 'all' && (in_array('invoices', user_modules())))
                 <div class="btn-group mt-3 mt-lg-0 pb-1 mt-md-0 ml-lg-3 d-none d-lg-block" role="group">
-                    <button class="btn btn-secondary" id="einvoice-setting" type="button"><span><i class="fa fa-cog"></i> @lang('app.settings')</span></button>
+                    <button class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white " id="einvoice-setting" type="button"><span><i class="fa fa-cog"></i> @lang('app.settings')</span></button>
                 </div>
             @endif
         </div>
 
         <!-- Add Task Export Buttons End -->
         <!-- Task Box Start -->
-        <div class="d-flex flex-column w-tables rounded mt-3 bg-white w-100 table-responsive">
+        <div class="quentin  d-flex flex-column w-tables tw-rounded-xl mt-3 bg-white tw-shadow-lg  
+tw-border-none quentin w-100 table-responsive">
 
             {!! $dataTable->table(['class' => 'table table-hover border-0 w-100']) !!}
 

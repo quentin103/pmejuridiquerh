@@ -30,7 +30,7 @@
                         @endif
                     </td>
                     <td>{{ $item->memo }}</td>
-                    <td class="text-right">
+                    <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                         {{ $item->hours }}
                     </td>
                 </tr>

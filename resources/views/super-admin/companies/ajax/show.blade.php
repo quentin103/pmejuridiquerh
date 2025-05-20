@@ -176,16 +176,15 @@
                 </div>
             @endif
            
-            <p class="tw-flex tw-flex-col tw-gap-3 tw-justify-between tw-items-center mt-3">
+            <p class="tw-flex tw-flex-col tw-gap-3 mt-3">
                 @if($updateCompanyPackagePermission == 'all')
                     <a href="{{ route('superadmin.companies.edit_package', [$company->id]) }}?requestFrom=show"
-                       class="ttw-bg-[#7366FF] tw-p-2 px-3 hover:tw-bg-[#7366FF]/70  hover:tw-text-white  tw-rounded-md !tw-text-white openRightModal">
+                       class="tw-bg-[#f76700] tw-p-2 px-3 hover:tw-bg-[#f76700]/70  hover:tw-text-white  tw-rounded-md !tw-text-white openRightModal">
                         <i class="fa fa-edit mr-1"></i> @lang('app.update') @lang('superadmin.package')
                     </a>
                 @endif
                 @if($manageCompanyImpersonatePermission == 'all')
-                    <button type="button" id="login-as-company"
-                            class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white">
+                    <button type="button" id="login-as-company"class="tw-bg-[#838383] tw-text-start tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white ">
                         <i class="fa fa-sign-in-alt mr-1"></i> @lang('superadmin.superadmin.loginAsCompany')
                     </button>
                 @endif

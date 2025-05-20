@@ -184,7 +184,7 @@
                                                 || ($viewInterviewPermission == 'added' && $item->added_by == user()->id)
                                                 || ($viewInterviewPermission == 'owned' && in_array($loggedEmployee->id, $secEmp)
                                                 || ($viewInterviewPermission == 'both' && (in_array($loggedEmployee->id, $secEmp)) || $item->added_by == user()->id)))
-                                                <div class="task_view">
+                                                <div class="task_view-quentin">
                                                     <a href="{{ route('interview-schedule.show', [$item->id]) }}"
                                                        class="taskView openRightModal">@lang('app.view')</a>
                                                 </div>
@@ -225,7 +225,7 @@
                                         || ($viewJobPermission == 'owned' && user()->id == $item->recruiter_id)
                                         || ($viewJobPermission == 'both' && user()->id == $item->recruiter_id)
                                         || $item->added_by == user()->id)
-                                        <div class="task_view">
+                                        <div class="task_view-quentin">
                                             <a href="{{ route('jobs.show', [$item->id]) }}"
                                                class="taskView">@lang('app.view')</a>
                                         </div>

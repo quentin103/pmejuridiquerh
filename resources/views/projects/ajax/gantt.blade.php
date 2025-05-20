@@ -20,7 +20,8 @@ $editTaskPermission = ($project->project_admin == user()->id) ? 'all' : user()->
         </div>
         <!-- Add Task Export Buttons End -->
         <!-- Task Box Start -->
-        <div class="d-flex flex-column w-tables rounded mt-3 bg-white">
+        <div class="quentin  d-flex flex-column w-tables tw-rounded-xl mt-3 bg-white tw-shadow-lg  
+tw-border-none quentin">
 
             <div class="d-flex">
                 <!-- ASSIGN START -->

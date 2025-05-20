@@ -19,19 +19,19 @@
                         {{ $key + 1 }}
                     </td>
                     <td> {{ $type->name }} </td>
-                    <td class="text-right">
-                        <div class="task_view">
+                    <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
+                        <div class="task_view-quentin">
                             @if ($editAssetTypePermission == 'all' || $editAssetTypePermission == 'added')
                                 <a href="javascript:;" data-type-id="{{ $type->id }}"
-                                   class="editAssetType task_view_more d-flex align-items-center justify-content-center">
+                                   class="editAssetType task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin">
                                     <i class="mr-1 fa fa-edit icons"></i> @lang('app.edit')
                                 </a>
                             @endif
                         </div>
-                        <div class="mt-1 ml-1 task_view mt-lg-0 mt-md-0">
+                        <div class="mt-1 ml-1 task_view-quentin mt-lg-0 mt-md-0">
                             @if ($deleteAssetTypePermission == 'all' || $deleteAssetTypePermission == 'added')
                                 <a href="javascript:;" data-type-id="{{ $type->id }}"
-                                   class="delete-asset-type task_view_more d-flex align-items-center justify-content-center">
+                                   class="delete-asset-type task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin">
                                     <i class="mr-1 fa fa-trash icons"></i> @lang('app.delete')
                                 </a>
                             @endif

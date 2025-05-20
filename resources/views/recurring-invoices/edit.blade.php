@@ -422,7 +422,7 @@
                                 </table>
                                 @if(count($invoice->recurrings) == 0)
                                 <a href="javascript:;"
-                                   class="d-flex align-items-center justify-content-center ml-3 remove-item"><i
+                                   class="quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin ml-3 remove-item"><i
                                         class="fa fa-times-circle f-20 text-lightest"></i></a>
                                 @endif
                             </div>
@@ -738,7 +738,7 @@
                 '</tbody>' +
                 '</table>' +
                 '</div>' +
-                '<a href="javascript:;" class="d-flex align-items-center justify-content-center ml-3 remove-item"><i class="fa fa-times-circle f-20 text-lightest"></i></a>' +
+                '<a href="javascript:;" class="quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin ml-3 remove-item"><i class="fa fa-times-circle f-20 text-lightest"></i></a>' +
                 '</div>';
             $(item).hide().appendTo("#sortable").fadeIn(500);
             $('#multiselect' + i).selectpicker();

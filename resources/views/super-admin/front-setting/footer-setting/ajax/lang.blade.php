@@ -31,7 +31,7 @@
     <div class="row pt-2">
         <div class="col-md-12 mb-2 ml-3">
             <button id="add-footer" type="button"
-                    class="btn-primary rounded f-14 p-2"><i
+                    class="tw-bg-[#838383] tw-text-start tw-p-2 px-3 hover:tw-bg-[#838383]/70 hover:tw-text-white tw-rounded-md !tw-text-white "><i
                     class="fa fa-plus mr-1"></i>@lang('superadmin.footer.addFooter')</button>
         </div>
     </div>

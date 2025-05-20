@@ -15,29 +15,29 @@
         </div>
 
         @if(user()->permission('view_companies'))
-            <div class="row">
+            <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 md:tw-grid-cols-3 xl:tw-grid-cols-5 tw-gap-2 tw-mb-3">
                 @if($sidebarSuperadminPermissions['view_companies'] != 5 && $sidebarSuperadminPermissions['view_companies'] != 'none')
-                    <div class="col-xl-4 col-lg-6 col-md-6 mb-2">
+                    <div class="">
                         <x-cards.widget :title="__('superadmin.dashboard.totalCompany')" :value="$totalCompanies"
                                         icon="building"/>
                     </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6 mb-2">
+                    <div class="">
                         <x-cards.widget :title="__('superadmin.dashboard.activeCompany')" :value="$activeCompanies"
                                         icon="store"/>
                     </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6 mb-2">
+                    <div class="">
                         <x-cards.widget :title="__('superadmin.dashboard.licenseExpired')"
                                         :value="$expiredCompanies"
                                         icon="ban"/>
                     </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6 mb-2">
+                    <div class="">
                         <x-cards.widget :title="__('superadmin.dashboard.inactiveCompany')"
                                         :value="$inactiveCompanies"
                                         icon="store-slash"/>
                     </div>
                 @endif
                 @if($sidebarSuperadminPermissions['view_packages'] != 5 && $sidebarSuperadminPermissions['view_packages'] != 'none')
-                    <div class="col-xl-4 col-lg-6 col-md-6 mb-2">
+                    <div class="">
                         <x-cards.widget :title="__('superadmin.dashboard.totalPackages')"
                                         :value="$totalPackages"
                                         icon="boxes"/>

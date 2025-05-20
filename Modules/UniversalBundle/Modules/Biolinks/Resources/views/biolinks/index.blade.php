@@ -47,7 +47,7 @@ $addBiolinkPermission = user()->permission('add_biolink');
         <div class="d-flex justify-content-between action-bar">
             <div id="table-actions" class="flex-grow-1 align-items-center">
                 @if (user()->permission('add_biolink') != 'none')
-                    <a href="javascript:;" class="btn btn-primary rounded f-14 p-2 mr-3 float-left" id="add-biolink">
+                    <a href="javascript:;" class="tw-bg-[#838383] tw-text-start tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white float-left" id="add-biolink">
                         <i class="fa fa-plus mr-1"></i>
                         @lang('app.add')
                         @lang('biolinks::app.biolinkPage')
@@ -57,7 +57,8 @@ $addBiolinkPermission = user()->permission('add_biolink');
         </div>
         <!-- Add Task Export Buttons End -->
         <!-- Task Box Start -->
-        <div class="d-flex flex-column w-tables rounded mt-3 bg-white table-responsive">
+        <div class="quentin  d-flex flex-column w-tables tw-rounded-xl mt-3 bg-white tw-shadow-lg  
+tw-border-none quentin table-responsive">
 
             {!! $dataTable->table(['class' => 'table table-hover border-0 w-100']) !!}
 

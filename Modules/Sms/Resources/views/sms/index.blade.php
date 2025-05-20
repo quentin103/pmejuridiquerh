@@ -373,7 +373,7 @@
                 </div>
                 @else
                 <div class="col-lg-12 py-3">
-                    <div class="w-100 h-100 d-flex align-items-center justify-content-center">
+                    <div class="w-100 h-100 quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin">
                         <div>
                             @lang('sms::modules.smsConfigure')
                         </div>

@@ -40,7 +40,7 @@
 
         primary.insertAdjacentHTML('beforeend', `
         <li class="-more bg-grey">
-            <button type="button" class="px-4 h-100 d-lg-flex d-md-flex align-items-center justify-content-center" aria-haspopup="true" aria-expanded="false">
+            <button type="button" class="px-4 h-100 d-lg-flex d-mquentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin" aria-haspopup="true" aria-expanded="false">
                     More <span>&darr;</span>
             </button>
             <ul class="-secondary" id="hide-project-menues">

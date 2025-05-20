@@ -11,10 +11,10 @@ function toggleItem() {
     var itemClass = this.parentNode.className;
 
     for (i = 0; i < accItem.length; i++) {
-        accItem[i].className = 'accordionItem closeIt';
+        accItem[i].className = 'accordionItem closeIt tw-text-[#404040] nav-bar-quentin tw-px-2';
     }
-    if (itemClass == 'accordionItem closeIt') {
-        this.parentNode.className = 'accordionItem openIt';
+    if (itemClass == 'accordionItem closeIt tw-text-[#404040] nav-bar-quentin tw-px-2') {
+        this.parentNode.className = 'accordionItem openIt tw-text-[#404040] nav-bar-quentin tw-px-2';
     }
 }
 /*******************************************************

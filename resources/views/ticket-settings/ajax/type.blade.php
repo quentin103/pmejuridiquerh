@@ -8,13 +8,13 @@
         @forelse($ticketTypes as $key => $ticketType)
             <tr class="row{{ $ticketType->id }}">
                 <td>{{ $ticketType->type }}</td>
-                <td class="text-right">
-                    <div class="task_view">
-                        <a href="javascript:;" data-type-id="{{ $ticketType->id }}" class="edit-type task_view_more d-flex align-items-center justify-content-center" > <i class="fa fa-edit icons mr-2"></i>  @lang('app.edit')
+                <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
+                    <div class="task_view-quentin">
+                        <a href="javascript:;" data-type-id="{{ $ticketType->id }}" class="edit-type task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin" > <i class="fa fa-edit icons mr-2"></i>  @lang('app.edit')
                         </a>
                     </div>
-                    <div class="task_view mt-1 mt-lg-0 mt-md-0">
-                        <a href="javascript:;" class="delete-table-row delete-type task_view_more d-flex align-items-center justify-content-center" data-type-id="{{ $ticketType->id }}">
+                    <div class="task_view-quentin mt-1 mt-lg-0 mt-md-0">
+                        <a href="javascript:;" class="delete-table-row delete-type task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin" data-type-id="{{ $ticketType->id }}">
                             <i class="fa fa-trash icons mr-2"></i> @lang('app.delete')
                         </a>
                     </div>

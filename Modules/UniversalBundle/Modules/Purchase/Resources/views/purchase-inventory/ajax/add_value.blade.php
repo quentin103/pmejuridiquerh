@@ -64,7 +64,7 @@
             </tbody>
         </table>
 
-        <a href="javascript:;" class="d-flex align-items-center justify-content-center ml-3 remove-item"
+        <a href="javascript:;" class="quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin ml-3 remove-item"
             data-item-id="{{ $item->id }}"><i class="fa fa-times-circle f-20 text-lightest"></i></a>
     </div>
 

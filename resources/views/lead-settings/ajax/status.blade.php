@@ -22,17 +22,17 @@
                 </td>
 
                 <td>
-                    <div class="task_view">
+                    <div class="task_view-quentin">
                         <a href="javascript:;" data-status-id="{{ $status->id }}"
-                            class="edit-status task_view_more d-flex align-items-center justify-content-center"> <i
+                            class="edit-status task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin"> <i
                                 class="fa fa-edit icons mr-2"></i> @lang('app.edit')
                         </a>
                     </div>
 
                     @if (!$status->default)
-                        <div class="task_view mt-1 mt-lg-0 mt-md-0">
+                        <div class="task_view-quentin mt-1 mt-lg-0 mt-md-0">
                             <a href="javascript:;"
-                                class="delete-status task_view_more d-flex align-items-center justify-content-center"
+                                class="delete-status task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin"
                                 data-status-id="{{ $status->id }}">
                                 <i class="fa fa-trash icons mr-2"></i> @lang('app.delete')
                             </a>

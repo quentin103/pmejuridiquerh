@@ -26,16 +26,16 @@
                         @endif
                     </td>
                     <td> {{ (__('payroll::modules.payroll.' . $salaryComponent->value_type)) }}</td>
-                    <td class="text-right">
-                        <div class="task_view">
+                    <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
+                        <div class="task_view-quentin">
                             <a href="javascript:;" data-salary-components-id="{{ $salaryComponent->id }}"
-                               class="edit-salary-component task_view_more d-flex align-items-center justify-content-center">
+                               class="edit-salary-component task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin">
                                 <i class="fa fa-edit icons mr-2"></i> @lang('app.edit')
                             </a>
                         </div>
-                        <div class="task_view">
+                        <div class="task_view-quentin">
                             <a href="javascript:;" data-salary-components-id="{{ $salaryComponent->id }}"
-                               class="delete-salary-component task_view_more d-flex align-items-center justify-content-center">
+                               class="delete-salary-component task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin">
                                 <i class="fa fa-trash icons mr-2"></i> @lang('app.delete')
                             </a>
                         </div>

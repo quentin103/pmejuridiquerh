@@ -36,7 +36,7 @@
                         </td>
                         <td>{{ $note->created_at->timezone(company()->timezone)->translatedFormat(company()->date_format . ' ' . company()->time_format) }}</td>
 
-                        <td class="text-right">
+                        <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                             <div class="dropdown ml-auto note-action">
                                 <button
                                     class="btn btn-lg f-14 p-0 text-lightest  rounded  dropdown-toggle"

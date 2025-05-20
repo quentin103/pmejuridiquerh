@@ -144,7 +144,7 @@
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-1 col-2 pt-2">
-                        <a href="javascript:;" class="mt-5 d-flex align-items-center justify-content-center remove-item" data-item-id="${i}">
+                        <a href="javascript:;" class="mt-5 quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin remove-item" data-item-id="${i}">
                             <i class="fa fa-times-circle f-20 text-lightest"></i>
                         </a>
                     </div>

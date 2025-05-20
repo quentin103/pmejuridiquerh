@@ -68,9 +68,9 @@
                                     <tr>
                                         <td>{{ $subdomains.'.'.getDomain() }} </td>
                                         <td>
-                                            <div class="task_view mt-1 mt-lg-0 mt-md-0">
+                                            <div class="task_view-quentin mt-1 mt-lg-0 mt-md-0">
                                                 <a href="javascript:;" data-key-id="{{$key}}"
-                                                   class="sa-params task_view_more d-flex align-items-center justify-content-center">
+                                                   class="sa-params task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin">
                                                     <i class="fa fa-trash icons mr-2"></i> @lang('app.delete')
                                                 </a>
                                             </div>

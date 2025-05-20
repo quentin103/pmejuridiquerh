@@ -61,15 +61,16 @@ $addHolidayPermission = user()->permission('add_holiday');
             </div>
 
             <div class="btn-group mt-2 mt-lg-0 mt-md-0 ml-0 ml-lg-3 ml-md-3" role="group" aria-label="Basic example">
-                <a href="{{ route('holidays.index') }}" class="btn btn-secondary f-14 btn-active" data-toggle="tooltip"
+                <a href="{{ route('holidays.index') }}" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-14 btn-active" data-toggle="tooltip"
                     data-original-title="@lang('app.menu.calendar')"><i class="side-icon bi bi-calendar"></i></a>
-                <a href="{{ route('holidays.table_view') }}" class="btn btn-secondary f-14" data-toggle="tooltip"
+                <a href="{{ route('holidays.table_view') }}" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-14" data-toggle="tooltip"
                     data-original-title="@lang('modules.leaves.tableView')"><i class="side-icon bi bi-list-ul"></i></a>
             </div>
         </div>
 
         <!-- leave table Box Start -->
-        <div class="d-flex flex-column w-tables rounded mt-3 bg-white">
+        <div class="quentin  d-flex flex-column w-tables tw-rounded-xl mt-3 bg-white tw-shadow-lg  
+tw-border-none quentin">
             <x-cards.data>
                 <div id="calendar"></div>
             </x-cards.data>

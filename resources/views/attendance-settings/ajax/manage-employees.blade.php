@@ -28,7 +28,7 @@
                         </select>
                     </div>
                 </td>
-                <td class="text-right">
+                <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                     <x-forms.button-secondary data-employee-id="{{ $employee->id }}" icon="times"
                         class="remove-employee">
                         @lang('app.remove')

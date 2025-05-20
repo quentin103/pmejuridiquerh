@@ -219,7 +219,7 @@ final class Dashboard extends Renderer
 
         foreach ($leastTestedClasses as $className => $coverage) {
             $result['class'] .= sprintf(
-                '       <tr><td><a href="%s">%s</a></td><td class="text-right">%d%%</td></tr>' . "\n",
+                '       <tr><td><a href="%s">%s</a></td><td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">%d%%</td></tr>' . "\n",
                 str_replace($baseLink, '', $classes[$className]['link']),
                 $className,
                 $coverage,
@@ -230,7 +230,7 @@ final class Dashboard extends Renderer
             [$class, $method] = explode('::', $methodName);
 
             $result['method'] .= sprintf(
-                '       <tr><td><a href="%s"><abbr title="%s">%s</abbr></a></td><td class="text-right">%d%%</td></tr>' . "\n",
+                '       <tr><td><a href="%s"><abbr title="%s">%s</abbr></a></td><td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">%d%%</td></tr>' . "\n",
                 str_replace($baseLink, '', $classes[$class]['methods'][$method]['link']),
                 $methodName,
                 $method,
@@ -274,7 +274,7 @@ final class Dashboard extends Renderer
 
         foreach ($classRisks as $className => $crap) {
             $result['class'] .= sprintf(
-                '       <tr><td><a href="%s">%s</a></td><td class="text-right">%d</td></tr>' . "\n",
+                '       <tr><td><a href="%s">%s</a></td><td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">%d</td></tr>' . "\n",
                 str_replace($baseLink, '', $classes[$className]['link']),
                 $className,
                 $crap,
@@ -285,7 +285,7 @@ final class Dashboard extends Renderer
             [$class, $method] = explode('::', $methodName);
 
             $result['method'] .= sprintf(
-                '       <tr><td><a href="%s"><abbr title="%s">%s</abbr></a></td><td class="text-right">%d</td></tr>' . "\n",
+                '       <tr><td><a href="%s"><abbr title="%s">%s</abbr></a></td><td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">%d</td></tr>' . "\n",
                 str_replace($baseLink, '', $classes[$class]['methods'][$method]['link']),
                 $methodName,
                 $method,

@@ -13,16 +13,16 @@
                     <td> {{ currency_format($tds->salary_from, $payrollCurrency) }}</td>
                     <td> {{ currency_format($tds->salary_to, $payrollCurrency) }}</td>
                     <td> {{ $tds->salary_percent }}</td>
-                    <td class="text-right">
-                        <div class="task_view">
+                    <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
+                        <div class="task_view-quentin">
                             <a href="javascript:;" data-salary-tds-id="{{ $tds->id }}"
-                               class="edit-salary-tds task_view_more d-flex align-items-center justify-content-center">
+                               class="edit-salary-tds task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin">
                                 <i class="fa fa-edit icons mr-2"></i> @lang('app.edit')
                             </a>
                         </div>
-                        <div class="task_view">
+                        <div class="task_view-quentin">
                             <a href="javascript:;" data-salary-tds-id="{{ $tds->id }}"
-                               class="delete-salary-tds task_view_more d-flex align-items-center justify-content-center">
+                               class="delete-salary-tds task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin">
                                 <i class="fa fa-trash icons mr-2"></i> @lang('app.delete')
                             </a>
                         </div>

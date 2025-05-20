@@ -1,8 +1,8 @@
 <!-- COLLAPSE - INFORMATION -->
 @if ($permission)
-    <a class="f-14 text-lightest" href="{{ $link }}" title="{{ $text }}">{{ $text }}
+    <a class="tw-flex tw-items-center f-15 tw-p-2 items-sub-menu " href="{{ $link }}" title="{{ $text }}">{{ $text }}
         @if ($addon)
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor"
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="active-icon"
                  class="bi bi-gift ml-1 text-yellow" viewBox="0 0 16 16" data-toggle="tooltip"
                  data-original-title="Add On (Need to be bought separately)">
                 <path
@@ -11,3 +11,13 @@
         @endif
     </a>
 @endif
+
+<style>
+    .items-sub-menu{
+        color: #000000 !important;
+        background-color: #f0f0f0; /* Added background color */
+        border-radius: 5px; /* Added border radius */
+        margin: 2px; /* Added padding */
+    }
+</style>
+    

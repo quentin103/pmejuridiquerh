@@ -124,7 +124,8 @@ $addProposalTemplatePermission = user()->permission('manage_proposal_template');
 
         <!-- Add Task Export Buttons End -->
         <!-- Task Box Start -->
-        <div class="d-flex flex-column w-tables rounded mt-3 bg-white w-100">
+        <div class="quentin  d-flex flex-column w-tables tw-rounded-xl mt-3 bg-white tw-shadow-lg  
+tw-border-none quentin w-100">
 
             {!! $dataTable->table(['class' => 'table table-hover border-0 w-100']) !!}
 

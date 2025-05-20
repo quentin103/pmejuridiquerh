@@ -1,5 +1,5 @@
 <div
-    {{ $attributes->merge(['class' => 'card-quentin bg-white p-20  d-flex justify-content-between align-items-center']) }}>
+    {{ $attributes->merge(['class' => 'card-quentin bg-white tw-p-4  d-flex justify-content-between align-items-center']) }}>
     <div class="d-block ">
         <h5 class="f-13 f-w-500 text-darkest-grey">{{ $title }}
             @if (!is_null($info))
@@ -14,6 +14,6 @@
         </div>
     </div>
     <div class="d-block">
-        <i class="fa fa-{{ $icon }} text-lightest" style="font-size: 40px"></i>
+        <i class="fa fa-{{ $icon }} text-lightest" style="font-size: 30px"></i>
     </div>
 </div>

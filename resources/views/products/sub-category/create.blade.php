@@ -32,7 +32,7 @@
                 <td data-row-id="{{ $subcategory->id }}"
                     contenteditable="true">{{ $subcategory->category_name }}</td>
 
-                <td class="text-right">
+                <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                     @if ($deleteProductSubCategoryPermission == 'all' || ($deleteProductSubCategoryPermission == 'added' && $subcategory->added_by == user()->id))
                         <x-forms.button-secondary data-cat-id="{{ $subcategory->id }}" icon="trash"
                                                   class="delete-category">

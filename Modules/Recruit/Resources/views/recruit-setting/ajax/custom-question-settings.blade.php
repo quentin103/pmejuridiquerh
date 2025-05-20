@@ -62,18 +62,18 @@
                     @endif
                 </td>
                 <td class="text-right col-md-2">
-                    <div class="task_view">
+                    <div class="task_view-quentin">
                         {{-- @if ($editPermission == 'all') --}}
                             <a href="javascript:;" data-question-id="{{ $question->id }}"
-                               class="editQuestion task_view_more d-flex align-items-center justify-content-center">
+                               class="editQuestion task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin">
                                 <i class="fa fa-edit icons mr-1"></i> @lang('app.edit')
                             </a>
                         {{-- @endif --}}
                     </div>
-                    <div class="task_view">
+                    <div class="task_view-quentin">
                         {{-- @if ($deletePermission == 'all') --}}
                             <a href="javascript:;" data-question-id="{{ $question->id }}"
-                               class="delete-question task_view_more d-flex align-items-center justify-content-center dropdown-toggle">
+                               class="delete-question task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin dropdown-toggle">
                                 <i class="fa fa-trash icons mr-2"></i> @lang('app.delete')
                             </a>
                         {{-- @endif --}}

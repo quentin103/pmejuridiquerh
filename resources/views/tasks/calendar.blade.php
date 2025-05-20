@@ -177,17 +177,17 @@
             </div>
 
             <div class="btn-group mt-2 mt-lg-0 mt-md-0 ml-0 ml-lg-3 ml-md-3" role="group" >
-                <a href="{{ route('tasks.index') }}" class="btn btn-secondary f-14" data-toggle="tooltip"
+                <a href="{{ route('tasks.index') }}" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-14" data-toggle="tooltip"
                     data-original-title="@lang('app.menu.tasks')"><i class="side-icon bi bi-list-ul"></i></a>
 
-                <a href="{{ route('taskboards.index') }}" class="btn btn-secondary f-14" data-toggle="tooltip"
+                <a href="{{ route('taskboards.index') }}" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-14" data-toggle="tooltip"
                     data-original-title="@lang('modules.tasks.taskBoard')"><i class="side-icon bi bi-kanban"></i></a>
 
-                <a href="{{ route('task-calendar.index') }}" class="btn btn-secondary f-14 btn-active" data-toggle="tooltip"
+                <a href="{{ route('task-calendar.index') }}" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-14 btn-active" data-toggle="tooltip"
                     data-original-title="@lang('app.menu.calendar')"><i class="side-icon bi bi-calendar"></i></a>
 
                     @if(in_array('admin', user_roles()) || in_array('employee', user_roles()))
-                    <a href="{{ route('tasks.waiting-approval') }}" class="btn btn-secondary f-14 show-waiting-approval-task" data-toggle="tooltip"
+                    <a href="{{ route('tasks.waiting-approval') }}" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-14 show-waiting-approval-task" data-toggle="tooltip"
                         data-original-title="@lang('app.menu.waiting-approval')">
                         <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#000000" width="18" height="18">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>

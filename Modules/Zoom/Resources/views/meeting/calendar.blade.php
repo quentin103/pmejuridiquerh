@@ -138,18 +138,19 @@
             </div>
 
             <div class="btn-group" role="group">
-                <a href="{{ route('zoom-meetings.index') }}" class="btn btn-secondary f-15" data-toggle="tooltip"
+                <a href="{{ route('zoom-meetings.index') }}" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-15" data-toggle="tooltip"
                    data-original-title="@lang('modules.leaves.tableView')"><i
                         class="side-icon bi bi-list-ul"></i></a>
 
-                <a href="{{ route('zoom-meetings.calendar') }}" class="btn btn-secondary f-15 btn-active"
+                <a href="{{ route('zoom-meetings.calendar') }}" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-15 btn-active"
                    data-toggle="tooltip" data-original-title="@lang('app.menu.calendar')"><i
                         class="side-icon bi bi-calendar"></i></a>
             </div>
         </div>
 
         <!-- leave table Box Start -->
-        <div class="d-flex flex-column w-tables rounded mt-3 bg-white">
+        <div class="quentin  d-flex flex-column w-tables tw-rounded-xl mt-3 bg-white tw-shadow-lg  
+tw-border-none quentin">
             <x-cards.data>
                 <div id="calendar"></div>
             </x-cards.data>

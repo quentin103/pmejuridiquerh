@@ -18,12 +18,12 @@
                         <td>{{ $contact->email }}</td>
                         <td>{{ $contact->mobile }}</td>
                         <td>{{ $contact->relation }}</td>
-                        <td class="text-right">
+                        <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
 
-                            <div class="task_view">
+                            <div class="task_view-quentin">
 
                                 <div class="dropdown">
-                                    <a class="task_view_more d-flex align-items-center justify-content-center dropdown-toggle" type="link"
+                                    <a class="task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin dropdown-toggle" type="link"
                                         id="dropdownMenuLink-' . $contact->id . '" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-boundary="viewport">
                                         <i class="icon-options-vertical icons"></i>
                                     </a>

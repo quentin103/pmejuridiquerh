@@ -187,10 +187,10 @@ $editDesignationPermission = user()->permission('edit_designation');
             </div>
 
             <div class="btn-group mt-2 mt-lg-0 mt-md-0 ml-0 ml-lg-3 ml-md-3" role="group">
-                <a href="{{ route('designations.index') }}" class="btn btn-secondary f-14" data-toggle="tooltip"
+                <a href="{{ route('designations.index') }}" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-14" data-toggle="tooltip"
                 data-original-title="@lang('modules.leaves.tableView')"><i class="side-icon bi bi-list-ul"></i></a>
 
-                <a href="{{ route('designation.hierarchy') }}" class="btn btn-secondary f-14 btn-active" data-toggle="tooltip"
+                <a href="{{ route('designation.hierarchy') }}" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-14 btn-active" data-toggle="tooltip"
                     data-original-title="@lang('app.hierarchy')"><i class="bi bi-diagram-3"></i></a>
             </div>
         </div>

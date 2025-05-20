@@ -49,13 +49,14 @@
                 @endif
             </div>
             <!-- DROPDOWN - INFORMATION -->
-            <div class="dropdown-menu dropdown-menu-right sidebar-brand-dropdown ml-3"
+            <div class="dropdown-menu dropdown-menu-right sidebar-brand-dropdown tw-shadown ml-3 tw-border-2"
                 aria-labelledby="dropdownMenuLink" tabindex="0">
-                <div class="d-flex justify-content-between align-items-center profile-box">
+                <div class="d-flex justify-content-between align-items-center profile-box tw-border-none px-2">
                     <a @if(in_array('client', user_roles())) href="{{ route('profile-settings.index') }}" @elseif (user()->is_superadmin) href="{{ route('superadmin.settings.super-admin-profile.index') }}" @else href="{{ route('employees.show', user()->id) }}" @endif >
-                        <div class="profileInfo d-flex align-items-center mr-1 flex-wrap">
-                            <div class="profileImg mr-2">
-                                <img class="h-100" src="{{ $user->image_url }}"
+                        <div class="profileInfo d-flex align-items-center mr-1 flex-wrap tw-flex tw-gap-2">
+                            {{-- <div class="profileInfo"> --}}
+                            <div class="">
+                                <img class="tw-h-12 tw-rounded-md" src="{{ $user->image_url }}"
                                     alt="{{ $userName }}">
                             </div>
                             <div class="ProfileData">
@@ -70,11 +71,13 @@
                     @if(user()->is_superadmin)
                         <a href="{{ route('superadmin.settings.super-admin-profile.index') }}"
                            data-toggle="tooltip"
+                           class="tw-text-sm"
                            data-original-title="{{ __('app.menu.profileSettings') }}">
                             <i class="side-icon bi bi-pencil-square"></i>
                         </a>
                     @else
                         <a href="{{ route('profile-settings.index') }}" data-toggle="tooltip"
+                         class="tw-text-sm"
                            data-original-title="{{ __('app.menu.profileSettings') }}">
                             <i class="side-icon bi bi-pencil-square"></i>
                         </a>
@@ -90,7 +93,7 @@
                     @endif
                 @endif
 
-                <a class="dropdown-item d-flex justify-content-between align-items-center f-15 text-dark"
+                {{-- <a class="dropdown-item d-flex justify-content-between align-items-center f-15 text-dark"
                     href="javascript:;">
                     <label for="dark-theme-toggle">@lang('app.darkTheme')</label>
                     <div class="custom-control custom-switch">
@@ -98,8 +101,8 @@
                             @if (user()->dark_theme) checked @endif>
                         <label class="custom-control-label f-14" for="dark-theme-toggle"></label>
                     </div>
-                </a>
-                <a class="dropdown-item d-flex justify-content-between align-items-center f-15 text-dark"
+                </a> --}}
+                <a class="dropdown-item d-flex justify-content-between align-items-center f-15 text-dark tw-mt-3"
                     href="{{ route('logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
                     @lang('app.logout')

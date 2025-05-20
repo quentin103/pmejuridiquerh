@@ -44,11 +44,11 @@ class OrdersDataTable extends BaseDataTable
         $datatables->addIndexColumn();
         $datatables->addColumn('action', function ($row) use ($id) {
 
-                $action = '<div class="task_view">
+                $action = '<div class="task_view-quentin">
 <a href="' . route('orders.show', [$row->id]) . '"
                         class="taskView  text-darkest-grey f-w-500">' . __('app.view') . '</a>
                 <div class="dropdown">
-                    <a class="task_view_more d-flex align-items-center justify-content-center dropdown-toggle" type="link"
+                    <a class="task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin dropdown-toggle" type="link"
                         id="dropdownMenuLink-' . $row->id . '" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="icon-options-vertical icons"></i>
                     </a>

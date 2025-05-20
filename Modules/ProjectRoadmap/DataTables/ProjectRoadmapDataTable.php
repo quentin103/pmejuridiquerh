@@ -228,7 +228,7 @@ class ProjectRoadmapDataTable extends BaseDataTable
         });
         $datatables->addColumn(
             'action', function ($row) {
-            $show = '<div class="task_view"><a href="' . route('projectroadmap.show', [$row->id]) . '" class="task_view_more d-flex align-items-center justify-content-center" role="button"><i class="fa fa-eye fa-w-18 icons mr-2"></i>' . __('app.view') . '</a></div>';
+            $show = '<div class="task_view-quentin"><a href="' . route('projectroadmap.show', [$row->id]) . '" class="task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin" role="button"><i class="fa fa-eye fa-w-18 icons mr-2"></i>' . __('app.view') . '</a></div>';
 
             return $show;
         }

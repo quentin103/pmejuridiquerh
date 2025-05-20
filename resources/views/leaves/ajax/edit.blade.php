@@ -113,7 +113,7 @@ $approveRejectPermission = user()->permission('approve_or_reject_leaves');
 
                         <div class="w-100 justify-content-end d-flex mt-2">
                             <button id="cancel-file" type="button"
-                                class="btn btn-secondary border-grey rounded f-14">@lang('app.cancel')</button>
+                                class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  border-grey rounded f-14">@lang('app.cancel')</button>
                         </div>
                     </div>
 

@@ -16,19 +16,19 @@
             </td>
             <td>{{ $item->knowledgebasecategory->name }}</td>
             <td>{{ $item->to }}</td>
-            <td class="text-right">
+            <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                 @if ($editKnowledgebasePermission == 'all' || ($editKnowledgebasePermission == 'added' && $item->added_by == user()->id))
-                    <div class="task_view">
+                    <div class="task_view-quentin">
                         <a href="{{ route('knowledgebase.edit', $item->id) }}"
-                            class="task_view_more d-flex align-items-center justify-content-center openRightModal">
+                            class="task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin openRightModal">
                             <i class="fa fa-edit icons mr-2"></i> @lang('app.edit')
                         </a>
                     </div>
                 @endif
                 @if ($deleteKnowledgebasePermission == 'all' || ($deleteKnowledgebasePermission == 'added' && $item->added_by == user()->id))
-                    <div class="task_view ml-2">
+                    <div class="task_view-quentin ml-2">
                         <a href="javascript:;" data-article-id="{{ $item->id }}"
-                            class="task_view_more d-flex align-items-center justify-content-center delete-article">
+                            class="task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin delete-article">
                             <i class="fa fa-trash icons mr-2"></i> @lang('app.delete')
                         </a>
                     </div>

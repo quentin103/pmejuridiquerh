@@ -48,12 +48,12 @@ $viewTimelogEarningPermission = user()->permission('view_timelog_earnings');
                             @endif
                         </td>
                     @endif
-                    <td class="text-right">
-                        <div class="task_view">
+                    <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
+                        <div class="task_view-quentin">
                             <a href="{{ route('timelogs.show', $item->id) }}"
                                 class="taskView openRightModal">@lang('app.view')</a>
                             <div class="dropdown">
-                                <a class="task_view_more d-flex align-items-center justify-content-center dropdown-toggle"
+                                <a class="task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin dropdown-toggle"
                                     type="link" id="dropdownMenuLink-{{ $item->id }}" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
                                     <i class="icon-options-vertical icons"></i>

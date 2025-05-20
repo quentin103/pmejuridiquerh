@@ -39,13 +39,13 @@
                                 </a>
                             </td>
                             <td>{{ $appreciation->award_date->translatedFormat($company->date_format) }}</td>
-                            <td class="text-right">
+                            <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                                 @if(($showAppreciationPermission == 'all' || ($showAppreciationPermission == 'added' && user()->id == $appreciation->added_by) || ($showAppreciationPermission == 'owned' && user()->id == $appreciation->award_to) || ($showAppreciationPermission == 'both' && ($appreciation->added_by == user()->id || user()->id == $appreciation->award_to)))
                                     || ($editAppreciationPermission == 'all' || ($editAppreciationPermission == 'added' && user()->id == $appreciation->added_by) || ($editAppreciationPermission == 'owned' && user()->id == $appreciation->award_to) || ($editAppreciationPermission == 'both' && ($appreciation->added_by == user()->id || user()->id == $appreciation->award_to)))
                                      || ($deleteAppreciationPermission == 'all' || ($deleteAppreciationPermission == 'added' && user()->id == $appreciation->added_by) || ($deleteAppreciationPermission == 'owned' && user()->id == $appreciation->award_to) || ($deleteAppreciationPermission == 'both' && ($appreciation->added_by == user()->id || user()->id == $appreciation->award_to))))
-                                    <div class="task_view">
+                                    <div class="task_view-quentin">
                                         <div class="dropdown">
-                                            <a class="task_view_more d-flex align-items-center justify-content-center dropdown-toggle"
+                                            <a class="task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin dropdown-toggle"
                                                type="link"
                                                id="dropdownMenuLink-{{$count}}" data-toggle="dropdown"
                                                aria-haspopup="true" aria-expanded="false" data-boundary="viewport">

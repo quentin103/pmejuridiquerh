@@ -25,7 +25,7 @@
                     @endif
                 >{{ $type->name }}
                 </td>
-                <td class="text-right">
+                <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                     @if ($deleteAssetTypePermission == 'all' || $deleteAssetTypePermission == 'added')
                         <x-forms.button-secondary data-row-id="{{ $type->id }}" icon="trash" class="delete-row">
                             @lang('app.delete')</x-forms.button-secondary>

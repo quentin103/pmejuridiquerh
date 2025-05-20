@@ -35,7 +35,7 @@
                                         </p>
                                         <div class="mt-2">
                                             @if($plugins->where('envato_id', config(strtolower($universalBundle) . '.envato_item_id'))->pluck('version')->first() > \Illuminate\Support\Facades\File::get($universalBundle->getPath() . '/version.txt'))
-                                                <button type="button" class="btn btn-secondary btn-sm update-module"
+                                                <button type="button" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  btn-sm update-module"
                                                         data-product-url="{{ Froiden\Envato\Helpers\FroidenApp::renewSupportUrl(config(strtolower($universalBundle) . '.envato_item_id')) }}"
                                                         data-module-name="{{ $universalBundle }}">
                                                     <i class="fa fa-download"></i> @lang('app.update')

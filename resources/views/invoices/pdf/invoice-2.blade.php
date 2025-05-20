@@ -843,7 +843,7 @@
                         <tr>
                             <td colspan="{{ $invoiceSetting->hsn_sac_code_show ? '5' : '4' }}">
                                 @lang('modules.invoices.appliedCredits'):</td>
-                            <td class="text-right">
+                            <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                                 {{ currency_format($invoice->appliedCredits(), $invoice->currency_id, false) }}
                             </td>
                         </tr>
@@ -851,7 +851,7 @@
                     <tr>
                         <td colspan="{{ $invoiceSetting->hsn_sac_code_show ? '5' : '4' }}">
                             @lang('app.totalPaid'):</td>
-                        <td class="text-right">
+                        <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                             {{ currency_format($invoice->getPaidAmount(), $invoice->currency_id, false) }}
                         </td>
                     </tr>
@@ -859,7 +859,7 @@
                     <tr>
                         <td colspan="{{ $invoiceSetting->hsn_sac_code_show ? '5' : '4' }}">
                             @lang('app.totalDue'):</td>
-                        <td class="text-right">
+                        <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                             {{ currency_format($invoice->amountDue(), $invoice->currency_id, false) }}
                             {{ $invoice->currency->currency_code }}</td>
                     </tr>

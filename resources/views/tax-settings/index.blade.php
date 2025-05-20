@@ -45,14 +45,14 @@
                                 <td>{{ $tax->tax_name }}</td>
                                 <td>{{ $tax->rate_percent }}</td>
                                 <td class="text-right pr-20">
-                                    <div class="task_view">
-                                        <a class="task_view_more d-flex align-items-center justify-content-center edit-tax"
+                                    <div class="task_view-quentin">
+                                        <a class="task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin edit-tax"
                                            href="javascript:;" data-tax-id="{{ $tax->id }}">
                                             <i class="fa fa-edit icons mr-2"></i> @lang('app.edit')
                                         </a>
                                     </div>
-                                    <div class="task_view">
-                                        <a class="task_view_more d-flex align-items-center justify-content-center delete-tax"
+                                    <div class="task_view-quentin">
+                                        <a class="task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin delete-tax"
                                            href="javascript:;" data-tax-id="{{ $tax->id }}">
                                             <i class="fa fa-edit icons mr-2"></i> @lang('app.delete')
                                         </a>

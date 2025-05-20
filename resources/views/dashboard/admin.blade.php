@@ -20,17 +20,16 @@
                 width: 300px;
             }
         }
-
     </style>
 @endpush
 
 @php
-$viewOverviewDashboard = user()->permission('view_overview_dashboard');
-$viewProjectDashboard = user()->permission('view_project_dashboard');
-$viewClientDashboard = user()->permission('view_client_dashboard');
-$viewHRDashboard = user()->permission('view_hr_dashboard');
-$viewTicketDashboard = user()->permission('view_ticket_dashboard');
-$viewFinanceDashboard = user()->permission('view_finance_dashboard');
+    $viewOverviewDashboard = user()->permission('view_overview_dashboard');
+    $viewProjectDashboard = user()->permission('view_project_dashboard');
+    $viewClientDashboard = user()->permission('view_client_dashboard');
+    $viewHRDashboard = user()->permission('view_hr_dashboard');
+    $viewTicketDashboard = user()->permission('view_ticket_dashboard');
+    $viewFinanceDashboard = user()->permission('view_finance_dashboard');
 @endphp
 
 @section('filter-section')
@@ -46,55 +45,60 @@ $viewFinanceDashboard = user()->permission('view_finance_dashboard');
             </a>
 
             @if ($viewOverviewDashboard == 'all')
-                <x-tab :href="route('dashboard.advanced').'?tab=overview'" :text="__('modules.projects.overview')"
-                       class="overview" ajax="false"/>
+                <x-tab :href="route('dashboard.advanced') . '?tab=overview'" :text="__('modules.projects.overview')" class="overview" ajax="false" />
             @endif
 
             @if (in_array('projects', user_modules()) && $viewProjectDashboard == 'all')
-                <x-tab :href="route('dashboard.advanced').'?tab=project'" :text="__('app.project')" class="project"
-                       ajax="false"/>
+                <x-tab :href="route('dashboard.advanced') . '?tab=project'" :text="__('app.project')" class="project" ajax="false" />
             @endif
 
             @if (in_array('clients', user_modules()) && $viewClientDashboard == 'all')
-                <x-tab :href="route('dashboard.advanced').'?tab=client'" :text="__('app.client')" class="client"
-                       ajax="false"/>
+                <x-tab :href="route('dashboard.advanced') . '?tab=client'" :text="__('app.client')" class="client" ajax="false" />
             @endif
 
-            @if ($viewHRDashboard == 'all' && (in_array('employees', user_modules()) || in_array('leaves', user_modules()) || in_array('attendance', user_modules())))
-                <x-tab :href="route('dashboard.advanced').'?tab=hr'" :text="__('app.menu.hr')" class="hr" ajax="false"/>
+            @if (
+                $viewHRDashboard == 'all' &&
+                    (in_array('employees', user_modules()) ||
+                        in_array('leaves', user_modules()) ||
+                        in_array('attendance', user_modules())))
+                <x-tab :href="route('dashboard.advanced') . '?tab=hr'" :text="__('app.menu.hr')" class="hr" ajax="false" />
             @endif
 
             @if (in_array('tickets', user_modules()) && $viewTicketDashboard == 'all')
-                <x-tab :href="route('dashboard.advanced').'?tab=ticket'" :text="__('app.menu.ticket')" class="ticket"
-                       ajax="false"/>
+                <x-tab :href="route('dashboard.advanced') . '?tab=ticket'" :text="__('app.menu.ticket')" class="ticket" ajax="false" />
             @endif
 
-            @if ($viewFinanceDashboard == 'all' && (in_array('invoices', user_modules()) || in_array('estimates', user_modules()) || in_array('leads', user_modules())))
-                <x-tab :href="route('dashboard.advanced').'?tab=finance'" :text="__('app.menu.finance')" class="finance"
-                       ajax="false"/>
+            @if (
+                $viewFinanceDashboard == 'all' &&
+                    (in_array('invoices', user_modules()) ||
+                        in_array('estimates', user_modules()) ||
+                        in_array('leads', user_modules())))
+                <x-tab :href="route('dashboard.advanced') . '?tab=finance'" :text="__('app.menu.finance')" class="finance" ajax="false" />
             @endif
 
         </div>
 
 
-        <div class="ml-auto d-flex align-items-center justify-content-center ">
+        <div class=" ">
 
             <!-- DATE START -->
             <div
-                class="{{ request('tab') == 'overview' || request('tab') == '' ? 'd-none' : 'd-flex' }} align-items-center border-left-grey border-left-grey-sm-0 h-100 pl-4">
-                <i class="fa fa-calendar-alt mr-2 f-14 text-dark-grey"></i>
-                <div class="select-status">
-                    <input type="text"
-                           class="position-relative text-dark form-control border-0 p-2 text-left f-14 f-w-500 border-additional-grey"
-                           id="datatableRange2" placeholder="@lang('placeholders.dateRange')">
+                class="{{ request('tab') == 'overview' || request('tab') == '' ? 'd-none' : 'd-flex' }} align-items-center border-left-grey border-left-grey-sm-0 h-100 pl-4 tw-border ">
+                <div class="tw-border-2 tw-rounded-md tw-flex tw-items-center tw-m-2 ">
+                    <i class="fa fa-calendar-alt m-2 f-14 text-dark-grey"></i>
+                    <div class="select-status">
+                        <input type="text"
+                            class="position-relative text-dark form-control border-0 p-2 text-left f-14 f-w-500 border-additional-grey"
+                            id="datatableRange2" placeholder="@lang('placeholders.dateRange')">
+                    </div>
                 </div>
             </div>
-            <!-- DATE END -->
-            @if (isset($widgets) && in_array('admin', user_roles()))
+            <!-- DATE END QUENTIN FONCTIONNALITE RETIRER -->
+            {{-- @if (isset($widgets) && in_array('admin', user_roles()))
                 <div class="admin-dash-settings">
                     <x-form id="dashboardWidgetForm" method="POST">
                         <div class="dropdown keep-open">
-                            <a class="d-flex align-items-center justify-content-center dropdown-toggle px-lg-4 border-left-grey text-dark"
+                            <a class="quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin dropdown-toggle px-lg-4 border-left-grey text-dark"
                                type="link" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
                                aria-expanded="false">
                                 <i class="fa fa-cog" data-original-title="{{__('modules.dashboard.dashboardWidgetsSettings')}}" data-toggle="tooltip"></i>
@@ -135,21 +139,19 @@ $viewFinanceDashboard = user()->permission('view_finance_dashboard');
                         </div>
                     </x-form>
                 </div>
-            @endif
+            @endif --}}
 
         </div>
 
         <a class="mb-0 d-block d-lg-none text-dark-grey mr-2 border-left-grey border-bottom-0"
-           onclick="openClientDetailSidebar()"><i class="fa fa-ellipsis-v"></i></a>
+            onclick="openClientDetailSidebar()"><i class="fa fa-ellipsis-v"></i></a>
 
     </div>
     <!-- FILTER END -->
     <!-- DASHBOARD HEADER END -->
-
 @endsection
 
 @section('content')
-
     <!-- CONTENT WRAPPER START -->
     <div class="px-4 py-0 py-lg-3  border-top-0 admin-dashboard">
         @include($view)
@@ -160,7 +162,7 @@ $viewFinanceDashboard = user()->permission('view_finance_dashboard');
 @push('scripts')
     <script src="{{ asset('vendor/jquery/daterangepicker.min.js') }}"></script>
     <script type="text/javascript">
-        $(function () {
+        $(function() {
             var format = '{{ company()->moment_date_format }}';
             var startDate = "{{ $startDate->format(company()->date_format) }}";
             var endDate = "{{ $endDate->format(company()->date_format) }}";
@@ -178,7 +180,7 @@ $viewFinanceDashboard = user()->permission('view_finance_dashboard');
             }, cb);
 
 
-            $('#datatableRange2').on('apply.daterangepicker', function (ev, picker) {
+            $('#datatableRange2').on('apply.daterangepicker', function(ev, picker) {
                 showTable();
             });
 
@@ -187,7 +189,7 @@ $viewFinanceDashboard = user()->permission('view_finance_dashboard');
 
 
     <script>
-        $(".dashboard-header").on("click", ".ajax-tab", function (event) {
+        $(".dashboard-header").on("click", ".ajax-tab", function(event) {
             event.preventDefault();
 
             $('.project-menu .p-sub-menu').removeClass('active');
@@ -217,7 +219,7 @@ $viewFinanceDashboard = user()->permission('view_finance_dashboard');
                     startDate: startDate,
                     endDate: endDate
                 },
-                success: function (response) {
+                success: function(response) {
                     if (response.status === "success") {
                         $('.admin-dashboard').html(response.html);
                         init('.admin-dashboard');
@@ -227,7 +229,7 @@ $viewFinanceDashboard = user()->permission('view_finance_dashboard');
         });
 
         $('.keep-open .dropdown-menu').on({
-            "click": function (e) {
+            "click": function(e) {
                 e.stopPropagation();
             }
         });
@@ -255,7 +257,7 @@ $viewFinanceDashboard = user()->permission('view_finance_dashboard');
                     startDate: startDate,
                     endDate: endDate
                 },
-                success: function (response) {
+                success: function(response) {
                     if (response.status === "success") {
                         $('.admin-dashboard').html(response.html);
                         init('.admin-dashboard');
@@ -263,7 +265,6 @@ $viewFinanceDashboard = user()->permission('view_finance_dashboard');
                 }
             });
         }
-
     </script>
     <script>
         const activeTab = "{{ $activeTab }}";

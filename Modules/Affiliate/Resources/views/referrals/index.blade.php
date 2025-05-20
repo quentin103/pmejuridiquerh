@@ -87,7 +87,8 @@ $addReferralPermission = user()->permission('add_referrals');
         </div>
         <!-- Add Referral Buttons End -->
 
-        <div class="d-flex flex-column w-tables rounded mt-3 bg-white table-responsive">
+        <div class="quentin  d-flex flex-column w-tables tw-rounded-xl mt-3 bg-white tw-shadow-lg  
+tw-border-none quentin table-responsive">
 
             {!! $dataTable->table(['class' => 'table table-hover border-0 w-100']) !!}
 

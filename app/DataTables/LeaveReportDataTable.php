@@ -31,7 +31,7 @@ class LeaveReportDataTable extends BaseDataTable
         return datatables()
             ->eloquent($query)
             ->addColumn('action', function ($row) {
-                $action = '<div class="task_view">
+                $action = '<div class="task_view-quentin">
                     <a href="javascript:;" data-user-id="' . $row->id . '" class="taskView view-leaves border-right-0">' . __('app.view') . '</a>
                 </div>';
 

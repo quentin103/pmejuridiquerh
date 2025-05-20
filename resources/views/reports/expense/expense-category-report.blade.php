@@ -62,17 +62,18 @@
             <div class="col-lg-6">
                 <div class="d-lg-flex d-md-flex justify-content-end" id="reports">
                     <div class="btn-group mt-3 mt-lg-0 mt-md-0 ml-lg-3" role="group">
-                        <a href="{{ route('expense-report.index') }}" class="btn btn-secondary f-14" data-toggle="tooltip"
+                        <a href="{{ route('expense-report.index') }}" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-14" data-toggle="tooltip"
                             data-original-title="@lang('app.menu.expenseReport')"><i class="side-icon bi bi-list-ul"></i></a>
 
-                        <a href="{{ route('expense-report.expense_category_report') }}" class="btn btn-secondary f-14 btn-active" data-toggle="tooltip"
+                        <a href="{{ route('expense-report.expense_category_report') }}" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-14 btn-active" data-toggle="tooltip"
                             data-original-title="@lang('modules.expenseCategory.expenseCategoryReport')"><i class="side-icon bi bi-receipt"></i></a>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Task Box Start -->
-        <div class="d-flex flex-column w-tables rounded mt-3 bg-white">
+        <div class="quentin  d-flex flex-column w-tables tw-rounded-xl mt-3 bg-white tw-shadow-lg  
+tw-border-none quentin">
             {!! $dataTable->table(['class' => 'table table-hover border-0 w-100']) !!}
         </div>
         <!-- Task Box End -->

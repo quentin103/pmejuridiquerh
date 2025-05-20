@@ -90,7 +90,7 @@
     };
 
     DataTable.ext.buttons.excel = {
-        className: 'buttons-excel',
+        className: 'tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white',
 
         text: function (dt) {
             return '<i class="fa fa-file-excel-o"></i> ' + dt.i18n('buttons.excel', 'Excel');
@@ -103,7 +103,7 @@
     };
 
     DataTable.ext.buttons.postExcel = {
-        className: 'buttons-excel',
+        className: 'tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white',
 
         text: function (dt) {
             return '<i class="fa fa-file-excel-o"></i> ' + dt.i18n('buttons.excel', 'Excel');
@@ -118,7 +118,7 @@
     };
     
     DataTable.ext.buttons.postExcelVisibleColumns = {
-        className: 'buttons-excel',
+        className: 'tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white',
 
         text: function (dt) {
             return '<i class="fa fa-file-excel-o"></i> ' + dt.i18n('buttons.excel', 'Excel (only visible columns)');

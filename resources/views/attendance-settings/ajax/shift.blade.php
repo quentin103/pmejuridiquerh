@@ -70,17 +70,17 @@ $manageShiftPermission = user()->permission('manage_employee_shifts');
                         </x-forms.radio>
                     </td>
                     <td class="text-right pr-20">
-                        <div class="task_view mb-1">
+                        <div class="task_view-quentin mb-1">
                             <a href="javascript:;" data-shift-id="{{ $shift->id }}"
-                                class="edit-shift task_view_more d-flex align-items-center justify-content-center" data-toggle="tooltip"
+                                class="edit-shift task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin" data-toggle="tooltip"
                                 data-original-title="@lang('app.edit')"> <i
                                     class="fa fa-edit icons"></i>
                             </a>
                         </div>
                         @if ($shift->id != attendance_setting()->default_employee_shift)
-                            <div class="task_view mt-1 mt-lg-0 mt-md-0">
+                            <div class="task_view-quentin mt-1 mt-lg-0 mt-md-0">
                                 <a href="javascript:;" data-shift-id="{{ $shift->id }}"
-                                    class="delete-shift task_view_more d-flex align-items-center justify-content-center dropdown-toggle" data-toggle="tooltip"
+                                    class="delete-shift task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin dropdown-toggle" data-toggle="tooltip"
                                     data-original-title="@lang('app.delete')">
                                     <i class="fa fa-trash icons"></i>
                                 </a>

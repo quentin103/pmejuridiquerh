@@ -15,13 +15,13 @@
                 <td>{!! mb_strimwidth($setting->description, 0, 50, '...')  !!}</td>
                 <td>{{ $setting->language ? $setting->language->language_name : 'English' }}</td>
                 <td class="text-right pr-20">
-                    <div class="task_view">
-                        <a class="task_view_more d-flex align-items-center justify-content-center edit-feature" data-id="{{$setting->id}}" data-type="{{$type}}">
+                    <div class="task_view-quentin">
+                        <a class="task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin edit-feature" data-id="{{$setting->id}}" data-type="{{$type}}">
                             <i class="fa fa-edit icons mr-2"></i>  @lang('app.edit')
                         </a>
                     </div>
-                    <div class="task_view mt-1 mt-lg-0 mt-md-0">
-                        <a class="task_view_more d-flex align-items-center justify-content-center delete-table-row" href="javascript:;" data-id="{{ $setting->id }}" data-type="{{$type}}">
+                    <div class="task_view-quentin mt-1 mt-lg-0 mt-md-0">
+                        <a class="task_view-quentin_more quentin-deleted-btn tw-border-none tw-bg-red-300 tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin-deleted-btn delete-table-row" href="javascript:;" data-id="{{ $setting->id }}" data-type="{{$type}}">
                             <i class="fa fa-trash icons mr-2"></i> @lang('app.delete')
                         </a>
                     </div>
@@ -53,13 +53,13 @@
                                 <td>{{ $feature->language ? $feature->language->language_name : 'English' }}</td>
                                 <td><i class="{{ $feature->icon }}"></i></td>
                                 <td class="text-right pr-20">
-                                    <div class="task_view">
-                                        <a class="task_view_more d-flex align-items-center justify-content-center edit-feature" data-id="{{$feature->id}}" data-type="icon">
+                                    <div class="task_view-quentin">
+                                        <a class="task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin edit-feature" data-id="{{$feature->id}}" data-type="icon">
                                             <i class="fa fa-edit icons mr-2"></i>  @lang('app.edit')
                                         </a>
                                     </div>
-                                    <div class="task_view mt-1 mt-lg-0 mt-md-0">
-                                        <a class="task_view_more d-flex align-items-center justify-content-center delete-table-row" href="javascript:;" data-setting-id="{{$setting->id}}"
+                                    <div class="task_view-quentin mt-1 mt-lg-0 mt-md-0">
+                                        <a class="task_view-quentin_more quentin-deleted-btn tw-border-none tw-bg-red-300 tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin-deleted-btn delete-table-row" href="javascript:;" data-setting-id="{{$setting->id}}"
                                             data-id="{{ $feature->id }}" data-type="icon">
                                             <i class="fa fa-trash icons mr-2"></i> @lang('app.delete')
                                         </a>

@@ -21,10 +21,10 @@
                             <label class='badge badge-warning'>{{ $payCode->time }} X @lang('payroll::modules.payroll.hourlyRate', [ 'currency' => $payrollSetting->currency->currency_symbol ?? company()->currency->currency_symbol])</label>
                         @endif
                     </td>
-                    <td class="text-right">
-                        <div class="task_view">
+                    <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
+                        <div class="task_view-quentin">
                             <div class="dropdown">
-                                <a class="task_view_more d-flex align-items-center justify-content-center dropdown-toggle"
+                                <a class="task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin dropdown-toggle"
                                    type="link" id="dropdownMenuLink-3" data-toggle="dropdown"
                                    aria-haspopup="true" aria-expanded="false">
                                     <i class="icon-options-vertical icons"></i>

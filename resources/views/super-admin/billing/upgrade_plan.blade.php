@@ -180,9 +180,9 @@
 
             <div class="d-flex justify-content-between">
                 <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-secondary f-16 btn-active monthly package-type" data-package-type="monthly">@lang('app.monthly')</button>
+                    <button type="button" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-16 btn-active monthly package-type" data-package-type="monthly">@lang('app.monthly')</button>
 
-                    <button type="button" class="btn btn-secondary f-16 annually package-type" data-package-type="annual">@lang('app.annually')</button>
+                    <button type="button" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-16 annually package-type" data-package-type="annual">@lang('app.annually')</button>
                 </div>
                 <div class="col-2">
                     <select id="currency"  class="form-control select-picker" data-size="8">

@@ -19,9 +19,9 @@
                     <tr id="group-{{ $group->id }}">
                         <td>{{ $key+1 }}</td>
                         <td>{{ $group->group_name }}</td>
-                        <td class="text-right">
-                            <div class="task_view">
-                                <a href="javascript:;" class="delete-group task_view_more d-flex align-items-center justify-content-center" data-group-id="{{ $group->id }}">
+                        <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
+                            <div class="task_view-quentin">
+                                <a href="javascript:;" class="delete-group task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin" data-group-id="{{ $group->id }}">
                                     <i class="fa fa-trash icons mr-2"></i> @lang('app.delete')
                                 </a>
                             </div>

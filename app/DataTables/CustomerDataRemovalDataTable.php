@@ -25,16 +25,16 @@ class CustomerDataRemovalDataTable extends BaseDataTable
             ->eloquent($query)
             ->addIndexColumn()
             ->addColumn('action', function ($row) {
-                $action = '<div class="task_view mr-1">
+                $action = '<div class="task_view-quentin mr-1">
                         <a href="javascript:;" data-consent-id="' . $row->id . '" data-type="approved"
-                            class="table-action task_view_more d-flex align-items-center justify-content-center">
+                            class="table-action task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin">
                             <i class="fa fa-check icons mr-2"></i> ' . __('app.approve') . '
                         </a>
                     </div>';
 
-                $action .= '<div class="task_view">
+                $action .= '<div class="task_view-quentin">
                         <a href="javascript:;" data-consent-id="' . $row->id . '" data-type="rejected"
-                            class="table-action task_view_more d-flex align-items-center justify-content-center">
+                            class="table-action task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin">
                             <i class="fa fa-times icons mr-2"></i> ' . __('app.reject') . '
                         </a>
                     </div>';

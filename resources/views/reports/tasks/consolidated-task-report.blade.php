@@ -64,12 +64,12 @@
                 </div>
 
                 <div class="btn-group mt-2 mt-lg-0 mt-md-0 ml-0 ml-lg-3 ml-md-3" role="group">
-                    <a href="{{ route('task-report.index') }}" class="btn btn-secondary f-14" data-toggle="tooltip"
+                    <a href="{{ route('task-report.index') }}" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-14" data-toggle="tooltip"
                         data-original-title="@lang('app.menu.taskReport')"><i class="side-icon bi bi-list-ul"></i></a>
 
-                    <a href="{{ route('employee-wise-task-report') }}" class="btn btn-secondary f-14" data-toggle="tooltip"
+                    <a href="{{ route('employee-wise-task-report') }}" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-14" data-toggle="tooltip"
                         data-original-title="@lang('modules.tasks.employeeWiseTaskReport')"><i class="side-icon bi bi-people-fill"></i></a>
-                        <a href="{{ route('consolidated-task-report') }}" class="btn btn-secondary f-14 btn-active" data-toggle="tooltip"
+                        <a href="{{ route('consolidated-task-report') }}" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-14 btn-active" data-toggle="tooltip"
                         data-original-title="@lang('modules.tasks.consolidatedTaskReport')"><i class="side-icon bi bi-calendar-fill"></i></a>
                 </div>
             </div>
@@ -78,7 +78,8 @@
 
         <!-- Add Task Export Buttons End -->
         <!-- Task Box Start -->
-        <div class="d-flex flex-column w-tables rounded mt-3 bg-white">
+        <div class="quentin  d-flex flex-column w-tables tw-rounded-xl mt-3 bg-white tw-shadow-lg  
+tw-border-none quentin">
 
             {!! $dataTable->table(['class' => 'table table-hover border-0 w-100']) !!}
 

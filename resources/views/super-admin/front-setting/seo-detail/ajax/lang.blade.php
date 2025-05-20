@@ -23,9 +23,9 @@
                 <td>{{ $seoDetail->seo_author }}</td>
                 <td>{!! mb_strimwidth($seoDetail->seo_description, 0, 50, '...')  !!}</td>
                 <td>{!! mb_strimwidth($seoDetail->seo_keywords, 0, 50, '...')  !!}</td>
-                <td class="text-right">
-                    <div class="task_view">
-                        <a class="task_view_more d-flex align-items-center justify-content-center edit-seo "
+                <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
+                    <div class="task_view-quentin">
+                        <a class="task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin edit-seo "
                            data-id="{{ $seoDetail->id }}"
                            href="javascript:;">
                             <i class="fa fa-edit icons mr-2"></i> @lang('app.edit')

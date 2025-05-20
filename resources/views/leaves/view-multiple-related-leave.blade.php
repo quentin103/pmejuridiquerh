@@ -1,5 +1,5 @@
 <style>
-    .task_view{
+    .task_view-quentin{
         border: 0px !important;
     }
     .action-hover:hover{
@@ -40,7 +40,7 @@
                 data-leave-action="pre-approve" data-type="approveAll" class="mr-3" icon="check" href="javascript:;">
                 <i class="fa fa-check mr-2"></i>@lang('app.preApprove') @lang('app.all')</a>
         @endif
-            <a class="btn btn-secondary rounded f-14 p-2 leave-action-reject" data-leave-id="{{ $multipleLeaves->first()->unique_id }}"
+            <a class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  rounded f-14 p-2 leave-action-reject" data-leave-id="{{ $multipleLeaves->first()->unique_id }}"
                 data-leave-action="rejected" data-type="rejectAll" class="mr-3" icon="check" href="javascript:;">
                 <i class="fa fa-times mr-2"></i>{{$rejectTitle}}</a>
         @endif

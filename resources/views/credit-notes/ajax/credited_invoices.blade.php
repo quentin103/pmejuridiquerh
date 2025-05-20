@@ -67,7 +67,7 @@ $deleteInvoicePermission = user()->permission('delete_invoices');
                         <td>
                             {{ \Carbon\Carbon::parse($payment->created_at)->translatedFormat(company()->date_format) }}
                         </td>
-                        <td class="text-right">
+                        <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                             @if ($deleteInvoicePermission == 'all' || ($deleteInvoicePermission == 'added' && $payment->added_by == user()->id))
                                 <x-forms.button-secondary
                                     onclick="deleteCreditedInvoice({{ $payment->credit_notes_id }}, {{ $payment->id }})"

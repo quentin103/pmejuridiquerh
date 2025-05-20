@@ -15,7 +15,7 @@
             <tr id="row-{{ $jobType->id }}">
                 <td>{{ $key + 1 }}</td>
                 <td data-row-id="{{ $jobType->id }}" contenteditable="true">{{ $jobType->job_type }}</td>
-                <td class="text-right">
+                <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                     <x-forms.button-secondary data-row-id="{{ $jobType->id }}" icon="trash" class="delete-row">
                         @lang('app.delete')</x-forms.button-secondary>
             </tr>

@@ -11,9 +11,9 @@
             <tr class="row{{ $title->id }}">
                 <td>{{ $title->testimonial_title }}</td>
                 <td>{{ $title->language ? $title->language->language_name : 'English' }}</td>
-                <td class="text-right">
-                    <div class="task_view">
-                        <a class="task_view_more d-flex align-items-center justify-content-center edit-testimonial-title" data-title-id="{{ $title->id }}" href="javascript:;" >
+                <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
+                    <div class="task_view-quentin">
+                        <a class="task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin edit-testimonial-title" data-title-id="{{ $title->id }}" href="javascript:;" >
                             <i class="fa fa-edit icons mr-2"></i>  @lang('app.edit')
                         </a>
                     </div>

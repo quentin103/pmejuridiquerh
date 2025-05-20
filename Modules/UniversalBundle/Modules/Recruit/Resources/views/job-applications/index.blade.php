@@ -241,11 +241,11 @@
             </div>
 
             <div class="btn-group" role="group">
-                <a href="{{ route('job-applications.index') }}" class="btn btn-secondary f-14" data-toggle="tooltip"
+                <a href="{{ route('job-applications.index') }}" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-14" data-toggle="tooltip"
                    data-original-title="@lang('recruit::modules.interviewSchedule.tableView')"><i
                         class="side-icon bi bi-list-ul"></i></a>
 
-                <a href="{{ route('job-appboard.index') }}" class="btn btn-secondary f-14 btn-active"
+                <a href="{{ route('job-appboard.index') }}" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-14 btn-active"
                    data-toggle="tooltip"
                    data-original-title="@lang('recruit::app.menu.boardView')"><i class="side-icon bi bi-kanban"></i></a>
             </div>

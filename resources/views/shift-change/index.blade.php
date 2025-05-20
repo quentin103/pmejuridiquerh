@@ -93,17 +93,18 @@ $addTimelogPermission = user()->permission('add_timelogs');
 
 
             <div class="btn-group mt-2 mt-lg-0 mt-md-0 ml-0 ml-lg-3 ml-md-3" role="group">
-                <a href="{{ route('shifts.index') }}" class="btn btn-secondary f-14" data-toggle="tooltip"
+                <a href="{{ route('shifts.index') }}" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-14" data-toggle="tooltip"
                 data-original-title="@lang('app.summary')"><i class="side-icon bi bi-list-ul"></i></a>
 
-            <a href="{{ route('shifts-change.index') }}" class="btn btn-secondary f-14 btn-active" data-toggle="tooltip"
+            <a href="{{ route('shifts-change.index') }}" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-14 btn-active" data-toggle="tooltip"
                 data-original-title="@lang('modules.attendance.shiftChangeRequests')"><i
                     class="side-icon bi bi-hourglass-split"></i></a>
             </div>
         </div>
         <!-- Add Task Export Buttons End -->
         <!-- Task Box Start -->
-        <div class="d-flex flex-column w-tables rounded mt-3 bg-white">
+        <div class="quentin  d-flex flex-column w-tables tw-rounded-xl mt-3 bg-white tw-shadow-lg  
+tw-border-none quentin">
 
             {!! $dataTable->table(['class' => 'table table-hover border-0 w-100']) !!}
 

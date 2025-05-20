@@ -17405,32 +17405,32 @@ div.dataTables_wrapper div.dataTables_info {
      object-fit: cover;
 }
 
-.task_view {
+.task_view-quentin {
   border: 1px solid #99A5B5;
   border-radius: 4px;
   display: inline-flex;
 }
-.task_view .taskView {
+.task_view-quentin .taskView {
   padding: 0px 7px;
   line-height: 2;
   color: #99A5B5;
   border-right: 1px solid #99A5B5;
 }
-.task_view .taskView:hover {
+.task_view-quentin .taskView:hover {
   background-color: #F2F4F7;
 }
-.task_view .task_view_more {
+.task_view-quentin .task_view-quentin_more {
   color: #99A5B5;
   padding: 6.3px 5px;
   border-radius: 4px;
 }
-.task_view .task_view_more:hover {
+.task_view-quentin .task_view-quentin_more:hover {
   background-color: #F2F4F7;
 }
-.task_view .task_view_more:after {
+.task_view-quentin .task_view-quentin_more:after {
   content: none;
 }
-.task_view .dropdown-menu {
+.task_view-quentin .dropdown-menu {
   border: 0;
   box-shadow: 1px 4px 6px 4px rgba(104, 104, 104, 0.0784313725);
 }
@@ -18897,7 +18897,7 @@ button {
   padding-right: 1.5rem !important;
   padding-left: 0px;
 }
-.rtl .task_view .taskView {
+.rtl .task_view-quentin .taskView {
   border-left: 1px solid #99A5B5;
   border-right: 0px;
 }
@@ -19282,7 +19282,7 @@ body.dark-theme {
 body.dark-theme .border-0, body.dark-theme .settings-sidebar input, body.dark-theme .form-control.border-0, body.dark-theme .bootstrap-select > .dropdown-toggle {
   border: 0px !important;
 }
-body.dark-theme .bg-dark, body.dark-theme .qs-controls, body.dark-theme .dropdown-item:hover, body.dark-theme .dropdown-item:focus, body.dark-theme .task_view .task_view_more:hover, body.dark-theme .task_view .taskView:hover, body.dark-theme .project-menu.in, body.dark-theme .bg-amt-grey, body.dark-theme .e-d-tasks-projects-events .bg-grey, body.dark-theme .cal-info .bg-light-grey, body.dark-theme .inv-num-date .bg-light-grey, body.dark-theme .inv-detail .bg-light-grey, body.dark-theme .message_wrapper .msg-content-left .tablinks.active, body.dark-theme .message_wrapper .msg-content-left .card:hover, body.dark-theme .project-right .p-activity-heading span, body.dark-theme .settings-sidebar li.active, body.dark-theme .board-panel, body.dark-theme .w-task-board-panel .minimized, body.dark-theme .task-search .input-group-text, body.dark-theme .ticket-msg .card-horizontal.bg-white-shade, body.dark-theme .bg-white-shade.ticket-contact-owner, body.dark-theme .dark_place .input-group-text, body.dark-theme .login_section, body.dark-theme .daterangepicker .ranges li:hover, body.dark-theme .daterangepicker td.off.in-range, body.dark-theme .daterangepicker td.off.start-date, body.dark-theme .table .thead-light th, body.dark-theme .badge-light, body.dark-theme .datepicker .datepicker-switch:hover, body.dark-theme .datepicker .next:hover, body.dark-theme .datepicker .prev:hover, body.dark-theme .datepicker tfoot tr th:hover, body.dark-theme .datepicker table tr td.day:hover, body.dark-theme .datepicker table tr td.focused, body.dark-theme .tagify__tag > div, body.dark-theme .tagify__tag__removeBtn, body.dark-theme .fc-button.fc-button-primary.fc-button-active, body.dark-theme .fc-day-today, body.dark-theme .in-range.available, body.dark-theme .daterangepicker td.available:hover, body.dark-theme .daterangepicker th.available:hover, body.dark-theme .dropify-wrapper .dropify-preview, body.dark-theme .dropify-wrapper, body.dark-theme .bg-white-shade, body.dark-theme .input-group-text, body.dark-theme .progress, body.dark-theme .swal2-popup, body.dark-theme .main-sidebar, body.dark-theme .create-inv .bg-light-gre, body.dark-theme .unmatched .sample, body.dark-theme .fc .fc-cell-shaded, body.dark-theme .fc .fc-list-event:hover td, body.dark-theme .fc .fc-event:hover td {
+body.dark-theme .bg-dark, body.dark-theme .qs-controls, body.dark-theme .dropdown-item:hover, body.dark-theme .dropdown-item:focus, body.dark-theme .task_view-quentin .task_view-quentin_more:hover, body.dark-theme .task_view-quentin .taskView:hover, body.dark-theme .project-menu.in, body.dark-theme .bg-amt-grey, body.dark-theme .e-d-tasks-projects-events .bg-grey, body.dark-theme .cal-info .bg-light-grey, body.dark-theme .inv-num-date .bg-light-grey, body.dark-theme .inv-detail .bg-light-grey, body.dark-theme .message_wrapper .msg-content-left .tablinks.active, body.dark-theme .message_wrapper .msg-content-left .card:hover, body.dark-theme .project-right .p-activity-heading span, body.dark-theme .settings-sidebar li.active, body.dark-theme .board-panel, body.dark-theme .w-task-board-panel .minimized, body.dark-theme .task-search .input-group-text, body.dark-theme .ticket-msg .card-horizontal.bg-white-shade, body.dark-theme .bg-white-shade.ticket-contact-owner, body.dark-theme .dark_place .input-group-text, body.dark-theme .login_section, body.dark-theme .daterangepicker .ranges li:hover, body.dark-theme .daterangepicker td.off.in-range, body.dark-theme .daterangepicker td.off.start-date, body.dark-theme .table .thead-light th, body.dark-theme .badge-light, body.dark-theme .datepicker .datepicker-switch:hover, body.dark-theme .datepicker .next:hover, body.dark-theme .datepicker .prev:hover, body.dark-theme .datepicker tfoot tr th:hover, body.dark-theme .datepicker table tr td.day:hover, body.dark-theme .datepicker table tr td.focused, body.dark-theme .tagify__tag > div, body.dark-theme .tagify__tag__removeBtn, body.dark-theme .fc-button.fc-button-primary.fc-button-active, body.dark-theme .fc-day-today, body.dark-theme .in-range.available, body.dark-theme .daterangepicker td.available:hover, body.dark-theme .daterangepicker th.available:hover, body.dark-theme .dropify-wrapper .dropify-preview, body.dark-theme .dropify-wrapper, body.dark-theme .bg-white-shade, body.dark-theme .input-group-text, body.dark-theme .progress, body.dark-theme .swal2-popup, body.dark-theme .main-sidebar, body.dark-theme .create-inv .bg-light-gre, body.dark-theme .unmatched .sample, body.dark-theme .fc .fc-cell-shaded, body.dark-theme .fc .fc-list-event:hover td, body.dark-theme .fc .fc-event:hover td {
   background-color: #29304C !important;
 }
 body.dark-theme .bg-white, body.dark-theme .card, body.dark-theme .form-control, body.dark-theme .qs-datepicker-container, body.dark-theme .qs-overlay, body.dark-theme .unpaid, body.dark-theme .custom-file-label, body.dark-theme .p-client-msg .btn-secondary, body.dark-theme .w-task-board-panel, body.dark-theme .b-p-header .b-p-badge, body.dark-theme .content-wrapper, body.dark-theme .admin-dashboard, body.dark-theme .page-title, body.dark-theme .main-container, body.dark-theme .settings-box, body.dark-theme .input-group .bootstrap-select.form-control .dropdown-toggle, body.dark-theme .bootstrap-select > .dropdown-toggle, body.dark-theme .bootstrap-timepicker-widget table td a:hover, body.dark-theme .btn-cancel, body.dark-theme .select-picker.role-permission-select, body.dark-theme .fc .fc-button-primary, body.dark-theme .daterangepicker td.off, body.dark-theme .dropzone, body.dark-theme textarea, body.dark-theme iframe .form-body, body.dark-theme .tabs .-secondary, body.dark-theme .set-btns, body.dark-theme .list-group-item, body.dark-theme .bg-light, body.dark-theme .bg-grey, body.dark-theme .dropzone .dz-preview.dz-image-preview, body.dark-theme .c-inv-desc select, body.dark-theme .bg-light-grey, body.dark-theme .matched .sample {
@@ -19300,7 +19300,7 @@ body.dark-theme .ql-snow .ql-stroke {
 body.dark-theme .filter-box, body.dark-theme .table tr td, body.dark-theme .login_header {
   box-shadow: 0 1px 0 0 #4B4E69;
 }
-body.dark-theme .border-right-grey, body.dark-theme .task_view .taskView, body.dark-theme .border-right {
+body.dark-theme .border-right-grey, body.dark-theme .task_view-quentin .taskView, body.dark-theme .border-right {
   border-right: 1px solid #4B4E69 !important;
 }
 body.dark-theme .border-left-grey, body.dark-theme .more-filters, body.dark-theme .daterangepicker.show-ranges.ltr .drp-calendar.left, body.dark-theme .border-left, body.dark-theme .c-inv-btns .dropdown-toggle span {
@@ -19341,7 +19341,7 @@ body.dark-theme .table thead th {
   border-bottom: 1px solid #4B4E69 !important;
   color: #D5D8DF !important;
 }
-body.dark-theme .c-inv-disc td, body.dark-theme .inv-num-date tr td, body.dark-theme .inv-detail tr td, body.dark-theme .message_wrapper .msg-content-left, body.dark-theme .message_wrapper, body.dark-theme .message_wrapper .msg-content-left .card, body.dark-theme .message_wrapper .input-group, body.dark-theme .settings-sidebar, body.dark-theme .border-grey, body.dark-theme .ticket-wrapper, body.dark-theme .task-detail-panel, body.dark-theme ul.thumbnails.image_picker_selector li .thumbnail, body.dark-theme .task_view, body.dark-theme .fc-theme-standard .fc-scrollgrid, body.dark-theme .fc-theme-standard td, body.dark-theme .fc-theme-standard th, body.dark-theme .fc .fc-button-primary, body.dark-theme .dropify-wrapper, body.dark-theme .input-group-text, body.dark-theme .fc-theme-standard .fc-list, body.dark-theme .tagify, body.dark-theme .list-group-item {
+body.dark-theme .c-inv-disc td, body.dark-theme .inv-num-date tr td, body.dark-theme .inv-detail tr td, body.dark-theme .message_wrapper .msg-content-left, body.dark-theme .message_wrapper, body.dark-theme .message_wrapper .msg-content-left .card, body.dark-theme .message_wrapper .input-group, body.dark-theme .settings-sidebar, body.dark-theme .border-grey, body.dark-theme .ticket-wrapper, body.dark-theme .task-detail-panel, body.dark-theme ul.thumbnails.image_picker_selector li .thumbnail, body.dark-theme .task_view-quentin, body.dark-theme .fc-theme-standard .fc-scrollgrid, body.dark-theme .fc-theme-standard td, body.dark-theme .fc-theme-standard th, body.dark-theme .fc .fc-button-primary, body.dark-theme .dropify-wrapper, body.dark-theme .input-group-text, body.dark-theme .fc-theme-standard .fc-list, body.dark-theme .tagify, body.dark-theme .list-group-item {
   border: 1px solid #4B4E69 !important;
 }
 body.dark-theme .dash-border-top {

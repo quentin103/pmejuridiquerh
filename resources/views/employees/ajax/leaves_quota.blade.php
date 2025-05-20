@@ -58,7 +58,7 @@ $updateLeaveQuotaPermission = user()->permission('update_leaves_quota');
                                                     :popover="__('modules.leaves.leavemanageimpact')"/>
                                             </div>
                                         </td>
-                                        <td class="text-right">
+                                        <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                                             <button type="button" data-type-id="{{ $leavesQuota->id }}"
                                                 class="btn btn-sm btn-primary btn-outline update-category">
                                                 <i class="fa fa-check"></i>

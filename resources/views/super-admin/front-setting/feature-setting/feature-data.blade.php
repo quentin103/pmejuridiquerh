@@ -27,17 +27,18 @@
                     @endif
                 </td>
             @endif
-            <td class="text-right">
-                <div class="task_view">
-                    <a class="task_view_more d-flex align-items-center justify-content-center edit-feature"
+            <td class="tw-flex tw-gap-2 tw-justify-end">
+
+                <div class="">
+                    <a class="tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md edit-feature"
                        data-id="{{$feature->id}}" data-type="{{$type}}">
-                        <i class="fa fa-edit icons mr-2"></i> @lang('app.edit')
+                        <i class="fa fa-edit icons mr-1"></i> @lang('app.edit')
                     </a>
                 </div>
-                <div class="task_view mt-1 mt-lg-0 mt-md-0">
-                    <a class="task_view_more d-flex align-items-center justify-content-center delete-table-row"
+                <div class="">
+                    <a class="tw-border-none tw-bg-red-300 tw-text-start tw-p-2 tw-text-black tw-rounded-md delete-table-row"
                        href="javascript:;" data-id="{{ $feature->id }}" data-type="{{$type}}">
-                        <i class="fa fa-trash icons mr-2"></i> @lang('app.delete')
+                        <i class="fa fa-trash icons mr-1"></i> @lang('app.delete')
                     </a>
                 </div>
             </td>

@@ -14,7 +14,8 @@
     }
 </style>
 <!-- CONTENT WRAPPER START -->
-    <div class="d-flex flex-column w-tables rounded mt-3 bg-white">
+    <div class="quentin  d-flex flex-column w-tables tw-rounded-xl mt-3 bg-white tw-shadow-lg  
+tw-border-none quentin">
         <h4 class="mb-0 p-20 f-21 font-weight-normal  border-bottom-grey d-flex justify-content-between">
             @lang('recruit::modules.jobApplication.quickAdd')
 
@@ -231,7 +232,7 @@
                                 </td>
                             @endif
 
-                            <td  class="text-right pr-20"><button type="submit" id="save-application" class="btn-primary rounded f-14 p-2">@lang('app.save')</button></td>
+                            <td  class="text-right pr-20"><button type="submit" id="save-application" class="tw-bg-[#838383] tw-text-start tw-p-2 px-3 hover:tw-bg-[#838383]/70 hover:tw-text-white tw-rounded-md !tw-text-white ">@lang('app.save')</button></td>
                         </tr>
                 </x-table>
             </div>

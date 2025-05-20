@@ -67,9 +67,9 @@
                                 ) || ($leaveSetting->manager_permission != 'cannot-approve' && user()->id == $leave->user->employeeDetails->reporting_to)
                                 )
                 @if($viewType == 'model')
-                    <td class="text-right">
+                    <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                         @if ($leave->status == 'pending' && ($approveRejectPermission == 'all' || ($leaveSetting->manager_permission != 'cannot-approve' && user()->id == $leave->user->employeeDetails->reporting_to)))
-                            <div class="task_view">
+                            <div class="task_view-quentin">
                                 @if (user()->id != $leave->user->employeeDetails->reporting_to)
                                     <a class="dropdown-item leave-action-approved action-hover" data-leave-id={{ $leave->id }}
                                         data-leave-action="approved" data-toggle="tooltip" data-original-title="@lang('app.approve')" data-leave-type-id="{{ $leave->leave_type_id }}" href="javascript:;">
@@ -91,7 +91,7 @@
                                 @endif
 
                             </div>
-                            <div class="task_view mt-1 mt-lg-0 mt-md-0">
+                            <div class="task_view-quentin mt-1 mt-lg-0 mt-md-0">
                                 <a class="dropdown-item leave-action-reject action-hover" data-leave-id={{ $leave->id }}
                                     data-leave-action="rejected" data-toggle="tooltip" data-original-title="@lang('app.reject')" data-leave-type-id="{{ $leave->leave_type_id }}"  href="javascript:;">
                                         <i class="fa fa-times mr-2"></i>
@@ -102,7 +102,7 @@
                                     || ($deleteLeavePermission == 'added' && user()->id == $leave->added_by)
                                     || ($deleteLeavePermission == 'owned' && user()->id == $leave->user_id)
                                     || ($deleteLeavePermission == 'both' && (user()->id == $leave->user_id || user()->id == $leave->added_by)))
-                            <div class="task_view mt-1 mt-lg-0 mt-md-0">
+                            <div class="task_view-quentin mt-1 mt-lg-0 mt-md-0">
                                 <a data-leave-id={{$leave->id}} data-type="multiple-leave" data-unique-id="{{$leave->unique_id}}"
                                     class="dropdown-item delete-table-row action-hover"  data-toggle="tooltip" data-original-title="@lang('app.delete')" href="javascript:;">
                                     <i class="fa fa-trash mr-2"></i>
@@ -113,9 +113,9 @@
                 @else
                 
                     <td class="text-right pr-20">
-                        <div class="task_view">
+                        <div class="task_view-quentin">
                             <div class="dropdown">
-                                <a class="task_view_more d-flex align-items-center justify-content-center dropdown-toggle" type="link" id="dropdownMenuLink-41" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin dropdown-toggle" type="link" id="dropdownMenuLink-41" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="icon-options-vertical icons"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink-41" tabindex="0" x-placement="bottom-end" style="position: absolute; transform: translate3d(-137px, 26px, 0px); top: 0px; left: 0px; will-change: transform;">

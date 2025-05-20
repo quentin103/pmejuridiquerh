@@ -61,13 +61,13 @@
 
         <div class="d-grid d-lg-flex d-md-flex action-bar mb-4">
             <div class="btn-group mt-2 mt-lg-0 mt-md-0 ml-auto" role="group">
-                <a href="{{ route('time-log-report.index') }}" class="btn btn-secondary f-14" data-toggle="tooltip"
+                <a href="{{ route('time-log-report.index') }}" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-14" data-toggle="tooltip"
                     data-original-title="@lang('app.menu.timeLogReport')"><i class="side-icon bi bi-list-ul"></i></a>
 
-                <a href="{{ route('time-log-consolidated.report') }}" class="btn btn-secondary f-14 btn-active" data-toggle="tooltip"
+                <a href="{{ route('time-log-consolidated.report') }}" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-14 btn-active" data-toggle="tooltip"
                     data-original-title="@lang('app.timelogConsolidatedReport')"><i class="side-icon bi bi-clipboard-data"></i></a>
 
-                <a href="{{ route('project-wise-timelog.report') }}" class="btn btn-secondary f-14" data-toggle="tooltip"
+                <a href="{{ route('project-wise-timelog.report') }}" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-14" data-toggle="tooltip"
                     data-original-title="@lang('app.projectWiseTimeLogReport')"><i class="side-icon bi bi-list"></i></a>
             </div>
         </div>

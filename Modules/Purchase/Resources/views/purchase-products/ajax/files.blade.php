@@ -14,11 +14,11 @@
 
             <div class="btn-group" role="group">
                 <a id="list-tabs" href="javascript:;" onclick="productFilesView('listview')"
-                    class="btn btn-secondary f-14 layout btn-active" data-toggle="tooltip" data-tab-name="listview"
+                    class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-14 layout btn-active" data-toggle="tooltip" data-tab-name="listview"
                     data-original-title="List View"><i class="side-icon bi bi-list-ul"></i></a>
 
                 <a id="thumbnail" href="javascript:;" onclick="productFilesView('gridview')"
-                    class="btn btn-secondary f-14 layout" data-toggle="tooltip" data-tab-name="gridview"
+                    class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-14 layout" data-toggle="tooltip" data-tab-name="gridview"
                     data-original-title="Grid View"><i class="side-icon bi bi-grid"></i></a>
             </div>
         </div>

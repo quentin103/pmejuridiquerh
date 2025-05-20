@@ -25,11 +25,11 @@ $approveRejectPermission = user()->permission('approve_or_reject_leaves');
                         @endphp
 
                         @if ($pendingCountLeave > 0 && $approveRejectPermission == 'all')
-                            <a class="btn btn-secondary rounded f-14 p-2 leave-action-approved" data-leave-id="{{ $multipleLeaves->first()->unique_id }}"
+                            <a class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  rounded f-14 p-2 leave-action-approved" data-leave-id="{{ $multipleLeaves->first()->unique_id }}"
                                 data-leave-action="approved" data-type="approveAll" class="mr-3" icon="check" href="javascript:;">
                                 <i class="fa fa-check mr-2"></i>{{$approveTitle}}</a>
 
-                            <a class="btn btn-secondary rounded f-14 p-2 leave-action-reject" data-leave-id="{{ $multipleLeaves->first()->unique_id }}"
+                            <a class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  rounded f-14 p-2 leave-action-reject" data-leave-id="{{ $multipleLeaves->first()->unique_id }}"
                                 data-leave-action="rejected" data-type="rejectAll" class="mr-3" icon="check" href="javascript:;">
                                 <i class="fa fa-times mr-2"></i>{{$rejectTitle}}</a>
                         @endif

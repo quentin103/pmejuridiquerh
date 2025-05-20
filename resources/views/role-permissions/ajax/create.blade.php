@@ -18,7 +18,7 @@
                 <td data-row-id="{{ $role->id }}"  contenteditable="true" placeholder="Edit me..." >{{ $role->display_name }}
                 </td>
                 <td><span class="text-lightest"><span class="badge badge-primary">{{ $role->unsynced_users_count }}</span> @lang('app.unsyncedUsers')</span></td>
-                <td class="text-right">
+                <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                     @if (!in_array($role->name, ['admin', 'employee', 'client']))
                         <x-forms.button-secondary data-cat-id="{{ $role->id }}" icon="trash" class="delete-category">
                             @lang('app.delete')

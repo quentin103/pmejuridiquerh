@@ -51,7 +51,7 @@
                     </div>
                     @if($loop->iteration !== 1)
                         <div class="col-md-1">
-                            <div class="task_view mt-4"> <a href="javascript:;" class="task_view_more d-flex align-items-center justify-content-center dropdown-toggle" onclick="removeBox({{$loop->iteration}})"> <i class="fa fa-trash icons mr-2"></i> @lang('app.delete')</a> </div>
+                            <div class="task_view-quentin mt-4"> <a href="javascript:;" class="task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin dropdown-toggle" onclick="removeBox({{$loop->iteration}})"> <i class="fa fa-trash icons mr-2"></i> @lang('app.delete')</a> </div>
                         </div>
                     @endif
                 </div>
@@ -87,7 +87,7 @@
     {
         $i = $i+1;
         var indexs = $i+1;
-        $('<div id="addMoreBox'+indexs+'" class="row my-3"> <div class="col-md-10">  <label class="control-label">@lang('app.value')</label> <input class="form-control height-35 f-14" name="value[]" type="text" value="" placeholder=""/>  </div> <div class="col-md-1"> <div class="task_view mt-4"> <a href="javascript:;" class="task_view_more d-flex align-items-center justify-content-center dropdown-toggle" onclick="removeBox('+indexs+')"> <i class="fa fa-trash icons mr-2"></i> @lang('app.delete')</a> </div> </div></div>').insertBefore($insertBefore);
+        $('<div id="addMoreBox'+indexs+'" class="row my-3"> <div class="col-md-10">  <label class="control-label">@lang('app.value')</label> <input class="form-control height-35 f-14" name="value[]" type="text" value="" placeholder=""/>  </div> <div class="col-md-1"> <div class="task_view-quentin mt-4"> <a href="javascript:;" class="task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin dropdown-toggle" onclick="removeBox('+indexs+')"> <i class="fa fa-trash icons mr-2"></i> @lang('app.delete')</a> </div> </div></div>').insertBefore($insertBefore);
     });
 
     // Remove fields

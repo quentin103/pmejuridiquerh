@@ -25,7 +25,7 @@
             <tr id="reason-{{ $reason->id }}">
                 <td>{{ $key + 1 }}</td>
                 <td data-row-id="{{ $reason->id }}" contenteditable="true">{{ mb_ucwords($reason->name) }}</td>
-                <td class="text-right">
+                <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                     @if ($deleteProjectCategoryPermission == 'all' || ($deleteProjectCategoryPermission == 'added' && $category->added_by == user()->id))
                         <x-forms.button-secondary data-reason-id="{{ $reason->id }}" icon="trash" class="delete-reason">
                             @lang('app.delete')

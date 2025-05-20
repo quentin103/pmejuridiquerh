@@ -10,13 +10,13 @@
             <td>{{ $inventory->created_at->diffForHumans() }}</td>
             <td class="text-right pr-20">
                 @if ($viewPermission == 'all' || ($viewPermission == 'added' && $file->added_by == user()->id))
-                    <div class="task_view">
+                    <div class="task_view-quentin">
                         <a class="taskView" href="{{ $file->file_url }}" target="_blank">
                             @lang('app.view')
                         </a>
                         <div class="dropdown">
                             <a href="{{ route('inventory-files.download', $file->id) }}"
-                                class="task_view_more d-flex align-items-center justify-content-center dropdown-toggle"
+                                class="task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin dropdown-toggle"
                                 type="link" id="dropdownMenuLink-3" data-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false">
                                 <i class="icon-options-vertical icons"></i>

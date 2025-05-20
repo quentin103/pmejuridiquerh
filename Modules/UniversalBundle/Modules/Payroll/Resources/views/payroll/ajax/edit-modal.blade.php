@@ -106,7 +106,7 @@
                                     @if($key != 'Total Hours')
                                         <tr>
                                             <td class="pr-2">{{ $key }}</td>
-                                            <td class="text-right">
+                                            <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                                                 <input type="hidden" class="form-control" name="earnings_name[]"
                                                     value="{{ $key }}">
                                                 <input type="number" min="0" step=".01"
@@ -123,7 +123,7 @@
                                     <tr>
                                         <td class="pr-2"><input type="text" class="form-control height-35 f-14 my-2"
                                                                 name="extra_earnings_name[]" value="{{ $key }}"></td>
-                                        <td class="text-right">
+                                        <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                                             <input type="number" min="0" step=".01" id="extraValue{{$loop->iteration}}"
                                                    class="form-control text-right extraValue height-35 f-14 my-2"
                                                    name="extra_earnings[]" value="{{ $item }}">
@@ -138,7 +138,7 @@
                                 @endforeach
                                 <tr id="fixedAllowanceTr">
                                     <td class="pr-2">@lang('payroll::modules.payroll.fixedAllowance')</td>
-                                    <td class="text-right">
+                                    <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                                         @php
                                             $fixedAllow = ($salarySlip->fixed_allowance > 0) ? $salarySlip->fixed_allowance : $fixedAllowance;
                                         @endphp
@@ -171,7 +171,7 @@
                                             <tr>
                                                 <td class="pr-2"><input type="text" class="form-control height-35 f-14 my-2"
                                                                         name="additional_name[]" value="{{ $key }}"></td>
-                                                <td class="text-right">
+                                                <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                                                     <input type="number" min="0" step=".01" id="additionalValue{{$loop->iteration}}"
                                                         class="form-control additionalValue text-right height-35 f-14 my-2"
                                                         name="additional_earnings[]" value="{{ $item }}">
@@ -209,7 +209,7 @@
                                 @foreach ($deductions as $key=>$item)
                                     <tr>
                                         <td class="pr-2">{{ $key }}</td>
-                                        <td class="text-right">
+                                        <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                                             <input type="hidden" class="form-control" name="deductions_name[]"
                                                    value="{{ $key }}">
                                             <input type="number" min="0" step=".01"
@@ -223,7 +223,7 @@
                                     <tr>
                                         <td class="pr-2"><input type="text" class="form-control height-35 f-14 my-2"
                                                                 name="extra_deductions_name[]" value="{{ $key }}"></td>
-                                        <td class="text-right">
+                                        <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                                             <input type="number" min="0" step=".01"
                                                    class="form-control text-right height-35 f-14 my-2"
                                                    name="extra_deductions[]" value="{{ $item }}">

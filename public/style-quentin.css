@@ -195,3 +195,12 @@
     box-shadow: 0px 9px 20px rgba(46, 35, 94, 0.07) !important;
     background: #fff !important;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }

@@ -48,7 +48,7 @@ $deleteContractPermission = user()->permission('delete_contract');
                         <tr>
                             <td>{{ $history->start_date->timezone(company()->timezone)->translatedFormat(company()->date_format) }}</td>
                             <td>{{ $history->end_date->timezone(company()->timezone)->translatedFormat(company()->date_format) }}</td>
-                            <td class="text-right">{{ currency_format($history->amount, $contract->currency_id) }}</td>
+                            <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">{{ currency_format($history->amount, $contract->currency_id) }}</td>
                         </tr>
                     </x-table>
                 </div>

@@ -25,16 +25,16 @@ class ConsentDataTable extends BaseDataTable
             ->addColumn('check', fn($row) => $this->checkBox($row))
             ->addColumn('action', function ($row) {
 
-                $action = '<div class="task_view mr-1">
+                $action = '<div class="task_view-quentin mr-1">
                         <a href="javascript:;" data-consent-id="' . $row->id . '"
-                            class="edit-consent task_view_more d-flex align-items-center justify-content-center">
+                            class="edit-consent task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin">
                             <i class="fa fa-edit icons mr-2"></i> ' . __('app.edit') . '
                         </a>
                     </div>';
 
-                $action .= '<div class="task_view">
+                $action .= '<div class="task_view-quentin">
                         <a href="javascript:;" data-consent-id="' . $row->id . '"
-                            class="delete-table-row task_view_more d-flex align-items-center justify-content-center">
+                            class="delete-table-row task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin">
                             <i class="fa fa-trash icons mr-2"></i> ' . __('app.delete') . '
                         </a>
                     </div>';

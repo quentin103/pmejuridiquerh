@@ -112,12 +112,12 @@
                                                     @if(array_key_exists("Total Hours",$earnings))
                                                         ( @lang('payroll::modules.payroll.totalHours') {{$earnings['Total Hours']}} )
                                                     @endif</td>
-                                                <td class="text-right">{{ currency_format($item, ($currency->currency ? $currency->currency->id : company()->currency->id ))  }}</td>
+                                                <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">{{ currency_format($item, ($currency->currency ? $currency->currency->id : company()->currency->id ))  }}</td>
                                             </tr>
                                         @elseif($key != 'Total Hours')
                                         <tr>
                                             <td>{{ ($key) }}</td>
-                                            <td class="text-right">{{ currency_format($item, ($currency->currency ? $currency->currency->id : company()->currency->id ))  }}</td>
+                                            <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">{{ currency_format($item, ($currency->currency ? $currency->currency->id : company()->currency->id ))  }}</td>
                                         </tr>
                                         @endif
                                     @endforeach
@@ -125,7 +125,7 @@
                                     @forelse ($earningsExtra as $key=>$item)
                                         <tr>
                                             <td>{{ ($key) }}</td>
-                                            <td class="text-right">{{ currency_format($item, ($currency->currency ? $currency->currency->id : company()->currency->id ))  }}</td>
+                                            <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">{{ currency_format($item, ($currency->currency ? $currency->currency->id : company()->currency->id ))  }}</td>
                                         </tr>
                                     @endforeach
 
@@ -142,7 +142,7 @@
                                     @forelse ($earningsAdditional as $key=>$item)
                                         <tr>
                                             <td>{{ ($key) }}</td>
-                                            <td class="text-right">{{ currency_format($item, ($currency->currency ? $currency->currency->id : company()->currency->id ))  }}</td>
+                                            <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">{{ currency_format($item, ($currency->currency ? $currency->currency->id : company()->currency->id ))  }}</td>
                                         </tr>
                                     @endforeach
 
@@ -162,13 +162,13 @@
                                     @foreach ($deductions as $key => $item)
                                         <tr>
                                             <td>{{ ($key) }}</td>
-                                            <td class="text-right">{{ currency_format($item, ($currency->currency ? $currency->currency->id : company()->currency->id ) ) }}</td>
+                                            <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">{{ currency_format($item, ($currency->currency ? $currency->currency->id : company()->currency->id ) ) }}</td>
                                         </tr>
                                     @endforeach
                                     @foreach ($deductionsExtra as $key => $item)
                                         <tr>
                                             <td>{{ ($key) }}</td>
-                                            <td class="text-right">{{ currency_format($item, ($currency->currency ? $currency->currency->id : company()->currency->id )) }}</td>
+                                            <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">{{ currency_format($item, ($currency->currency ? $currency->currency->id : company()->currency->id )) }}</td>
                                         </tr>
                                     @endforeach
 
@@ -210,7 +210,7 @@
                                     <tr>
                                         <td><strong>@lang('app.total')
                                                 @lang('payroll::modules.payroll.reimbursement')</strong></td>
-                                        <td class="text-right">
+                                        <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                                             <strong>{{ currency_format($salarySlip->expense_claims, ($currency->currency ? $currency->currency->id : company()->currency->id )) }}</strong>
                                         </td>
                                     </tr>

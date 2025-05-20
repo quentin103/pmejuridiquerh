@@ -87,7 +87,8 @@
             <!-- TASK TABS START -->
             <div class="bg-additional-grey rounded my-3">
 
-                <div class="s-b-inner s-b-notifications bg-white b-shadow-4 rounded">
+                <div class="quentin s-b-inner s-b-notifications  d-flex flex-column w-tables tw-rounded-xl  bg-white tw-shadow-lg  
+tw-border-none quentin">
 
                     <x-tab-section class="task-tabs">
 

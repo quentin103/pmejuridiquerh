@@ -47,7 +47,7 @@ $deleteLeadFollowUpPermission = user()->permission('delete_lead_follow_up');
                             @endif
                             {{ ucfirst($folllowUp->status) }}
                         </td>
-                        <td class="text-right">
+                        <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                             <div class="dropdown ml-auto file-action">
                                 <button class="btn btn-lg f-14 p-0 text-lightest  rounded  dropdown-toggle"
                                     type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

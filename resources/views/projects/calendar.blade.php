@@ -207,14 +207,14 @@
             @endif
 
             <div class="btn-group mt-2 mt-lg-0 mt-md-0 ml-0 ml-lg-3 ml-md-3" role="group">
-                <a href="{{ route('projects.index') }}" class="btn btn-secondary f-14 projects" data-toggle="tooltip"
+                <a href="{{ route('projects.index') }}" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-14 projects" data-toggle="tooltip"
                     data-original-title="@lang('app.menu.projects')"><i class="side-icon bi bi-list-ul"></i></a>
 
                     @if ($deleteProjectPermission != 'none')
-                        <a href="{{ route('projects.archive') }}" class="btn btn-secondary f-14" data-toggle="tooltip"
+                        <a href="{{ route('projects.archive') }}" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-14" data-toggle="tooltip"
                             data-original-title="@lang('app.archive')"><i class="side-icon bi bi-archive"></i></a>
                     @endif
-                    <a href="{{ route('project-calendar.index') }}" class="btn btn-secondary f-14 btn-active" data-toggle="tooltip"
+                    <a href="{{ route('project-calendar.index') }}" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-14 btn-active" data-toggle="tooltip"
                     data-original-title="@lang('app.menu.calendar')"><i class="side-icon bi bi-calendar"></i></a>
             </div>
         </div>

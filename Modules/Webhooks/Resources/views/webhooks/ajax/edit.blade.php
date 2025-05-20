@@ -121,8 +121,8 @@
                                 </div>
                                 @if (!$loop->first)
                                     <div class="col-md-2">
-                                        <div class="task_view"> <a href="javascript:;"
-                                                class="task_view_more d-flex align-items-center justify-content-center dropdown-toggle"
+                                        <div class="task_view-quentin"> <a href="javascript:;"
+                                                class="task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin dropdown-toggle"
                                                 onclick="removeBox({{ $loop->iteration }})"> <i
                                                     class="fa fa-trash icons mr-2"></i> @lang('app.delete')</a> </div>
                                     </div>
@@ -192,8 +192,8 @@
                                 </div>
                                 @if ($loop->iteration !== 1)
                                     <div class="col-md-2 mt-0">
-                                        <div class="task_view mt-1"> <a href="javascript:;"
-                                                class="task_view_more d-flex align-items-center justify-content-center dropdown-toggle"
+                                        <div class="task_view-quentin mt-1"> <a href="javascript:;"
+                                                class="task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin dropdown-toggle"
                                                 onclick="removeBodyBox({{ $loop->iteration }})"> <i
                                                     class="fa fa-trash icons mr-2"></i> @lang('app.delete')</a> </div>
                                     </div>
@@ -293,8 +293,8 @@
                         <input class="form-control height-35 f-14" name="headers_value[]" type="text" />
                     </div>
                     <div class="col-md-2">
-                        <div class="task_view">
-                            <a href="javascript:;" class="task_view_more d-flex align-items-center justify-content-center dropdown-toggle" onclick="removeBox(${index})">
+                        <div class="task_view-quentin">
+                            <a href="javascript:;" class="task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin dropdown-toggle" onclick="removeBox(${index})">
                                 <i class="fa fa-trash icons mr-2"></i> @lang('app.delete')
                         </a>
                     </div>
@@ -321,8 +321,8 @@
                                 <input list="bodyValues" class="form-control height-35 f-14" name="body_value[]" type="text"  placeholder=""/>
                             </div>
                             <div class="col-md-2 mt-0">
-                                <div class="task_view">
-                                    <a href="javascript:;" class="task_view_more d-flex align-items-center justify-content-center dropdown-toggle" onclick="removeBodyBox(${indexNum})">
+                                <div class="task_view-quentin">
+                                    <a href="javascript:;" class="task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin dropdown-toggle" onclick="removeBodyBox(${indexNum})">
                                         <i class="fa fa-trash icons mr-2"></i> @lang('app.delete')
                             </a>
                         </div>

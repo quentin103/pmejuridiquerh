@@ -107,7 +107,7 @@
                 fieldId="dateField${i}" :fieldPlaceholder="__('app.date')" fieldValue="{{ $date }}" fieldRequired="true"  />
                 </div>  <div class="col-lg-5 col-md-5 col-10"> <div class="my-3 form-group">
                 <x-forms.text :fieldLabel="__('modules.holiday.occasion')" fieldName="occassion[]" fieldId="occassion${i}" :fieldPlaceholder="__('modules.holiday.occasion')" fieldValue="" fieldRequired="true" />
-                </div> </div> <div class="col-lg-2 col-md-1 col-2"><a href="javascript:;" class="mt-5 d-flex align-items-center justify-content-center remove-item" data-item-id="${i}"><i class="fa fa-times-circle f-20 text-lightest"></i></a></div> </div> `)
+                </div> </div> <div class="col-lg-2 col-md-1 col-2"><a href="javascript:;" class="mt-5 quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin remove-item" data-item-id="${i}"><i class="fa fa-times-circle f-20 text-lightest"></i></a></div> </div> `)
                 .insertBefore($insertBefore);
 
 

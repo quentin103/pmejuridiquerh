@@ -115,7 +115,7 @@
                         <tr>
                             <td class="px-2"><x-employee :user="$timesheet->user" /></td>
                             <td class="px-2">{{ $timesheet->week_start_date->translatedFormat(company()->date_format) }} - {{ $timesheet->week_start_date->addDays(6)->translatedFormat(company()->date_format) }}</td>
-                            <td class="text-right">
+                            <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                                 <x-forms.link-secondary :link="route('weekly-timesheets.show', $timesheet->id)" class="view-timesheet openRightModal mr-2" icon="fa fa-eye" >@lang('app.view')</x-forms.link-secondary>
                                 
                                 <x-forms.button-secondary type="button" class="change-timesheet-status  mr-2" data-status="draft" data-timesheet-id="{{ $timesheet->id }}" icon="fa fa-times" >@lang('app.reject')</x-forms.button-secondary>

@@ -41,11 +41,11 @@
                         @endif
                     @endif
                 </td>
-                <td class="text-right">
-                    <div class="task_view">
+                <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
+                    <div class="task_view-quentin">
                         @if ($deletePermission == 'all')
                             <a href="javascript:;" data-recruiter-id="{{ $recruiter->id }}"
-                               class="delete-recruiter task_view_more d-flex align-items-center justify-content-center dropdown-toggle">
+                               class="delete-recruiter task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin dropdown-toggle">
                                 <i class="fa fa-trash icons mr-2"></i> @lang('app.delete')
                             </a>
                         @endif

@@ -201,7 +201,7 @@
                     <div class="private-dash-settings d-flex align-self-center">
                         <x-form id="privateDashboardWidgetForm" method="POST">
                             <div class="dropdown keep-open">
-                                <a class="d-flex align-items-center justify-content-center dropdown-toggle px-4 text-dark left-3"
+                                <a class="quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin dropdown-toggle px-4 text-dark left-3"
                                     type="link" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
 
                                     aria-expanded="false">

@@ -2,7 +2,8 @@
 <div class="row py-3 py-lg-5 py-md-5">
     <div class="col-lg-12 col-md-12 mb-4 mb-xl-0 mb-lg-4">
         <!-- Task Box Start -->
-        <div class="d-flex flex-column w-tables rounded mt-3 bg-white">
+        <div class="quentin  d-flex flex-column w-tables tw-rounded-xl mt-3 bg-white tw-shadow-lg  
+tw-border-none quentin">
             <div class="d-flex px-2">
                 <!-- START ASSIGN START -->
                 <div class="select-box py-2 px-lg-2 px-md-2 px-0">

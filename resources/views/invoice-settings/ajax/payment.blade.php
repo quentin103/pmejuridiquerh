@@ -15,18 +15,18 @@
                     <td>{{ $method->title }}</td>
                     <td class="text-break">{!! nl2br($method->payment_details) !!} </td>
 
-                    <td class="text-right">
-                        <div class="task_view">
+                    <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
+                        <div class="task_view-quentin">
                             <a href="javascript:;" data-payment-id="{{ $method->id }}"
-                               class="task_view_more d-flex align-items-center justify-content-center edit-payment"
+                               class="task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin edit-payment"
                                {{-- data-toggle="tooltip" --}}
                                data-original-title="@lang('app.edit')">
                                 <i class="fa fa-edit icons"></i>
                             </a>
                         </div>
-                        <div class="task_view">
+                        <div class="task_view-quentin">
                             <a href="javascript:;" data-payment-id="{{ $method->id }}"
-                               class="task_view_more d-flex align-items-center justify-content-center delete-payment"
+                               class="task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin delete-payment"
                                {{-- data-toggle="tooltip" --}}
                                data-original-title="@lang('app.delete')">
                                 <i class="fa fa-trash icons"></i>

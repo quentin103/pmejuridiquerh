@@ -48,7 +48,7 @@
 
             i += 1;
 
-            $(`<div id="addMoreBox${i}" class="row pl-20 pr-20 skill-name"><div class="col-md-5"> <div id="nameBox${i}" class="form-group"><input class="form-control name_new height-35 f-14" name="names[]" id="names${i}" placeholder="@lang('recruit::modules.skill.skillname')" value="" required="true" /></div></div><div class="col-md-1"><div class="task_view mt-1"><a href="javascript:;" class="task_view_more d-flex align-items-center justify-content-center remove-item" data-item-id="${i}"><i class="fa fa-trash icons mr-2 text-lightest"></i>@lang('recruit::app.menu.delete')</a></div> </div></div>`).insertBefore($insertBefore);
+            $(`<div id="addMoreBox${i}" class="row pl-20 pr-20 skill-name"><div class="col-md-5"> <div id="nameBox${i}" class="form-group"><input class="form-control name_new height-35 f-14" name="names[]" id="names${i}" placeholder="@lang('recruit::modules.skill.skillname')" value="" required="true" /></div></div><div class="col-md-1"><div class="task_view-quentin mt-1"><a href="javascript:;" class="task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin remove-item" data-item-id="${i}"><i class="fa fa-trash icons mr-2 text-lightest"></i>@lang('recruit::app.menu.delete')</a></div> </div></div>`).insertBefore($insertBefore);
 
         });
 

@@ -166,7 +166,7 @@ $addTaskPermission = user()->permission('add_tasks');
                                <div style="display: none"> {{ $item->user->name }} </div>
                                 <x-employee-image :user="$item->user" />
                             </td>
-                            <td class="text-right">
+                            <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                                 {{ $item->start_time->timezone(company()->timezone)->translatedFormat(company()->date_format . ' ' . company()->time_format) }}
                                 <div class="mt-1 f-12">
                                     @if (is_null($item->activeBreak))
@@ -182,7 +182,7 @@ $addTaskPermission = user()->permission('add_tasks');
                                     @endif
                                 </div>
                             </td>
-                            <td class="text-right">
+                            <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                                 @if (
                                     $editTimelogPermission == 'all'
                                     || ($editTimelogPermission == 'added' && $item->added_by == user()->id)

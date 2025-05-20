@@ -51,7 +51,7 @@ class WebhookLogsDataTable extends BaseDataTable
         });
 
         $datatables->addColumn('action', function ($row) {
-            return $row->webhookSettings ? '<div class="task_view"> <a href="' . route('webhooks-log.show', [$row->id]) . '" class="task_view_more d-flex align-items-center justify-content-center edit-custom-field" href="javascript:;" data-id="{{ $row->id }}" >' . __('app.view') . '</a> </div>' : '--';
+            return $row->webhookSettings ? '<div class="task_view-quentin"> <a href="' . route('webhooks-log.show', [$row->id]) . '" class="task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin edit-custom-field" href="javascript:;" data-id="{{ $row->id }}" >' . __('app.view') . '</a> </div>' : '--';
         });
 
         $datatables->addIndexColumn();

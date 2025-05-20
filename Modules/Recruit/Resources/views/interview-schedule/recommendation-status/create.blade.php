@@ -18,7 +18,7 @@
             <tr id="row-{{ $item->id }}">
                 <td>{{ $key + 1 }}</td>
                 <td data-row-id="{{ $item->id }}" contenteditable="true">{{ $item->status }}</td>
-                <td class="text-right">
+                <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                     @if ($deletePermission == 'all')
                         <x-forms.button-secondary data-row-id="{{ $item->id }}" icon="trash" class="delete-row">
                             @lang('app.delete')</x-forms.button-secondary>

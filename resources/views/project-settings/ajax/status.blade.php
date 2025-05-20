@@ -29,17 +29,17 @@
                     @else
                         <td>@lang('modules.statusFields.change')</td>
                     @endif
-                    <td class="text-right">
-                        <div class="task_view">
+                    <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
+                        <div class="task_view-quentin">
                             <a href="javascript:;" data-status-id="{{ $status->id }}"
-                               class="editProjectStatus task_view_more d-flex align-items-center justify-content-center">
+                               class="editProjectStatus task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin">
                                 <i class="fa fa-edit icons mr-1"></i> @lang('app.edit')
                             </a>
                         </div>
                         @if ($status->default_status == 0)
-                            <div class="task_view mt-1 mt-lg-0 mt-md-0 ml-1">
+                            <div class="task_view-quentin mt-1 mt-lg-0 mt-md-0 ml-1">
                                 <a href="javascript:;" data-status-id="{{ $status->id }}"
-                                   class="delete-project-status task_view_more d-flex align-items-center justify-content-center">
+                                   class="delete-project-status task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin">
                                     <i class="fa fa-trash icons mr-1"></i> @lang('app.delete')
                                 </a>
                             </div>

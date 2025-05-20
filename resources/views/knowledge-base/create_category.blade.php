@@ -16,7 +16,7 @@
                 <td>{{ $key + 1 }}</td>
                 <td data-row-id="{{ $category->id }}" contenteditable="true">{{ $category->name }}
                 </td>
-                <td class="text-right">
+                <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                     {{-- @if ($deletePermission == 'all' || $deletePermission == 'added') --}}
                     <x-forms.button-secondary
                         data-cat-id="{{ $category->id }}"

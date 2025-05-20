@@ -126,7 +126,7 @@
 
                 @if (!$universalBundle)
 
-                <td class="text-right">
+                <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                     @if ($fetchSetting)
                     <div class="custom-control custom-switch ml-2 d-inline-block"  data-toggle="tooltip"
                          data-original-title="@lang('app.moduleNotifySwitchMessage', ['name' => $module])">
@@ -139,7 +139,7 @@
                 </td>
                 @endif
 
-                <td class="text-right">
+                <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                     <div class="custom-control custom-switch ml-2 d-inline-block"  data-toggle="tooltip"
                          data-original-title="@lang('app.moduleSwitchMessage', ['name' => $module])">
                         <input type="checkbox" @if (in_array($module, $worksuitePlugins)) checked

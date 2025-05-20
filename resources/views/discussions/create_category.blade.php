@@ -24,7 +24,7 @@
                     <i class="fa fa-circle" style="color: {{ $category->color }}"></i>
                 </td>
                 <td data-row-id="{{ $category->id }}" contenteditable="true">{{ $category->name }}</td>
-                <td class="text-right">
+                <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                     @if ($manageCategoryPermission == 'all')
                         <x-forms.button-secondary data-cat-id="{{ $category->id }}" icon="trash"
                                                   class="delete-category">

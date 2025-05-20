@@ -20,7 +20,7 @@
                     {{ ($subcategory->sub_category_name) }}</td>
                 <td>{{ ($subcategory->category->category_name) }}</td>
 
-                <td class="text-right">
+                <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                     @if ($deletePermission == 'all' || $deletePermission == 'added')
                         <x-forms.button-secondary data-row-id="{{ $subcategory->id }}" icon="trash"
                                                   class="delete-category">

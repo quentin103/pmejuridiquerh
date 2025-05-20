@@ -122,11 +122,11 @@
                                           :value="$item->type->type_name"></x-status>
                             </td>
                             <td align="right" class="pr-20">
-                                <div class="task_view">
+                                <div class="task_view-quentin">
                                     <a href="{{ route('leaves.show', [$item->id]) }}"
                                        class="taskView openRightModal">@lang('app.view')</a>
                                     <div class="dropdown">
-                                        <a class="task_view_more d-flex align-items-center justify-content-center dropdown-toggle"
+                                        <a class="task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin dropdown-toggle"
                                            type="link" id="dropdownMenuLink" data-toggle="dropdown"
                                            aria-haspopup="true" aria-expanded="false">
                                             <i class="icon-options-vertical icons"></i>

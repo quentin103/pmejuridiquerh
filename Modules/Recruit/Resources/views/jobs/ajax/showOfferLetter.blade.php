@@ -189,7 +189,7 @@
                                             @foreach ($selectedEarningsComponent as $item)
                                                 <tr>
                                                     <td>{{ ($item->component_name) }}</td>
-                                                    <td class="text-right">{{ currency_format((int)$item->component_value, ($currency ? $currency->id : company()->currency->id ))  }}</td>
+                                                    <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">{{ currency_format((int)$item->component_value, ($currency ? $currency->id : company()->currency->id ))  }}</td>
                                                 </tr>
                                             @endforeach
 
@@ -214,7 +214,7 @@
                                             @foreach ($selectedDeductionsComponent as $item)
                                                 <tr>
                                                     <td>{{ ($item->component_name) }}</td>
-                                                    <td class="text-right">{{ currency_format((int)$item->component_value, ($currency ? $currency->id : company()->currency->id ))  }}</td>
+                                                    <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">{{ currency_format((int)$item->component_value, ($currency ? $currency->id : company()->currency->id ))  }}</td>
                                                 </tr>
                                             @endforeach
                                         </x-table>

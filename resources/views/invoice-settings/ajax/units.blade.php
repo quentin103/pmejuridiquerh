@@ -18,15 +18,15 @@
                         </x-forms.radio>
                     </td>
                     <td class="text-right pr-20">
-                        <div class="task_view mr-1">
+                        <div class="task_view-quentin mr-1">
                             <a href="javascript:;" data-unit-id="{{ $unit->id }}"
-                                class="edit-unit task_view_more d-flex align-items-center"> <i class="fa fa-edit mr-1"></i> @lang('app.edit')
+                                class="edit-unit task_view-quentin_more d-flex align-items-center"> <i class="fa fa-edit mr-1"></i> @lang('app.edit')
                             </a>
                         </div>
                         @if (!($unit->default == 1))
-                            <div class="task_view">
+                            <div class="task_view-quentin">
                                 <a href="javascript:;" data-unit-id="{{ $unit->id }}"
-                                    class="delete-unit task_view_more d-flex align-items-center justify-content-center dropdown-toggle">
+                                    class="delete-unit task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin dropdown-toggle">
                                     <i class="fa fa-trash mr-1"></i> @lang('app.delete')
                                 </a>
                             </div>

@@ -56,7 +56,7 @@ class InvoiceDataTable extends BaseDataTable
                 return '<img style="height: 15px;" src="' . $logo . '" title="' . $gatewayName . '"> ' . $gatewayName;
             })
             ->addColumn('action', function ($row) {
-                return '<div class="task_view"><a href="' . route('superadmin.invoices.download', $row->id) . '" class="task_view_more" data-toggle="tooltip" data-original-title="' . __('app.download') . '"><span></span> <i class="fa fa-download"></i></a></div>';
+                return '<div class="task_view-quentin"><a href="' . route('superadmin.invoices.download', $row->id) . '" class="task_view-quentin_more" data-toggle="tooltip" data-original-title="' . __('app.download') . '"><span></span> <i class="fa fa-download"></i></a></div>';
             })
             ->rawColumns(['action', 'method']);
     }

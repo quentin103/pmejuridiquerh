@@ -39,17 +39,17 @@
                     <td>
                         {{ $salary->date->format($company->date_format) }}
                     </td>
-                    <td class="text-right">
+                    <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                         @if ($salary->type == 'increment' || $salary->type == 'decrement')
-                            <div class="task_view">
-                                <a class="edit-salary task_view_more d-flex align-items-center justify-content-center"
+                            <div class="task_view-quentin">
+                                <a class="edit-salary task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin"
                                 href="javascript:;" data-salary-id="{{ $salary->id }}">
                                     <i class="fa fa-edit icons mr-2"></i> @lang('app.edit')
                                 </a>
                             </div>
                         @endif
-                        <div class="task_view">
-                            <a class="delete-salary task_view_more d-flex align-items-center justify-content-center"
+                        <div class="task_view-quentin">
+                            <a class="delete-salary task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin"
                                href="javascript:;" data-salary-id="{{ $salary->id }}">
                                 <i class="fa fa-trash icons mr-2"></i> @lang('app.delete')
                             </a>

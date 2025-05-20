@@ -33,7 +33,7 @@
     <div class="row m-l-3">
         <div class="col-md-12 mb-3">
             <button id="add-client" type="button"
-                    class="btn-primary rounded f-14 p-2"><i
+                    class="tw-bg-[#838383] tw-text-start tw-p-2 px-3 hover:tw-bg-[#838383]/70 hover:tw-text-white tw-rounded-md !tw-text-white "><i
                     class="fa fa-plus mr-1"></i>@lang('app.addNew') @lang('superadmin.menu.frontClient')</button>
         </div>
     </div>
@@ -56,15 +56,15 @@
                     <td>
                         <img height="40" width="120" src="{{$client->image_url }}" alt=""/>
                     </td>
-                    <td class="text-right">
-                        {{-- <div class="task_view">
-                            <a class="task_view_more d-flex align-items-center justify-content-center edit-client"
+                    <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
+                        {{-- <div class="task_view-quentin">
+                            <a class="task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin edit-client"
                                href="javascript:;" data-id="{{$client->id}}">
                                 <i class="fa fa-edit icons mr-2"></i> @lang('app.edit')
                             </a>
                         </div> --}}
-                        <div class="task_view mt-1 mt-lg-0 mt-md-0">
-                            <a class="task_view_more d-flex align-items-center justify-content-center delete-table-row"
+                        <div class="task_view-quentin mt-1 mt-lg-0 mt-md-0">
+                            <a class="task_view-quentin_more quentin-deleted-btn tw-border-none tw-bg-red-300 tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin-deleted-btn delete-table-row"
                                href="javascript:;" data-id="{{ $client->id }}">
                                 <i class="fa fa-trash icons mr-2"></i> @lang('app.delete')
                             </a>

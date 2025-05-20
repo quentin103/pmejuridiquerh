@@ -78,7 +78,7 @@
                 </div>
 
                 <div class="footer text-right">
-                    <button class="btn btn-secondary btn-sm rounded f-14 p-2 update-buttons" type="button" id="cancel-notes">@lang('app.cancel')</button>
+                    <button class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  btn-sm rounded f-14 p-2 update-buttons" type="button" id="cancel-notes">@lang('app.cancel')</button>
                     <button class="btn btn-primary btn-sm rounded f-14 p-2 update-buttons" type="button" id="save-notes">@lang('app.update')</button>
                 </div>
             </div>

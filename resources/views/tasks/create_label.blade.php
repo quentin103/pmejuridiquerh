@@ -51,7 +51,7 @@
                     </td>
                     <input type="hidden" name="parent_project_id" value="{{ $projectId }}">
                 @endif
-                <td class="text-right">
+                <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
                     @if (user()->permission('task_labels') == 'all')
                         <x-forms.button-secondary data-label-id="{{ $item->id }}" icon="trash" class="delete-label">
                             @lang('app.delete')

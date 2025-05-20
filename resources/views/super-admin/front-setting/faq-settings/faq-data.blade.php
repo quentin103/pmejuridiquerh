@@ -1,15 +1,15 @@
 @forelse($faqs as $faq)
     <x-cards.data class="mb-3" :title="$faq->question">
         <x-slot name="action">
-            <div>
-                <div class="task_view">
-                    <a class="task_view_more d-flex align-items-center justify-content-center edit-faq"
+            <div class="tw-flex tw-gap-2">
+                <div>
+                    <a class="tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md"
                         href="javascript:;" data-id="{{ $faq->id }}">
                         <i class="fa fa-edit icons mr-2"></i> @lang('app.edit')
                     </a>
                 </div>
-                <div class="task_view mt-1 mt-lg-0 mt-md-0">
-                    <a class="task_view_more d-flex align-items-center justify-content-center delete-table-row"
+                <div>
+                    <a class="tw-border-none tw-bg-red-300 tw-text-start tw-p-2 tw-text-black tw-rounded-md"
                         href="javascript:;" data-id="{{ $faq->id }}">
                         <i class="fa fa-trash icons mr-2"></i> @lang('app.delete')
                     </a>

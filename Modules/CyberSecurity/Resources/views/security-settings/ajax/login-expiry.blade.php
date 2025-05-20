@@ -18,16 +18,16 @@
                         <x-employee :user="$expiryUser->user"/>
                     </td>
                     <td> {{ $expiryUser->expiry_date->translatedFormat(companyOrGlobalSetting()->date_format) }} </td>
-                    <td class="text-right">
-                        <div class="task_view">
+                    <td class="quentin-table tw-flex tw-justify-end tw-gap-2 quentin-table">
+                        <div class="task_view-quentin">
                             <a href="javascript:;" data-expiryUser-id="{{ $expiryUser->id }}"
-                            class="editExpiryUser task_view_more d-flex align-items-center justify-content-center">
+                            class="editExpiryUser task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin">
                                 <i class="fa fa-edit icons mr-1"></i> @lang('app.edit')
                             </a>
                         </div>
-                        <div class="task_view mt-1 mt-lg-0 mt-md-0 ml-1">
+                        <div class="task_view-quentin mt-1 mt-lg-0 mt-md-0 ml-1">
                             <a href="javascript:;" data-expiryUser-id="{{ $expiryUser->id }}"
-                            class="delete-login-expiry-user task_view_more d-flex align-items-center justify-content-center">
+                            class="delete-login-expiry-user task_view-quentin_more quentin tw-border-none tw-bg-[#838383] tw-text-start tw-p-2 tw-text-white tw-rounded-md quentin">
                                 <i class="fa fa-trash icons mr-1"></i> @lang('app.delete')
                             </a>
                         </div>

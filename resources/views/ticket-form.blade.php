@@ -291,7 +291,7 @@
             <div class="mt-4 mb-4 form-actions">
                 <button type="button" id="save-form" class="mr-3 btn btn-primary"><i class="fa fa-check"></i>
                     @lang('app.save')</button>
-                <button type="reset" class="btn btn-secondary">@lang('app.reset')</button>
+                <button type="reset" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white ">@lang('app.reset')</button>
             </div>
         </x-form>
 

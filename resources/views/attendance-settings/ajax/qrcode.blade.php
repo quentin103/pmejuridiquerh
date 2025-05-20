@@ -74,7 +74,7 @@
         <button id="downloadBtn" class="btn btn-primary btn-sm mr-3" onclick="downloadQRCode()">
             <i class="fas fa-download"></i> @lang('app.download')
         </button>
-        <button id="printBtn" class="btn btn-secondary btn-sm mr-3" onclick="printQRCode()">
+        <button id="printBtn" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  btn-sm mr-3" onclick="printQRCode()">
             <i class="fas fa-print"></i> @lang('app.print')
         </button>
     </x-setting-form-actions>
