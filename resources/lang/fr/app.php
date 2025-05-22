@@ -365,7 +365,7 @@ return [
     'labelName' => 'Nom de l\'étiquette',
     'color' => 'Couleur',
     'columnStatus' => 'Statut',
-    'hr' => 'HEURE',
+    'hr' => 'Ressources Humaines',
     'work' => 'Travail',
     'contractType' => 'Type de contrat',
     'contract' => 'Contracter',

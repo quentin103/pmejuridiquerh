@@ -3,7 +3,7 @@
         <div
             class="card-quentin bg-white p-20 d-flex justify-content-between align-items-center mt-3 mt-lg-0 mt-md-0">
             <div class="d-block ">
-                <h5 class="f-15 f-w-500 mb-20 text-darkest-grey"> @lang('app.menu.projects') </h5>
+                <h5 class="f-15 f-w-500 text-darkest-grey"> @lang('app.menu.projects') </h5>
                 <div class="d-flex">
                     <a href="{{ route('projects.index') . '?assignee=me&status=in progress' }}">
                         <p class="mb-0 f-21 font-weight-bold text-blue d-grid mr-5">
