@@ -16,11 +16,9 @@ RUN echo '<Directory /var/www/public>\n\
     Require all granted\n\
 </Directory>' >> /etc/apache2/apache2.conf
 
-# Installer Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-
 # 📦 Copier TOUT le projet Laravel dans l’image
 COPY . /var/www
 
 # Définir le dossier de travail
 WORKDIR /var/www
+RUN chmod -R 777 storage bootstrap/cache
