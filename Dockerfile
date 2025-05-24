@@ -1,19 +1,23 @@
 FROM php:8.2-apache
 
-# Active mod_rewrite (nécessaire pour Laravel)
+# Installe les extensions nécessaires
+RUN apt-get update && apt-get install -y \
+    zip unzip git curl libpng-dev libonig-dev libxml2-dev libzip-dev libpq-dev \
+    && docker-php-ext-install pdo pdo_mysql zip mbstring exif bcmath gd
+
+# Active mod_rewrite
 RUN a2enmod rewrite
 
-# Change le doc root vers /public
-ENV APACHE_DOCUMENT_ROOT /var/www/html
+# Modifie le DocumentRoot d’Apache pour qu’il pointe vers /var/www/public
+RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/public|g' /etc/apache2/sites-available/000-default.conf
 
-# Mise à jour du vhost pour qu'il serve le dossier public
-RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/000-default.conf
+# Ajoute aussi les droits d'accès dans la conf Apache (AllowOverride)
+RUN echo "<Directory /var/www/public>\n\
+    AllowOverride All\n\
+    Require all granted\n\
+</Directory>" >> /etc/apache2/apache2.conf
 
-# Copie tout ton projet Laravel dans le container
-COPY . /var/www/html
+# Installe Composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Fix des permissions pour Laravel (optionnel si ton CMS n’utilise pas de stockage local)
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache \
-    && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
-# C'est Apache qui lance tout
-CMD ["apache2-foreground"]
+WORKDIR /var/www
