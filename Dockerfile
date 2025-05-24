@@ -16,10 +16,10 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www
 
 # Copie les fichiers du projet dans le conteneur (géré par docker-compose normalement)
-# COPY . .
+COPY . .
 
 # Change les permissions (à ajuster si tu bosses en dev)
-# RUN chown -R www-data:www-data /var/www
+RUN chown -R www-data:www-data /var/www
 
 # Expose le port 80 (déjà fait par l’image apache, mais pour info)
 EXPOSE 80
