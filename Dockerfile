@@ -15,6 +15,5 @@ COPY . /var/www/html
 # Fix des permissions pour Laravel (optionnel si ton CMS n’utilise pas de stockage local)
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache \
     && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
-
 # C'est Apache qui lance tout
 CMD ["apache2-foreground"]
