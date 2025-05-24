@@ -1,24 +1,22 @@
+# Utilise une image PHP avec Apache
 FROM php:8.2-apache
 
-# Install PHP extensions
+# Installe les extensions nécessaires à Laravel
 RUN apt-get update && apt-get install -y \
-    zip unzip curl git libpng-dev libonig-dev libxml2-dev libzip-dev \
-    && docker-php-ext-install pdo pdo_mysql mbstring zip exif bcmath
+    libonig-dev libzip-dev unzip \
+    && docker-php-ext-install pdo pdo_mysql mbstring zip
 
-# Active mod_rewrite
+# Active le mod_rewrite (nécessaire pour Laravel)
 RUN a2enmod rewrite
 
-# Définir DocumentRoot vers public/
-RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/public|g' /etc/apache2/sites-available/000-default.conf
-RUN echo '<Directory /var/www/public>\n\
-    Options Indexes FollowSymLinks\n\
-    AllowOverride All\n\
-    Require all granted\n\
-</Directory>' >> /etc/apache2/apache2.conf
+# Copie la config Apache custom (voir plus bas)
+COPY ./docker/apache/laravel.conf /etc/apache2/sites-available/000-default.conf
 
-# 📦 Copier TOUT le projet Laravel dans l’image
-COPY . /var/www
+# Copie tous les fichiers Laravel
+COPY . /var/www/html
 
-# Définir le dossier de travail
-WORKDIR /var/www
-RUN chmod -R 777 storage bootstrap/cache
+# Donne les bons droits à Apache sur storage et cache
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+
+# Point d'entrée
+CMD ["apache2-foreground"]
