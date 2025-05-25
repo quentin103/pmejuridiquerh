@@ -15,7 +15,7 @@ RUN apk add --no-cache \
 
 # Copier le projet Laravel (avec /vendor déjà présent)
 COPY . /var/www
-WORKDIR /var/www
+WORKDIR /var/www 
 
 # Donner les bonnes permissions
 RUN chown -R www-data:www-data /var/www \
