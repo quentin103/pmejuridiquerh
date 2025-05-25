@@ -1,40 +1,27 @@
-FROM php:8.1-apache
+FROM php:8.2-fpm
 
-LABEL authors="CHRISTIAN AKESSE"
-
-# Installe les dépendances système
+# Installer les extensions PHP requises par Laravel
 RUN apt-get update && apt-get install -y \
-    git \
-    curl \
-    unzip \
-    zip \
     libpng-dev \
-    libjpeg62-turbo-dev \
-    libfreetype6-dev \
+    libjpeg-dev \
     libonig-dev \
     libxml2-dev \
     libzip-dev \
-    libpq-dev \
-    cron \
-    vim
+    unzip \
+    zip \
+    && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip
 
-# Installe les extensions PHP nécessaires à Laravel
-RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install gd pdo_mysql zip mbstring exif pcntl bcmath
+# Définir le dossier de travail
+WORKDIR /var/www
 
-# Active mod_rewrite
-RUN a2enmod rewrite
+# Copier tout le projet (inclut vendor, .env, etc.)
+COPY . .
 
-# Crée le dossier de travail
-WORKDIR /var/www/html
+# Donner les bonnes permissions
+RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
-# Copie ton projet Laravel (avec vendor, .env, etc.)
-COPY . /var/www/html
+# Exposer le port utilisé par PHP-FPM
+EXPOSE 9000
 
-# Fixe les permissions pour Laravel
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
-
-# Configuration Apache (facultatif, si tu veux une config custom)
-COPY ./docker/apache/laravel.conf /etc/apache2/sites-enabled/000-default.conf
-
-# Pas besoin de CMD personnalisé, Apache se lance automatiquement
+# Lancer PHP-FPM
+CMD ["php-fpm"]
