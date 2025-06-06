@@ -19,6 +19,10 @@ use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\HospitalController;
+use App\Http\Controllers\RecrutementController;
+use App\Http\Controllers\AccidentController;
+use App\Http\Controllers\BaseLegalController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SubTaskController;
 use App\Http\Controllers\TimelogController;
@@ -37,6 +41,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EventFileController;
 use App\Http\Controllers\LeadBoardController;
 use App\Http\Controllers\LeaveFileController;
+use App\Http\Controllers\HospitalFileController;
 use App\Http\Controllers\QuickbookController;
 use App\Http\Controllers\TaskBoardController;
 use App\Http\Controllers\TaskLabelController;
@@ -55,6 +60,8 @@ use App\Http\Controllers\EmployeeDocController;
 use App\Http\Controllers\LeadCategoryController;
 use App\Http\Controllers\LeaveReportController;
 use App\Http\Controllers\LeavesQuotaController;
+use App\Http\Controllers\HospitalReportController;
+use App\Http\Controllers\HospitalsQuotaController;
 use App\Http\Controllers\MessageFileController;
 use App\Http\Controllers\ProductFileController;
 use App\Http\Controllers\ProjectFileController;
@@ -197,7 +204,7 @@ Route::group(['middleware' => ['auth', 'multi-company-select', 'email_verified']
     Route::post('employees/send-invite', [EmployeeController::class, 'sendInvite'])->name('employees.send_invite');
     Route::post('employees/create-link', [EmployeeController::class, 'createLink'])->name('employees.create_link');
     Route::post('/get-exit-date-message', [EmployeeController::class, 'getExitDateMessage'])->name('getExitDateMessage');
-    Route::resource('employees', EmployeeController::class);
+    Route::resource('employees', EmployeeController::class,); 
     Route::resource('passport', PassportController::class);
     Route::resource('employee-visa', EmployeeVisaController::class);
 
@@ -208,6 +215,9 @@ Route::group(['middleware' => ['auth', 'multi-company-select', 'email_verified']
 
     Route::get('employee-leaves/employeeLeaveTypes/{id}', [LeavesQuotaController::class, 'employeeLeaveTypes'])->name('employee-leaves.employee_leave_types');
     Route::resource('employee-leaves', LeavesQuotaController::class);
+
+    Route::get('employee-hospitals/employeeLeaveTypes/{id}', [HospitalsQuotaController::class, 'employeeLeaveTypes'])->name('employee-hospitals.employee_leave_types');
+    Route::resource('employee-hospitals', HospitalsQuotaController::class);
 
     Route::get('designations/designation-hierarchy', [DesignationController::class, 'hierarchyData'])->name('designation.hierarchy');
     Route::post('designations/changeParent', [DesignationController::class, 'changeParent'])->name('designation.changeParent');
@@ -329,6 +339,19 @@ Route::group(['middleware' => ['auth', 'multi-company-select', 'email_verified']
     Route::resource('productCategory', ProductCategoryController::class);
     Route::get('getProductSubCategories/{id}', [ProductSubCategoryController::class, 'getSubCategories'])->name('get_product_sub_categories');
     Route::resource('productSubCategory', ProductSubCategoryController::class);
+
+    
+    /* hospital */
+    Route::resource('hospital', HospitalController::class);
+    /* recrutement */
+    Route::resource('recrutement', RecrutementController::class);
+      /* baselegal */
+    Route::resource('accident', AccidentController::class);
+      /* baselegal */
+    Route::resource('baselegal', BaseLegalController::class);
+    Route::get('baselegal/consultation', [BaseLegalController::class, 'show'])->name('baselegal.consultation');
+
+    
 
     /* PRODUCT FILES */
     Route::get('product-files/download/{id}', [ProductFileController::class, 'download'])->name('product-files.download');
@@ -535,6 +558,10 @@ Route::group(['middleware' => ['auth', 'multi-company-select', 'email_verified']
     // leaves files routes
     Route::get('leave-files/download/{id}', [LeaveFileController::class, 'download'])->name('leave-files.download');
     Route::resource('leave-files', LeaveFileController::class);
+    
+    // hospital files routes
+    Route::get('hospital-files/download/{id}', [HospitalFileController::class, 'download'])->name('hospital-files.download');
+    Route::resource('hospital-files', HospitalFileController::class);
 
     /* LEAVES */
     Route::get('leaves/leaves-date', [LeaveController::class, 'getDate'])->name('leaves.date');
@@ -806,6 +833,11 @@ Route::group(['middleware' => ['auth', 'multi-company-select', 'email_verified']
     Route::get('leave-report/leave-quota/export-all-leave-quota/{id}/{year}/{month}', [LeavesQuotaController::class, 'exportAllLeaveQuota'])->name('leave_quota.export_all_leave_quota');
     Route::get('leave-report/leave-quota/{id}/{year}/{month}', [LeaveReportController::class, 'employeeLeaveQuota'])->name('leave-report.employee-leave-quota');
     Route::resource('leave-report', LeaveReportController::class);
+
+    Route::get('hospital-report/leave-quota', [HospitalReportController::class, 'leaveQuota'])->name('hospital-report.leave_quota');
+    Route::get('hospital-report/leave-quota/export-all-leave-quota/{id}/{year}/{month}', [HospitalsQuotaController::class, 'exportAllLeaveQuota'])->name('hospital_quota.export_all_leave_quota');
+    Route::get('hospital-report/leave-quota/{id}/{year}/{month}', [HospitalReportController::class, 'employeeLeaveQuota'])->name('hospital-report.employee-leave-quota');
+    Route::resource('hospital-report', HospitalReportController::class);
 
     Route::resource('attendance-report', AttendanceReportController::class);
 
