@@ -347,12 +347,40 @@ Route::group(['middleware' => ['auth', 'multi-company-select', 'email_verified']
     Route::resource('recrutement', RecrutementController::class);
       /* baselegal */
     Route::resource('accident', AccidentController::class);
-      /* baselegal */
-    Route::resource('baselegal', BaseLegalController::class);
-    Route::get('baselegal/consultation', [BaseLegalController::class, 'show'])->name('baselegal.consultation');
 
     
+      /* baselegal */
+    Route::resource('baselegal', BaseLegalController::class);
+    Route::get('baselegal/consultation/index', [BaseLegalController::class, 'index'])->name('baselegal_index');
+    Route::get('baselegal/consultation', [BaseLegalController::class, 'show'])->name('baselegal_consultation');
+    Route::get('baselegal/document', [BaseLegalController::class, 'documentsIndex'])->name('baselegal_documents_index');
+    Route::get('baselegal/document/create/form', [BaseLegalController::class, 'documentsCreate'])->name('base_documentaire_documents_create_form');
+    Route::post('baselegal/document/create/form/store', [BaseLegalController::class, 'documentsStore'])->name('base_documentaire_documents_store');
+    Route::get('baselegal/document/show/detail/{document}', [BaseLegalController::class, 'documentsShow'])->name('base_documentaire_documents_show');
+    Route::get('baselegal/document/update/form/{document}/edit', [BaseLegalController::class, 'documentsEdit'])->name('base_documentaire_documents_edit_form');
+    Route::put('baselegal/document/update/{document}', [BaseLegalController::class, 'documentsUpdate'])->name('base_documentaire_documents_edit');
+    Route::delete('baselegal/document/destroy/{document}', [BaseLegalController::class, 'documentsDestroy'])->name('base_documentaire_documents_destroy');
 
+    /* thematiques */
+    Route::get('baselegal/thematique/index', [BaseLegalController::class, 'thematiquesIndex'])->name('base-legal.thematiques.index');
+    Route::get('baselegal/thematique/{thematique}/edit', [BaseLegalController::class, 'thematiquesEdit'])->name('base-legal.thematiques.edit');
+    Route::get('baselegal/thematique/form/create', [BaseLegalController::class, 'thematiquesCreate'])->name('base-legal.thematiques.create');
+    Route::delete('baselegal/thematique/destroy/{thematique}', [BaseLegalController::class, 'thematiquesDestroy'])->name('base-legal.thematiques.destroy');
+    Route::get('baselegal/thematique/{thematique}', [BaseLegalController::class, 'thematiquesShow'])->name('base-legal.thematiques.show');
+    Route::post('baselegal/thematique', [BaseLegalController::class, 'thematiquesStore'])->name('base-legal.thematiques.store');
+    Route::put('baselegal/thematique/{thematique}', [BaseLegalController::class, 'thematiquesUpdate'])->name('base-legal.thematiques.update');
+
+    /* sources */
+    Route::get('baselegal/source/index', [BaseLegalController::class, 'sourcesIndex'])->name('base-legal.sources.index');
+    Route::get('baselegal/source/{source}/edit', [BaseLegalController::class, 'sourcesEdit'])->name('base-legal.sources.edit');
+    Route::get('baselegal/source/form/create', [BaseLegalController::class, 'sourcesCreate'])->name('base-legal.sources.create');
+    Route::delete('baselegal/source/destroy/{source}', [BaseLegalController::class, 'sourcesDestroy'])->name('base-legal.sources.destroy');
+    Route::get('baselegal/source/{source}', [BaseLegalController::class, 'sourcesShow'])->name('base-legal.sources.show');
+    Route::post('baselegal/source', [BaseLegalController::class, 'sourcesStore'])->name('base-legal.sources.store');
+    Route::put('baselegal/source/{source}', [BaseLegalController::class, 'sourcesUpdate'])->name('base-legal.sources.update');
+
+
+    
     /* PRODUCT FILES */
     Route::get('product-files/download/{id}', [ProductFileController::class, 'download'])->name('product-files.download');
     Route::post('product-files/delete-image/{id}', [ProductFileController::class, 'deleteImage'])->name('product-files.delete_image');

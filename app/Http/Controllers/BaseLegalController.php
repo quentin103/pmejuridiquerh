@@ -101,7 +101,11 @@ class BaseLegalController extends AccountBaseController
         }
 
         $this->documents = $query->latest('date_publication')->paginate(12);
-        $this->thematiques = Thematique::withCount('documents')->get();
+        $this->thematiques = Thematique::withCount([
+    'documents' => function ($query) {
+        $query->where('actif', true);
+    }
+])->get();
         $this->sourceTypes = Source::select('type')->distinct()->get();
 
         return view('base-legal.consultation',$this->data);
@@ -135,11 +139,11 @@ class BaseLegalController extends AccountBaseController
             $query->where('actif', $request->actif);
         }
 
-        $documents = $query->latest()->paginate(15);
-        $thematiques = Thematique::all();
-        $sources = Source::all();
+        $this->documents = $query->latest()->paginate(15);
+        $this->thematiques = Thematique::all();
+        $this->sources = Source::all();
 
-        return view('base-legal.documents.index', compact('documents', 'thematiques', 'sources'));
+        return view('base-legal.documents.index', $this->data);
     }
 
     /**
@@ -147,10 +151,10 @@ class BaseLegalController extends AccountBaseController
      */
     public function documentsCreate()
     {
-        $sources = Source::all();
-        $thematiques = Thematique::all();
+        $this->sources = Source::all();
+        $this->thematiques = Thematique::all();
         
-        return view('base-legal.documents.create', compact('sources', 'thematiques'));
+        return view('base-legal.documents.create',$this->data);
     }
 
     /**
@@ -179,8 +183,8 @@ class BaseLegalController extends AccountBaseController
         $document = Document::create($validated);
         $document->thematiques()->sync($request->thematiques);
 
-        return redirect()->route('base-legal.documents.index')
-            ->with('success', 'Document créé avec succès');
+        return redirect()->route('baselegal_documents_index'); 
+
     }
 
     /**
@@ -188,8 +192,8 @@ class BaseLegalController extends AccountBaseController
      */
     public function documentsShow(Document $document)
     {
-        $document->load(['source', 'thematiques']);
-        return view('base-legal.documents.show', compact('document'));
+        $this->document = $document->load(['source', 'thematiques']);
+        return view('base-legal.documents.show', $this->data);
     }
 
     /**
@@ -197,10 +201,10 @@ class BaseLegalController extends AccountBaseController
      */
     public function documentsEdit(Document $document)
     {
-        $sources = Source::all();
-        $thematiques = Thematique::all();
-        
-        return view('base-legal.documents.edit', compact('document', 'sources', 'thematiques'));
+        $this->sources = Source::all();
+        $this->thematiques = Thematique::all();
+        $this->document = $document->load(['source', 'thematiques']);
+        return view('base-legal.documents.edit',$this->data);
     }
 
     /**
@@ -217,7 +221,7 @@ class BaseLegalController extends AccountBaseController
             'source_id' => 'required|exists:sources,id',
             'thematiques' => 'required|array',
             'thematiques.*' => 'exists:thematiques,id',
-            'actif' => 'boolean'
+            'actif' => ''
         ]);
 
         if ($request->hasFile('fichier_pdf')) {
@@ -233,8 +237,7 @@ class BaseLegalController extends AccountBaseController
         $document->update($validated);
         $document->thematiques()->sync($request->thematiques);
 
-        return redirect()->route('base-legal.documents.index')
-            ->with('success', 'Document mis à jour avec succès');
+        return redirect()->route('base_documentaire_documents_edit_form', ['document' => $document->id]); 
     }
 
     /**
@@ -242,15 +245,15 @@ class BaseLegalController extends AccountBaseController
      */
     public function documentsDestroy(Document $document)
     {
-        if ($document->fichier_pdf) {
-            Storage::disk('public')->delete($document->fichier_pdf);
-        }
-        
-        $document->delete();
+            if (isset($document->fichier_pdf)) {
+            // Supprimer le fichier PDF associé
+                Storage::disk('public')->delete($document->fichier_pdf);
+            }
+            
+            $document->delete();
 
-        return redirect()->route('base-legal.documents.index')
-            ->with('success', 'Document supprimé avec succès');
-    }
+        return redirect()->route('baselegal_index'); 
+    }   
 
     // ================================
     // GESTION DES THÉMATIQUES
@@ -261,8 +264,8 @@ class BaseLegalController extends AccountBaseController
      */
     public function thematiquesIndex()
     {
-        $thematiques = Thematique::withCount('documents')->get();
-        return view('base-legal.thematiques.index', compact('thematiques'));
+        $this->thematiques = Thematique::withCount('documents')->get();
+        return view('base-legal.thematiques.index',$this->data);
     }
 
     /**
@@ -270,7 +273,7 @@ class BaseLegalController extends AccountBaseController
      */
     public function thematiquesCreate()
     {
-        return view('base-legal.thematiques.create');
+        return view('base-legal.thematiques.create',$this->data);
     }
 
     /**
@@ -285,8 +288,7 @@ class BaseLegalController extends AccountBaseController
 
         Thematique::create($validated);
 
-        return redirect()->route('base-legal.thematiques.index')
-            ->with('success', 'Thématique créée avec succès');
+        return redirect()->route('base-legal.thematiques.index');
     }
 
     /**
@@ -294,7 +296,8 @@ class BaseLegalController extends AccountBaseController
      */
     public function thematiquesShow(Thematique $thematique, Request $request)
     {
-        $query = $thematique->documents()->with('source')->actif();
+        $query = $thematique->documents()->with('source');
+        //QQQQQ ->actif()
 
         if ($request->filled('source_type')) {
             $query->parSource($request->source_type);
@@ -304,14 +307,16 @@ class BaseLegalController extends AccountBaseController
             $query->where('titre', 'like', '%' . $request->search . '%');
         }
 
-        $documents = $query->latest('date_publication')->paginate(10);
-        $sourceTypes = $thematique->documents()
+        $this->thematique = $thematique;
+
+        $this->documents = $query->latest('date_publication')->paginate(10);
+        $this->sourceTypes = $thematique->documents()
             ->join('sources', 'documents.source_id', '=', 'sources.id')
             ->select('sources.type')
             ->distinct()
             ->pluck('type');
 
-        return view('base-legal.thematiques.show', compact('thematique', 'documents', 'sourceTypes'));
+        return view('base-legal.thematiques.show', $this->data);
     }
 
     /**
@@ -319,7 +324,8 @@ class BaseLegalController extends AccountBaseController
      */
     public function thematiquesEdit(Thematique $thematique)
     {
-        return view('base-legal.thematiques.edit', compact('thematique'));
+        $this->thematique = $thematique;
+        return view('base-legal.thematiques.edit', $this->data);
     }
 
     /**
@@ -358,8 +364,8 @@ class BaseLegalController extends AccountBaseController
      */
     public function sourcesIndex()
     {
-        $sources = Source::withCount('documents')->get();
-        return view('base-legal.sources.index', compact('sources'));
+        $this->sources = Source::withCount('documents')->get();
+        return view('base-legal.sources.index',$this->data);
     }
 
     /**
@@ -367,8 +373,8 @@ class BaseLegalController extends AccountBaseController
      */
     public function sourcesCreate()
     {
-        $types = Source::TYPES;
-        return view('base-legal.sources.create', compact('types'));
+        $this->types = Source::TYPES;
+        return view('base-legal.sources.create',$this->data);
     }
 
     /**
@@ -383,8 +389,7 @@ class BaseLegalController extends AccountBaseController
 
         Source::create($validated);
 
-        return redirect()->route('base-legal.sources.index')
-            ->with('success', 'Source créée avec succès');
+        return redirect()->route('base-legal.sources.index');
     }
 
     /**
@@ -401,16 +406,16 @@ class BaseLegalController extends AccountBaseController
         if ($request->filled('search')) {
             $query->where('titre', 'like', '%' . $request->search . '%');
         }
-
-        $documents = $query->latest('date_publication')->paginate(10);
-        $thematiques = $source->documents()
+         $this->source = $source;
+        $this->documents = $query->latest('date_publication')->paginate(10);
+        $this->thematiques = $source->documents()
             ->join('document_thematique', 'documents.id', '=', 'document_thematique.document_id')
             ->join('thematiques', 'document_thematique.thematique_id', '=', 'thematiques.id')
             ->select('thematiques.nom', 'thematiques.slug')
             ->distinct()
             ->get();
 
-        return view('base-legal.sources.show', compact('source', 'documents', 'thematiques'));
+        return view('base-legal.sources.show', $this->data);
     }
 
     /**
@@ -418,8 +423,31 @@ class BaseLegalController extends AccountBaseController
      */
     public function sourcesEdit(Source $source)
     {
-        $types = Source::TYPES;
-        return view('base-legal.sources.edit', compact('source', 'types'));
+       $types = Source::TYPES; // ← Définir $types d'abord
+    
+    // Version simplifiée et sûre
+    $otherSources = [];
+    
+    foreach ($types as $typeKey => $typeLabel) {
+        $otherSources[$typeKey] = Source::where('type', $typeKey)
+            ->where('id', '!=', $source->id)
+            ->withCount('documents')
+            ->select('id', 'nom')
+            ->get()
+            ->map(function($sourceItem) {
+                return [
+                    'id' => $sourceItem->id,
+                    'nom' => $sourceItem->nom,
+                    'documents_count' => $sourceItem->documents_count ?? 0
+                ];
+            })
+            ->toArray();
+    }
+    
+    $this->source = $source;
+    $this->types= $types;
+    $this->otherSources = $otherSources;
+        return view('base-legal.sources.edit',$this->data);
     }
 
     /**
@@ -433,9 +461,9 @@ class BaseLegalController extends AccountBaseController
         ]);
 
         $source->update($validated);
+        
 
-        return redirect()->route('base-legal.sources.index')
-            ->with('success', 'Source mise à jour avec succès');
+        return redirect()->route('base-legal.sources.index');
     }
 
     /**
@@ -444,9 +472,7 @@ class BaseLegalController extends AccountBaseController
     public function sourcesDestroy(Source $source)
     {
         $source->delete();
-
-        return redirect()->route('base-legal.sources.index')
-            ->with('success', 'Source supprimée avec succès');
+        return redirect()->route('base-legal.sources.index');
     }
 
     // ================================

@@ -21,13 +21,15 @@
                 <dd class="tw-mt-1 tw-text-xl tw-font-semibold tw-tracking-tight tw-text-gray-900">
                     {{ $stats['totalSources'] }}</dd>
             </div>
-
-            <div class=" tw-rounded-lg tw-bg-white tw-p-4 tw-shadow">
-                <dt class="tw-truncate tw-text-sm tw-font-medium tw-text-gray-500">Documents inactifs</dt>
-                <dd class="tw-mt-1 tw-text-xl tw-font-semibold tw-tracking-tight tw-text-red-600">
-                    {{ $stats['documentsInactifs'] }}</dd>
-            </div>
+            @if (in_array('admin', user_roles()))
+                <div class=" tw-rounded-lg tw-bg-white tw-p-4 tw-shadow">
+                    <dt class="tw-truncate tw-text-sm tw-font-medium tw-text-gray-500">Documents inactifs</dt>
+                    <dd class="tw-mt-1 tw-text-xl tw-font-semibold tw-tracking-tight tw-text-red-600">
+                        {{ $stats['documentsInactifs'] }}</dd>
+                </div>
+            @endif
         </div>
+
 
         <div class="tw-grid tw-grid-cols-1 tw-gap-4 tw-lg:tw-grid-cols-2 tw-pt-4">
             <!-- Actions rapides -->
@@ -35,9 +37,9 @@
                 <div class="tw-px-4 tw-py-5 tw-sm:tw-px-6">
                     <h3 class="tw-text-lg tw-font-medium tw-leading-6 tw-text-gray-900 tw-mb-4">Actions rapides</h3>
                     <div class="tw-grid tw-grid-cols-1 tw-gap-3 sm:tw-grid-cols-2">
-                        <!-- href="route('baselegal.documents.create') }}"  -->
-                        <a
-                            class="tw-inline-flex tw-items-center tw-justify-center tw-px-4 tw-py-2 tw-border tw-border-transparent tw-text-sm tw-font-medium tw-rounded-md tw-text-white tw-bg-indigo-600 hover:tw-bg-indigo-700">
+                         @if (in_array('admin', user_roles()))
+                        <a href="{{ route('base_documentaire_documents_create_form') }}"
+                            class="tw-inline-flex tw-items-center tw-justify-center tw-px-4 tw-py-2 tw-border tw-border-transparent tw-text-sm tw-font-medium tw-rounded-md tw-text-white tw-bg-[#838383] hover:tw-bg-[#838383]">
                             <svg class="tw--ml-1 tw-mr-2 tw-h-5 tw-w-5" fill="none" viewBox="0 0 24 24"
                                 stroke-width="1.5" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -46,17 +48,17 @@
                             Nouveau document
                         </a>
 
-                        <a
+                        <a href="{{ route('base-legal.thematiques.index') }}"
                             class="tw-inline-flex tw-items-center tw-justify-center tw-px-4 tw-py-2 tw-border tw-border-gray-300 tw-text-sm tw-font-medium tw-rounded-md tw-text-gray-700 tw-bg-white hover:tw-bg-gray-50">
                             Nouvelle thématique
                         </a>
 
-                        <a
+                        <a href="{{ route('base-legal.sources.index') }}"
                             class="tw-inline-flex tw-items-center tw-justify-center tw-px-4 tw-py-2 tw-border tw-border-gray-300 tw-text-sm tw-font-medium tw-rounded-md tw-text-gray-700 tw-bg-white hover:tw-bg-gray-50">
                             Nouvelle source
                         </a>
-
-                        <a href="{{ route('baselegal.consultation') }}"
+                        @endif
+                        <a href="{{ route('baselegal_consultation') }}"
                             class="tw-inline-flex tw-items-center tw-justify-center tw-px-4 tw-py-2 tw-border tw-border-gray-300 tw-text-sm tw-font-medium tw-rounded-md tw-text-gray-700 tw-bg-white hover:tw-bg-gray-50">
                             Voir la consultation
                         </a>
@@ -78,7 +80,7 @@
                                 <div class="tw-flex tw-items-center tw-space-x-2">
                                     <span class="tw-text-sm tw-text-gray-500">{{ $data['count'] }} source(s)</span>
                                     <span
-                                        class="tw-inline-flex tw-items-center tw-px-2.5 tw-py-0.5 tw-rounded-full tw-text-xs tw-font-medium tw-bg-indigo-100 tw-text-indigo-800">
+                                        class="tw-inline-flex tw-items-center tw-px-2.5 tw-py-0.5 tw-rounded-full tw-text-xs tw-font-medium tw-bg-gray-100 tw-text-gray-800">
                                         {{ $data['documents'] }} doc(s)
                                     </span>
                                 </div>
@@ -90,72 +92,83 @@
         </div>
 
         <!-- Documents récents et Top thématiques -->
-        {{-- <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
-        <!-- Documents récents -->
-        <div class="bg-white shadow overflow-hidden sm:rounded-md">
-            <div class="px-4 py-5 sm:px-6">
-                <h3 class="text-lg leading-6 font-medium text-gray-900">Documents récents</h3>
-                <p class="mt-1 max-w-2xl text-sm text-gray-500">Les 5 derniers documents ajoutés</p>
-            </div>
-            <ul role="list" class="divide-y divide-gray-200">
-                @forelse($recentDocuments as $document)
-                    <li>
-                        <a href="{{ route('baselegal.documents.show', $document) }}" class="block hover:bg-gray-50">
-                            <div class="px-4 py-4 sm:px-6">
-                                <div class="flex items-center justify-between">
-                                    <div class="flex-1 min-w-0">
-                                        <p class="text-sm font-medium text-indigo-600 truncate">{{ $document->titre }}</p>
-                                        <p class="text-sm text-gray-500">{{ $document->source->type_libelle }} - {{ $document->source->nom }}</p>
-                                    </div>
-                                    <div class="flex-shrink-0">
-                                        <span class="text-xs text-gray-400">{{ $document->created_at->diffForHumans() }}</span>
+        <!-- Documents récents et Top thématiques -->
+        <div class="tw-grid tw-grid-cols-1 tw-gap-6 lg:tw-grid-cols-2 tw-py-4">
+            <!-- Documents récents -->
+            <div class="tw-bg-white tw-shadow tw-overflow-hidden sm:tw-rounded-md">
+                <div class="tw-px-4 tw-py-5 sm:tw-px-6">
+                    <h3 class="tw-text-lg tw-leading-6 tw-font-medium tw-text-gray-900">Documents récents</h3>
+                    <p class="tw-mt-1 tw-max-w-2xl tw-text-sm tw-text-gray-500">Les 5 derniers documents ajoutés</p>
+                </div>
+                <ul role="list" class="tw-divide-y tw-divide-gray-200">
+                    @forelse($recentDocuments as $document)
+                        <li>
+                            <a href="{{ route('base_documentaire_documents_show', $document) }}"
+                                class="tw-block hover:tw-bg-gray-50">
+                                <div class="tw-px-4 tw-py-4 sm:tw-px-6">
+                                    <div class="tw-flex tw-items-center tw-justify-between">
+                                        <div class="tw-flex-1 tw-min-w-0">
+                                            <p class="tw-text-sm tw-font-medium tw-text-[#838383] tw-truncate">
+                                                {{ $document->titre }}
+                                            </p>
+                                            <p class="tw-text-sm tw-text-gray-500">{{ $document->source->type_libelle }} -
+                                                {{ $document->source->nom }}</p>
+                                        </div>
+                                        <div class="tw-flex-shrink-0">
+                                            <span
+                                                class="tw-text-xs tw-text-gray-400">{{ $document->created_at->diffForHumans() }}</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
-                    </li>
-                @empty
-                    <li class="px-4 py-4 sm:px-6 text-center text-gray-500">
-                        Aucun document pour le moment
-                    </li>
-                @endforelse
-            </ul>
-        </div>
+                            </a>
+                        </li>
+                    @empty
+                        <li class="tw-px-4 tw-py-4 sm:tw-px-6 tw-text-center tw-text-gray-500">
+                            Aucun document pour le moment
+                        </li>
+                    @endforelse
+                </ul>
+            </div>
 
-        <!-- Top thématiques -->
-        <div class="bg-white shadow overflow-hidden sm:rounded-md">
-            <div class="px-4 py-5 sm:px-6">
-                <h3 class="text-lg leading-6 font-medium text-gray-900">Thématiques les plus utilisées</h3>
-                <p class="mt-1 max-w-2xl text-sm text-gray-500">Top 5 des thématiques</p>
-            </div>
-            <ul role="list" class="divide-y divide-gray-200">
-                @forelse($topThematiques as $thematique)
-                    <li>
-                        <a href="{{ route('baselegal.thematiques.show', $thematique) }}" class="block hover:bg-gray-50">
-                            <div class="px-4 py-4 sm:px-6">
-                                <div class="flex items-center justify-between">
-                                    <div class="flex-1 min-w-0">
-                                        <p class="text-sm font-medium text-gray-900">{{ $thematique->nom }}</p>
-                                        @if ($thematique->description)
-                                            <p class="text-sm text-gray-500 truncate">{{ $thematique->description }}</p>
-                                        @endif
-                                    </div>
-                                    <div class="flex-shrink-0">
-                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                                            {{ $thematique->documents_count }} doc(s)
-                                        </span>
+            <!-- Top thématiques -->
+            <div class="tw-bg-white tw-shadow tw-overflow-hidden sm:tw-rounded-md">
+                <div class="tw-px-4 tw-py-5 sm:tw-px-6">
+                    <h3 class="tw-text-lg tw-leading-6 tw-font-medium tw-text-gray-900">Thématiques les plus utilisées</h3>
+                    <p class="tw-mt-1 tw-max-w-2xl tw-text-sm tw-text-gray-500">Top 5 des thématiques</p>
+                </div>
+                <ul role="list" class="tw-divide-y tw-divide-gray-200">
+                    @forelse($topThematiques as $thematique)
+                        <li>
+                            <a href="{{ route('base-legal.thematiques.show', $thematique) }}"
+                                class="tw-block hover:tw-bg-gray-50">
+                                <div class="tw-px-4 tw-py-4 sm:tw-px-6">
+                                    <div class="tw-flex tw-items-center tw-justify-between">
+                                        <div class="tw-flex-1 tw-min-w-0">
+                                            <p class="tw-text-sm tw-font-medium tw-text-gray-900">{{ $thematique->nom }}
+                                            </p>
+                                            @if ($thematique->description)
+                                                <p class="tw-text-sm tw-text-gray-500 tw-truncate">
+                                                    {{ $thematique->description }}
+                                                </p>
+                                            @endif
+                                        </div>
+                                        <div class="tw-flex-shrink-0">
+                                            <span
+                                                class="tw-inline-flex tw-items-center tw-px-2.5 tw-py-0.5 tw-rounded-full tw-text-xs tw-font-medium tw-bg-green-100 tw-text-green-800">
+                                                {{ $thematique->documents_count }} doc(s)
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
-                    </li>
-                @empty
-                    <li class="px-4 py-4 sm:px-6 text-center text-gray-500">
-                        Aucune thématique pour le moment
-                    </li>
-                @endforelse
-            </ul>
+                            </a>
+                        </li>
+                    @empty
+                        <li class="tw-px-4 tw-py-4 sm:tw-px-6 tw-text-center tw-text-gray-500">
+                            Aucune thématique pour le moment
+                        </li>
+                    @endforelse
+                </ul>
+            </div>
         </div>
-    </div> --}}
     </div>
 @endsection

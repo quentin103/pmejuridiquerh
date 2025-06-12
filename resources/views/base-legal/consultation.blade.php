@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="tw-space-y-6">
+<div class="tw-space-y-6 tw-p-4">
     <!-- Bannière d'accueil -->
-    <div class="tw-bg-gradient-to-r tw-from-indigo-500 tw-to-purple-600 tw-rounded-lg tw-shadow-xl">
+    <div class="tw-bg-gradient-to-r tw-from-[#838383] tw-to-orange-600 tw-rounded-lg tw-shadow-xl">
         <div class="tw-p-4">
             <div class="tw-max-w-3xl">
                 <h2 class=" tw-text-base tw-md:tw-text-xl tw-font-bold tw-text-white">
@@ -21,8 +21,7 @@
     <div class="tw-bg-white tw-shadow tw-rounded-lg">
         <div class="tw-px-4 tw-py-5 sm:tw-p-6">
             <h3 class="tw-text-lg tw-font-medium tw-leading-6 tw-text-gray-900 tw-mb-4">Rechercher dans la base</h3>
-            <!-- action="{ route('base-legal.consultation') }" -->
-            <form method="GET"  class="tw-space-y-4">
+            <form method="GET" action="{{ route('baselegal_consultation') }}" class="tw-space-y-4">
                 <div class="tw-grid tw-grid-cols-1 tw-gap-4 sm:tw-grid-cols-2 lg:tw-grid-cols-4">
                     <!-- Recherche texte -->
                     <div class="lg:tw-col-span-2">
@@ -35,7 +34,7 @@
                             </div>
                             <input type="text" name="search" id="search" value="{{ request('search') }}"
                                    placeholder="Titre, description..."
-                                   class="focus:tw-ring-indigo-500 focus:tw-border-indigo-500 tw-block tw-w-full tw-pl-10 sm:tw-text-sm tw-border-gray-300 tw-rounded-md">
+                                   class="focus:tw-ring-[#838383] focus:tw-border-[#838383] tw-block tw-w-full tw-pl-10 sm:tw-text-sm tw-border-gray-300 tw-rounded-md tw-border tw-p-2">
                         </div>
                     </div>
 
@@ -43,7 +42,7 @@
                     <div>
                         <label for="thematique" class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Thématique</label>
                         <select name="thematique" id="thematique" 
-                                class="tw-mt-1 tw-block tw-w-full tw-rounded-md tw-border-gray-300 tw-shadow-sm focus:tw-border-indigo-500 focus:tw-ring-indigo-500 sm:tw-text-sm">
+                                class="tw-mt-1 tw-block tw-w-full tw-rounded-md tw-border-gray-300 tw-shadow-sm focus:tw-border-[#838383] focus:tw-ring-[#838383] sm:tw-text-sm">
                             <option value="">Toutes les thématiques</option>
                             @foreach($thematiques as $thematique)
                                 <option value="{{ $thematique->slug }}" 
@@ -58,7 +57,7 @@
                     <div>
                         <label for="source_type" class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Type de source</label>
                         <select name="source_type" id="source_type" 
-                                class="tw-mt-1 tw-block tw-w-full tw-rounded-md tw-border-gray-300 tw-shadow-sm focus:tw-border-indigo-500 focus:tw-ring-indigo-500 sm:tw-text-sm">
+                                class="tw-mt-1 tw-block tw-w-full tw-rounded-md tw-border-gray-300 tw-shadow-sm focus:tw-border-[#838383] focus:tw-ring-[#838383] sm:tw-text-sm">
                             <option value="">Tous les types</option>
                             @foreach($sourceTypes as $sourceType)
                                 <option value="{{ $sourceType->type }}" {{ request('source_type') == $sourceType->type ? 'selected' : '' }}>
@@ -72,15 +71,14 @@
                 <!-- Boutons -->
                 <div class="tw-flex tw-items-center tw-space-x-3">
                     <button type="submit" 
-                            class="tw-inline-flex tw-items-center tw-px-4 tw-py-2 tw-border tw-border-transparent tw-text-sm tw-font-medium tw-rounded-md tw-text-white tw-bg-indigo-600 hover:tw-bg-indigo-700 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-indigo-500">
+                            class="tw-inline-flex tw-items-center tw-px-4 tw-py-2 tw-border tw-border-transparent tw-text-sm tw-font-medium tw-rounded-md tw-text-white tw-bg-[#838383] hover:tw-bg-[#838383] focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-[#838383]">
                         <svg class="-tw-ml-1 tw-mr-2 tw-h-5 tw-w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
                         Rechercher
                     </button>
-                    {{-- {{ route('base-legal.consultation') }} --}}
-                    <a href="" 
-                       class="tw-inline-flex tw-items-center tw-px-4 tw-py-2 tw-border tw-border-gray-300 tw-text-sm tw-font-medium tw-rounded-md tw-text-gray-700 tw-bg-white hover:tw-bg-gray-50 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-indigo-500">
+                    <a href="{{ route('baselegal_consultation') }}" 
+                       class="tw-inline-flex tw-items-center tw-px-4 tw-py-2 tw-border tw-border-gray-300 tw-text-sm tw-font-medium tw-rounded-md tw-text-gray-700 tw-bg-white hover:tw-bg-gray-50 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-[#838383]">
                         Réinitialiser
                     </a>
                 </div>
@@ -107,7 +105,7 @@
                             <div class="tw-flex-1 tw-min-w-0">
                                 <!-- Titre et statut -->
                                 <div class="tw-flex tw-items-center tw-mb-2">
-                                    <h4 class="tw-text-lg tw-font-medium tw-text-indigo-600 tw-truncate">
+                                    <h4 class="tw-text-lg tw-font-medium tw-text-[#838383] tw-truncate">
                                         <!-- { route('base-legal.documents.show', $document) }} -->
                                         <a href="" 
                                            class="hover:tw-text-indigo-800">
@@ -152,8 +150,7 @@
                                 <!-- Thématiques -->
                                 <div class="tw-mt-2 tw-flex tw-flex-wrap tw-gap-1">
                                     @foreach($document->thematiques as $thematique)
-                                    <!-- { route('base-legal.consultation', ['thematique' => $thematique->slug]) }} -->
-                                        <a href="" 
+                                        <a href="{{ route('baselegal_consultation', ['thematique' => $thematique->slug]) }}" 
                                            class="tw-inline-flex tw-items-center tw-px-2.5 tw-py-0.5 tw-rounded-full tw-text-xs tw-font-medium tw-bg-gray-100 tw-text-gray-800 hover:tw-bg-gray-200">
                                             {{ $thematique->nom }}
                                         </a>
@@ -173,8 +170,7 @@
                                         </svg>
                                     </a>
                                 @endif
-                                <!-- { route('base-legal.documents.show', $document) }} -->
-                                <a href=""
+                                <a href="{{ route('base_documentaire_documents_show', $document) }}"
                                    class="tw-inline-flex tw-items-center tw-p-2 tw-border tw-border-gray-300 tw-rounded-md tw-text-gray-400 hover:tw-text-gray-500 hover:tw-bg-gray-50"
                                    title="Voir les détails">
                                     <svg class="tw-h-5 tw-w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -233,9 +229,8 @@
                     Aucun document ne correspond à vos critères de recherche.
                 </p>
                 <div class="tw-mt-6">
-                    <!-- { route('base-legal.consultation') }} -->
-                    <a href="" 
-                       class="tw-inline-flex tw-items-center tw-px-4 tw-py-2 tw-border tw-border-transparent tw-shadow-sm tw-text-sm tw-font-medium tw-rounded-md tw-text-white tw-bg-indigo-600 hover:tw-bg-indigo-700">
+                    <a href="{{ route('baselegal_consultation') }}" 
+                       class="tw-inline-flex tw-items-center tw-px-4 tw-py-2 tw-border tw-border-transparent tw-shadow-sm tw-text-sm tw-font-medium tw-rounded-md tw-text-white tw-bg-[#838383] hover:tw-bg-[#838383]">
                         Voir tous les documents
                     </a>
                 </div>
@@ -252,8 +247,7 @@
                 </h3>
                 <div class="tw-grid tw-grid-cols-1 tw-gap-4 sm:tw-grid-cols-2 lg:tw-grid-cols-3">
                     @foreach($thematiques->sortByDesc('documents_count')->take(6) as $thematique)
-                    <!-- { route('base-legal.consultation', ['thematique' => $thematique->slug]) }} -->
-                        <a href="" 
+                        <a href="{{ route('baselegal_consultation', ['thematique' => $thematique->slug]) }}" 
                            class="tw-relative tw-rounded-lg tw-border tw-border-gray-300 tw-bg-white tw-px-6 tw-py-5 hover:tw-bg-gray-50 tw-transition-colors">
                             <div class="tw-flex tw-items-center tw-justify-between">
                                 <div class="tw-flex-1 tw-min-w-0">
