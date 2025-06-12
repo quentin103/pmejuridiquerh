@@ -131,9 +131,7 @@
             </svg>
         </x-slot>
     </x-menu-item>
-    @endif
-    @if (!in_array('client', user_roles()) &&
-            in_array('clients', user_modules()))
+    @else
      <x-menu-item icon="baselegal" text="Base légale" :link="route('baselegal_consultation')">
         <x-slot name="iconPath">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
