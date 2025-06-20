@@ -26,6 +26,24 @@
     <link rel="icon" type="image/png" sizes="16x16"
           href="{{ isset($company)?$company->favicon_url:global_setting()->favicon_url }}">
 
+
+     <!-- Tailwind CSS via CDN -->
+     <script src="https://cdn.tailwindcss.com"></script>
+
+     <!-- Optionnel : config custom via CDN -->
+     <script>
+         tailwind.config = {
+             prefix: 'tw-', // pour éviter les conflits avec Bootstrap
+             theme: {
+                 extend: {
+                     colors: {
+                         primary: '#1E40AF',
+                     }
+                 }
+             }
+         }
+     </script>
+
     @include('sections.theme_css')
 
     @isset($activeSettingMenu)

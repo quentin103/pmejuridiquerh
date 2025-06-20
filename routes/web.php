@@ -23,6 +23,10 @@ use App\Http\Controllers\HospitalController;
 use App\Http\Controllers\RecrutementController;
 use App\Http\Controllers\AccidentController;
 use App\Http\Controllers\BaseLegalController;
+use App\Http\Controllers\HRDashboardController;
+use App\Http\Controllers\JobOfferController;
+use App\Http\Controllers\JobApplicationController;
+use App\Http\Controllers\InterviewController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SubTaskController;
 use App\Http\Controllers\TimelogController;
@@ -378,6 +382,43 @@ Route::group(['middleware' => ['auth', 'multi-company-select', 'email_verified']
     Route::get('baselegal/source/{source}', [BaseLegalController::class, 'sourcesShow'])->name('base-legal.sources.show');
     Route::post('baselegal/source', [BaseLegalController::class, 'sourcesStore'])->name('base-legal.sources.store');
     Route::put('baselegal/source/{source}', [BaseLegalController::class, 'sourcesUpdate'])->name('base-legal.sources.update');
+
+
+    /* network  */
+   // Dashboard RH
+    Route::get('/hr/dashboard', [HRDashboardController::class, 'index'])->name('hr.dashboard');
+    
+    // Gestion des offres d'emploi
+    Route::resource('job-offers', JobOfferController::class);
+    Route::post('/job-offers/{jobOffer}/publish', [JobOfferController::class, 'publish'])->name('job-offers.publish');
+    Route::post('/job-offers/{jobOffer}/close', [JobOfferController::class, 'close'])->name('job-offers.close');
+    
+    // Gestion des candidatures
+    Route::resource('applications', JobApplicationController::class)->only(['index', 'show']);
+    Route::post('/applications/{application}/rating', [JobApplicationController::class, 'updateRating'])->name('applications.update-rating');
+    Route::get('/applications/{application}/cv', [JobApplicationController::class, 'downloadCV'])->name('applications.download-cv');
+    Route::get('/applications/{application}/cover-letter', [JobApplicationController::class, 'downloadCoverLetter'])->name('applications.download-cover-letter');
+    Route::post('/applications/{application}/status', [JobApplicationController::class, 'updateStatus'])->name('applications.update-status');
+    Route::post('/applications/{application}/rating', [JobApplicationController::class, 'updateRating'])->name('applications.update-rating');
+
+    // Gestion des entretiens
+    Route::resource('interviews', InterviewController::class);
+    Route::get('/interviews/{application}/create', [InterviewController::class, 'create'])->name('interviews.create');
+    Route::post('/interviews/{interview}/feedback', [InterviewController::class, 'addFeedback'])->name('interviews.add-feedback');
+    Route::put('/interviews/save/{interview}/update', [InterviewController::class, 'update'])->name('interviews.update');
+    Route::post('/interviews/save/{interview}/cancel', [InterviewController::class, 'cancel'])->name('interviews.cancel');
+    Route::post('/interviews/reschedule/{interview}', [InterviewController::class, 'reschedule'])->name('interviews.reschedule');
+    Route::get('/interviews/calendar/view', [InterviewController::class, 'calendar'])->name('interviews.calendar');
+    
+    // Workflows de recrutement
+    Route::resource('recruitment-workflows', RecruitmentWorkflowController::class)->only(['index', 'show', 'update']);
+
+
+// Routes publiques pour les candidatures
+Route::get('/careers', [JobOfferController::class, 'publicIndex'])->name('public.job-offers.index');
+Route::get('/careers/{jobOffer}', [JobOfferController::class, 'publicShow'])->name('public.job-offers.show');
+Route::get('/careers/form/{jobOffer}/showApplyForm', [JobApplicationController::class, 'showApplyForm'])->name('public.job-offers.apply-form');
+Route::post('/careers/{jobOffer}/apply', [JobApplicationController::class, 'apply'])->name('public.job-offers.apply');
 
 
     

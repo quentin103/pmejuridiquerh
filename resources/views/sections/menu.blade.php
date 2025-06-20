@@ -97,7 +97,7 @@
         </x-slot>
     </x-menu-item>
 
-    <x-menu-item icon="recrutement" :text="__('Recrutement')" :link="route('recrutement.index')">
+    <x-menu-item icon="recrutement" :text="__('Recrutement')" :link="route('hr.dashboard')">
         <x-slot name="iconPath">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-boxes" viewBox="0 0 16 16">
