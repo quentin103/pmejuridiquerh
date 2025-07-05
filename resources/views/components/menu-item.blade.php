@@ -8,7 +8,7 @@
                     {!! $iconPath !!}
                 </svg>
             @endisset
-            <span class="pl-3">{{ $text }}</span>
+            <span class="pl-3 tw-line-clamp-1  ">{{ $text }}</span>
             @if ($addon)
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-gift ml-2 text-yellow" viewBox="0 0 16 16" data-toggle="tooltip"
@@ -30,7 +30,7 @@
                     {!! $iconPath !!}
                 </svg>
             @endisset
-            <span class="pl-3">{{ $text }}</span>
+            <span class="pl-3 tw-line-clamp-1  ">{{ $text }}</span>
 
             @if ($addon)
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"

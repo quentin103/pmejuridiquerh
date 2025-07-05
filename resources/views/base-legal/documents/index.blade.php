@@ -20,7 +20,7 @@
                     <div>
                         <label for="thematique" class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Thématique</label>
                         <select name="thematique" id="thematique" 
-                                class="tw-mt-1 tw-block tw-w-full tw-rounded-md tw-border-gray-300 tw-shadow-sm focus:tw-border-orange-500 focus:tw-ring-orange-500 sm:tw-text-sm">
+                                class="tw-w-full tw-px-4 tw-py-3 tw-border tw-border-gray-300 tw-rounded-lg tw-appearance-none tw-bg-white tw-text-gray-700 tw-shadow-sm tw-focus:outline-none tw-focus:ring-2 tw-focus:ring-orange-400 tw-focus:border-orange-400">
                             <option value="">Toutes les thématiques</option>
                             @foreach($thematiques as $thematique)
                                 <option value="{{ $thematique->slug }}" {{ request('thematique') == $thematique->slug ? 'selected' : '' }}>
@@ -34,7 +34,7 @@
                     <div>
                         <label for="source_type" class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Type de source</label>
                         <select name="source_type" id="source_type" 
-                                class="tw-mt-1 tw-block tw-w-full tw-rounded-md tw-border-gray-300 tw-shadow-sm focus:tw-border-orange-500 focus:tw-ring-orange-500 sm:tw-text-sm">
+                                class="tw-w-full tw-px-4 tw-py-3 tw-border tw-border-gray-300 tw-rounded-lg tw-appearance-none tw-bg-white tw-text-gray-700 tw-shadow-sm tw-focus:outline-none tw-focus:ring-2 tw-focus:ring-orange-400 tw-focus:border-orange-400">
                             <option value="">Tous les types</option>
                             @foreach(\App\Models\Source::TYPES as $key => $label)
                                 <option value="{{ $key }}" {{ request('source_type') == $key ? 'selected' : '' }}>

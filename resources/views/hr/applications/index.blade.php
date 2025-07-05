@@ -26,12 +26,12 @@
                     <label class="tw-block tw-text-sm tw-font-medium tw-text-gray-700 tw-mb-2">Recherche</label>
                     <input type="text" name="search" value="{{ request('search') }}" 
                            placeholder="Nom, prénom, email..."
-                           class="tw-w-full tw-px-4 tw-py-2 tw-border tw-border-gray-300 tw-rounded-lg tw-focus:ring-2 tw-focus:ring-orange-400 tw-focus:border-orange-400">
+                           class="tw-w-full tw-px-4 tw-py-3 tw-border tw-border-gray-300 tw-rounded-lg tw-appearance-none tw-bg-white tw-text-gray-700 tw-shadow-sm tw-focus:outline-none tw-focus:ring-2 tw-focus:ring-orange-400 tw-focus:border-orange-400">
                 </div>
                 
                 <div class="tw-min-w-0 tw-flex-1">
                     <label class="tw-block tw-text-sm tw-font-medium tw-text-gray-700 tw-mb-2">Offre d'emploi</label>
-                    <select name="job_offer_id" class="tw-w-full tw-px-4 tw-py-2 tw-border tw-border-gray-300 tw-rounded-lg tw-focus:ring-2 tw-focus:ring-orange-400 tw-focus:border-orange-400">
+                    <select name="job_offer_id" class="tw-w-full tw-px-4 tw-py-3 tw-border tw-border-gray-300 tw-rounded-lg tw-appearance-none tw-bg-white tw-text-gray-700 tw-shadow-sm tw-focus:outline-none tw-focus:ring-2 tw-focus:ring-orange-400 tw-focus:border-orange-400">
                         <option value="">Toutes les offres</option>
                         @foreach($jobOffers as $jobOffer)
                             <option value="{{ $jobOffer->id }}" {{ request('job_offer_id') == $jobOffer->id ? 'selected' : '' }}>
@@ -43,7 +43,7 @@
 
                 <div class="tw-min-w-0 tw-flex-1">
                     <label class="tw-block tw-text-sm tw-font-medium tw-text-gray-700 tw-mb-2">Statut</label>
-                    <select name="status" class="tw-w-full tw-px-4 tw-py-2 tw-border tw-border-gray-300 tw-rounded-lg tw-focus:ring-2 tw-focus:ring-orange-400 tw-focus:border-orange-400">
+                    <select name="status" class="tw-w-full tw-px-4 tw-py-3 tw-border tw-border-gray-300 tw-rounded-lg tw-appearance-none tw-bg-white tw-text-gray-700 tw-shadow-sm tw-focus:outline-none tw-focus:ring-2 tw-focus:ring-orange-400 tw-focus:border-orange-400">
                         <option value="">Tous les statuts</option>
                         @foreach($statuses as $status)
                             <option value="{{ $status }}" {{ request('status') == $status ? 'selected' : '' }}>
@@ -55,7 +55,7 @@
 
                 <div class="tw-min-w-0 tw-flex-1">
                     <label class="tw-block tw-text-sm tw-font-medium tw-text-gray-700 tw-mb-2">Évaluation min.</label>
-                    <select name="rating" class="tw-w-full tw-px-4 tw-py-2 tw-border tw-border-gray-300 tw-rounded-lg tw-focus:ring-2 tw-focus:ring-orange-400 tw-focus:border-orange-400">
+                    <select name="rating" class="tw-w-full tw-px-4 tw-py-3 tw-border tw-border-gray-300 tw-rounded-lg tw-appearance-none tw-bg-white tw-text-gray-700 tw-shadow-sm tw-focus:outline-none tw-focus:ring-2 tw-focus:ring-orange-400 tw-focus:border-orange-400">
                         <option value="">Toutes</option>
                         @for($i = 1; $i <= 5; $i++)
                             <option value="{{ $i }}" {{ request('rating') == $i ? 'selected' : '' }}>
@@ -66,10 +66,10 @@
                 </div>
 
                 <div class="tw-flex tw-space-x-2">
-                    <button type="submit" class="tw-bg-orange-400 hover:tw-bg-orange-500 tw-text-white tw-px-6 tw-py-2 tw-rounded-lg tw-font-medium tw-transition tw-duration-200">
+                    <button type="submit" class="tw-bg-orange-400 hover:tw-bg-orange-500 tw-text-white tw-px-6 tw-py-3 tw-rounded-lg tw-font-medium tw-transition tw-duration-200">
                         Filtrer
                     </button>
-                    <a href="{{ route('applications.index') }}" class="tw-bg-gray-200 hover:tw-bg-gray-300 tw-text-gray-700 tw-px-6 tw-py-2 tw-rounded-lg tw-font-medium tw-transition tw-duration-200">
+                    <a href="{{ route('applications.index') }}" class="tw-bg-gray-200 hover:tw-bg-gray-300 tw-text-gray-700 tw-px-6 tw-py-3 tw-rounded-lg tw-font-medium tw-transition tw-duration-200">
                         Reset
                     </a>
                 </div>

@@ -48,7 +48,7 @@
                             <h3 class="text-lg font-medium leading-6 text-gray-900 mb-4">Actions rapides</h3>
                             <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
                                 <a href="{{ route('base-legal.documents.create') }}"
-                                    class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                                    class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700">
                                     <svg class="-ml-1 mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                         stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -88,7 +88,7 @@
                                         <div class="flex items-center space-x-2">
                                             <span class="text-sm text-gray-500">{{ $data['count'] }} source(s)</span>
                                             <span
-                                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
                                                 {{ $data['documents'] }} doc(s)
                                             </span>
                                         </div>
@@ -115,7 +115,7 @@
                                         <div class="px-4 py-4 sm:px-6">
                                             <div class="flex items-center justify-between">
                                                 <div class="flex-1 min-w-0">
-                                                    <p class="text-sm font-medium text-indigo-600 truncate">
+                                                    <p class="text-sm font-medium text-gray-600 truncate">
                                                         {{ $document->titre }}</p>
                                                     <p class="text-sm text-gray-500">{{ $document->source->type_libelle }}
                                                         - {{ $document->source->nom }}</p>

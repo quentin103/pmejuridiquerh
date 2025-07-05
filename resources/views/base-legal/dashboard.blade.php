@@ -39,27 +39,23 @@
                     <div class="tw-grid tw-grid-cols-1 tw-gap-3 sm:tw-grid-cols-2">
                          @if (in_array('admin', user_roles()))
                         <a href="{{ route('base_documentaire_documents_create_form') }}"
-                            class="tw-inline-flex tw-items-center tw-justify-center tw-px-4 tw-py-2 tw-border tw-border-transparent tw-text-sm tw-font-medium tw-rounded-md tw-text-white tw-bg-[#838383] hover:tw-bg-[#838383]">
-                            <svg class="tw--ml-1 tw-mr-2 tw-h-5 tw-w-5" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
-                            </svg>
+                            class="tw-bg-orange-400 hover:tw-bg-orange-500 tw-text-white tw-px-6 tw-flex tw-items-center tw-justify-center tw-py-2 tw-rounded-lg tw-font-medium tw-transition tw-duration-200
+">
                             Nouveau document
                         </a>
 
                         <a href="{{ route('base-legal.thematiques.index') }}"
-                            class="tw-inline-flex tw-items-center tw-justify-center tw-px-4 tw-py-2 tw-border tw-border-gray-300 tw-text-sm tw-font-medium tw-rounded-md tw-text-gray-700 tw-bg-white hover:tw-bg-gray-50">
+                            class="tw-bg-orange-400 hover:tw-bg-orange-500 tw-text-white tw-px-6 tw-flex tw-items-center tw-justify-center tw-py-2 tw-rounded-lg tw-font-medium tw-transition tw-duration-200">
                             Nouvelle thématique
                         </a>
 
                         <a href="{{ route('base-legal.sources.index') }}"
-                            class="tw-inline-flex tw-items-center tw-justify-center tw-px-4 tw-py-2 tw-border tw-border-gray-300 tw-text-sm tw-font-medium tw-rounded-md tw-text-gray-700 tw-bg-white hover:tw-bg-gray-50">
+                            class="tw-bg-orange-400 hover:tw-bg-orange-500 tw-text-white tw-px-6 tw-flex tw-items-center tw-justify-center tw-py-2 tw-rounded-lg tw-font-medium tw-transition tw-duration-200">
                             Nouvelle source
                         </a>
                         @endif
                         <a href="{{ route('baselegal_consultation') }}"
-                            class="tw-inline-flex tw-items-center tw-justify-center tw-px-4 tw-py-2 tw-border tw-border-gray-300 tw-text-sm tw-font-medium tw-rounded-md tw-text-gray-700 tw-bg-white hover:tw-bg-gray-50">
+                            class="tw-bg-orange-400 hover:tw-bg-orange-500 tw-text-white tw-px-6 tw-flex tw-items-center tw-justify-center tw-py-2 tw-rounded-lg tw-font-medium tw-transition tw-duration-200">
                             Voir la consultation
                         </a>
                     </div>

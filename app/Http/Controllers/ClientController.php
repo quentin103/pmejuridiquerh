@@ -63,7 +63,6 @@ class ClientController extends AccountBaseController
         $this->pageTitle = 'app.menu.clients';
         $this->middleware(function ($request, $next) {
             abort_403(!in_array('clients', $this->user->modules));
-
             return $next($request);
         });
     }

@@ -206,21 +206,20 @@
                 </div>
             </x-datatable.actions>
 
-
+{{-- 
             <div class="btn-group mt-2 mt-lg-0 mt-md-0 ml-0 ml-lg-3 ml-md-3" role="group">
                 <a href="{{ route('clients.index') }}" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-14 btn-active show-clients" data-toggle="tooltip"
                     data-original-title="@lang('app.menu.clients')"><i class="side-icon bi bi-list-ul"></i></a>
 
                 <a href="javascript:;" class="tw-bg-[#838383] tw-p-2 px-3 hover:tw-bg-[#838383]/70  hover:tw-text-white  tw-rounded-md !tw-text-white  f-14 show-unverified" data-toggle="tooltip"
                     data-original-title="@lang('modules.dashboard.verificationPending')"><i class="side-icon bi bi-person-x"></i></a>
-            </div>
+            </div> --}}
 
         </div>
         <!-- Add Task Export Buttons End -->
 
         <!-- Task Box Start -->
-        <div class="quentin  d-flex flex-column w-tables tw-rounded-xl mt-3 bg-white tw-shadow-lg  
-tw-border-none quentin table-responsive">
+        <div class="quentin  d-flex flex-column w-tables tw-rounded-xl mt-3 bg-white tw-shadow-lg tw-border-none quentin table-responsive">
 
             {!! $dataTable->table(['class' => 'table table-hover border-0 w-100']) !!}
 

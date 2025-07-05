@@ -76,7 +76,7 @@
                                     Type de source *
                                 </label>
                                 <select id="type" name="type" required onchange="updateTypeInfo()"
-                                    class="tw-mt-1 tw-block tw-w-full tw-py-2 tw-px-3 tw-border tw-border-gray-300 tw-bg-white tw-rounded-md tw-shadow-sm focus:tw-outline-none focus:tw-ring-gray-500 focus:tw-border-gray-500 sm:tw-text-sm  tw-p-2">
+                                    class="tw-w-full tw-px-4 tw-py-3 tw-border tw-border-gray-300 tw-rounded-lg tw-appearance-none tw-bg-white tw-text-gray-700 tw-shadow-sm tw-focus:outline-none tw-focus:ring-2 tw-focus:ring-orange-400 tw-focus:border-orange-400">
                                     <option value="">Sélectionner un type de source</option>
                                     @foreach ($types as $key => $label)
                                         <option value="{{ $key }}" {{ old('type') == $key ? 'selected' : '' }}>

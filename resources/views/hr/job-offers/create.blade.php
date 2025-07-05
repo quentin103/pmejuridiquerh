@@ -63,7 +63,7 @@
                                 <label class="tw-block tw-text-sm tw-font-medium tw-text-gray-700 tw-mb-2">
                                     Type de contrat *
                                 </label>
-                                <select name="type" required
+                                <select name="type" required 
                                         class="tw-w-full tw-px-4 tw-py-3 tw-border tw-border-gray-300 tw-rounded-lg tw-appearance-none tw-bg-white tw-text-gray-700 tw-shadow-sm tw-focus:outline-none tw-focus:ring-2 tw-focus:ring-orange-400 tw-focus:border-orange-400 @error('type') tw-border-red-500 @enderror">
                                     <option value="">Sélectionner un type</option>
                                     <option value="CDI" {{ old('type') == 'CDI' ? 'selected' : '' }}>CDI</option>

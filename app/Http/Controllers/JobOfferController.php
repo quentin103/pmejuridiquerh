@@ -34,7 +34,7 @@ class JobOfferController extends AccountBaseController
         $this->pageTitle = 'Gestion des Offres d\'Emploi';
         // $this->middleware(
         //     function ($request, $next) {
-        //         in_array('client', user_roles()) ? abort_403(!(in_array('orders', $this->user->modules) && user()->permission('add_order') == 'all')) : abort_403(!in_array('products', $this->user->modules));
+        //         in_array('admin', user_roles()));
 
         //         return $next($request);
         //     }

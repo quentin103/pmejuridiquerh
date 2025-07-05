@@ -9,7 +9,7 @@
                 <h2 class=" tw-text-base tw-md:tw-text-xl tw-font-bold tw-text-white">
                     Consultez la base documentaire
                 </h2>
-                <p class="tw-text-sm tw-mt-2 tw-md:tw-text-base tw-text-indigo-100">
+                <p class="tw-text-sm tw-mt-2 tw-md:tw-text-base tw-text-gray-100">
                     Accédez à l'ensemble des textes législatifs, réglementaires et conventionnels applicables, 
                     classés par thématique et par source.
                 </p>
@@ -34,7 +34,7 @@
                             </div>
                             <input type="text" name="search" id="search" value="{{ request('search') }}"
                                    placeholder="Titre, description..."
-                                   class="focus:tw-ring-[#838383] focus:tw-border-[#838383] tw-block tw-w-full tw-pl-10 sm:tw-text-sm tw-border-gray-300 tw-rounded-md tw-border tw-p-2">
+                                   class="focus:tw-ring-[#838383] focus:tw-border-[#838383] tw-block tw-w-full tw-pl-10 sm:tw-text-sm tw-border-gray-300 tw-rounded-md tw-border tw-p-3 tw-py-3">
                         </div>
                     </div>
 
@@ -42,7 +42,7 @@
                     <div>
                         <label for="thematique" class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Thématique</label>
                         <select name="thematique" id="thematique" 
-                                class="tw-mt-1 tw-block tw-w-full tw-rounded-md tw-border-gray-300 tw-shadow-sm focus:tw-border-[#838383] focus:tw-ring-[#838383] sm:tw-text-sm">
+                                class="tw-w-full tw-px-4 tw-py-3 tw-border tw-border-gray-300 tw-rounded-lg tw-appearance-none tw-bg-white tw-text-gray-700 tw-shadow-sm tw-focus:outline-none tw-focus:ring-2 tw-focus:ring-orange-400 tw-focus:border-orange-400">
                             <option value="">Toutes les thématiques</option>
                             @foreach($thematiques as $thematique)
                                 <option value="{{ $thematique->slug }}" 
@@ -57,7 +57,7 @@
                     <div>
                         <label for="source_type" class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Type de source</label>
                         <select name="source_type" id="source_type" 
-                                class="tw-mt-1 tw-block tw-w-full tw-rounded-md tw-border-gray-300 tw-shadow-sm focus:tw-border-[#838383] focus:tw-ring-[#838383] sm:tw-text-sm">
+                                class="tw-w-full tw-px-4 tw-py-3 tw-border tw-border-gray-300 tw-rounded-lg tw-appearance-none tw-bg-white tw-text-gray-700 tw-shadow-sm tw-focus:outline-none tw-focus:ring-2 tw-focus:ring-orange-400 tw-focus:border-orange-400">
                             <option value="">Tous les types</option>
                             @foreach($sourceTypes as $sourceType)
                                 <option value="{{ $sourceType->type }}" {{ request('source_type') == $sourceType->type ? 'selected' : '' }}>
@@ -108,7 +108,7 @@
                                     <h4 class="tw-text-lg tw-font-medium tw-text-[#838383] tw-truncate">
                                         <!-- { route('base-legal.documents.show', $document) }} -->
                                         <a href="" 
-                                           class="hover:tw-text-indigo-800">
+                                           class="hover:tw-text-gray-800">
                                             {{ $document->titre }}
                                         </a>
                                     </h4>
@@ -261,7 +261,7 @@
                                     @endif
                                 </div>
                                 <div class="tw-flex-shrink-0">
-                                    <span class="tw-inline-flex tw-items-center tw-px-2.5 tw-py-0.5 tw-rounded-full tw-text-xs tw-font-medium tw-bg-indigo-100 tw-text-indigo-800">
+                                    <span class="tw-inline-flex tw-items-center tw-px-2.5 tw-py-0.5 tw-rounded-full tw-text-xs tw-font-medium tw-bg-gray-100 tw-text-gray-800">
                                         {{ $thematique->documents_count }}
                                     </span>
                                 </div>

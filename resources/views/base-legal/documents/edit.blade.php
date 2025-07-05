@@ -79,7 +79,7 @@
                                 <label for="source_id" class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Source
                                     *</label>
                                 <select id="source_id" name="source_id" required
-                                    class="tw-mt-1 tw-block tw-w-full tw-py-2 tw-px-3 tw-border tw-border-gray-300 tw-bg-white tw-rounded-md tw-shadow-sm focus:tw-outline-none focus:tw-ring-orange-500 focus:tw-border-orange-500 sm:tw-text-sm">
+                                    class="tw-w-full tw-px-4 tw-py-3 tw-border tw-border-gray-300 tw-rounded-lg tw-appearance-none tw-bg-white tw-text-gray-700 tw-shadow-sm tw-focus:outline-none tw-focus:ring-2 tw-focus:ring-orange-400 tw-focus:border-orange-400">
                                     <option value="">Sélectionner une source</option>
                                     @foreach ($sources as $source)
                                         <option value="{{ $source->id }}"
@@ -99,7 +99,7 @@
                                     class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Date de publication</label>
                                 <input type="date" name="date_publication" id="date_publication"
                                     value="{{ old('date_publication', $document->date_publication ? $document->date_publication->format('Y-m-d') : '') }}"
-                                    class="tw-mt-1 focus:tw-ring-orange-500 focus:tw-border-orange-500 tw-block tw-w-full tw-shadow-sm sm:tw-text-sm tw-border-gray-300 tw-rounded-md">
+                                    class="tw-w-full tw-px-4 tw-py-3 tw-border tw-border-gray-300 tw-rounded-lg tw-appearance-none tw-bg-white tw-text-gray-700 tw-shadow-sm tw-focus:outline-none tw-focus:ring-2 tw-focus:ring-orange-400 tw-focus:border-orange-400">
                                 @error('date_publication')
                                     <p class="tw-mt-2 tw-text-sm tw-text-red-600">{{ $message }}</p>
                                 @enderror

@@ -20,7 +20,7 @@
                     <div class="tw-col-span-6">
                         <label for="titre" class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Titre *</label>
                         <input type="text" name="titre" id="titre" value="{{ old('titre') }}" required
-                               class="tw-mt-1 focus:tw-ring-indigo-500 focus:tw-border-indigo-500 tw-block tw-w-full tw-shadow-sm sm:tw-text-sm tw-border-gray-300 tw-rounded-md tw-border p-2">
+                               class="tw-mt-1 focus:tw-ring-gray-500 focus:tw-border-gray-500 tw-block tw-w-full tw-shadow-sm sm:tw-text-sm tw-border-gray-300 tw-rounded-md tw-border p-2">
                         @error('titre')
                             <p class="tw-mt-2 tw-text-sm tw-text-red-600">{{ $message }}</p>
                         @enderror
@@ -30,7 +30,7 @@
                     <div class="tw-col-span-6">
                         <label for="description" class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Description</label>
                         <textarea id="description" name="description" rows="3"
-                                  class="tw-mt-1 focus:tw-ring-indigo-500 focus:tw-border-indigo-500 tw-block tw-w-full tw-shadow-sm sm:tw-text-sm tw-border-gray-300 tw-rounded-md">{{ old('description') }}</textarea>
+                                  class="tw-mt-1 focus:tw-ring-gray-500 focus:tw-border-gray-500 tw-block tw-w-full tw-shadow-sm sm:tw-text-sm tw-border-gray-300 tw-rounded-md tw-border tw-px-3 tw-py-2">{{ old('description') }}</textarea>
                         @error('description')
                             <p class="tw-mt-2 tw-text-sm tw-text-red-600">{{ $message }}</p>
                         @enderror
@@ -40,7 +40,7 @@
                     <div class="tw-col-span-6 sm:tw-col-span-3">
                         <label for="source_id" class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Source *</label>
                         <select id="source_id" name="source_id" required
-                                class="tw-mt-1 tw-block tw-w-full tw-py-2 tw-px-3 tw-border tw-border-gray-300 tw-bg-white tw-rounded-md tw-shadow-sm focus:tw-outline-none focus:tw-ring-indigo-500 focus:tw-border-indigo-500 sm:tw-text-sm">
+                                class="tw-w-full tw-px-4 tw-py-3 tw-border tw-border-gray-300 tw-rounded-lg tw-appearance-none tw-bg-white tw-text-gray-700 tw-shadow-sm tw-focus:outline-none tw-focus:ring-2 tw-focus:ring-orange-400 tw-focus:border-orange-400">
                             <option value="">Sélectionner une source</option>
                             @foreach($sources as $source)
                                 <option value="{{ $source->id }}" {{ old('source_id') == $source->id ? 'selected' : '' }}>
@@ -57,7 +57,7 @@
                     <div class="tw-col-span-6 sm:tw-col-span-3">
                         <label for="date_publication" class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Date de publication</label>
                         <input type="date" name="date_publication" id="date_publication" value="{{ old('date_publication') }}"
-                               class="tw-mt-1 focus:tw-ring-indigo-500 focus:tw-border-indigo-500 tw-block tw-w-full tw-shadow-sm sm:tw-text-sm tw-border-gray-300 tw-rounded-md">
+                               class="tw-w-full tw-px-4 tw-py-3 tw-border tw-border-gray-300 tw-rounded-lg tw-appearance-none tw-bg-white tw-text-gray-700 tw-shadow-sm tw-focus:outline-none tw-focus:ring-2 tw-focus:ring-orange-400 tw-focus:border-orange-400">
                         @error('date_publication')
                             <p class="tw-mt-2 tw-text-sm tw-text-red-600">{{ $message }}</p>
                         @enderror
@@ -81,7 +81,7 @@
                     <div class="tw-col-span-6">
                         <label for="fichier_pdf" class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Fichier PDF</label>
                         <input type="file" name="fichier_pdf" id="fichier_pdf" accept=".pdf"
-                               class="tw-mt-1 focus:tw-ring-indigo-500 focus:tw-border-indigo-500 tw-block tw-w-full tw-shadow-sm sm:tw-text-sm tw-border-gray-300 tw-rounded-md">
+                               class="tw-w-full tw-px-4 tw-py-3 tw-border tw-border-gray-300 tw-rounded-lg tw-appearance-none tw-bg-white tw-text-gray-700 tw-shadow-sm tw-focus:outline-none tw-focus:ring-2 tw-focus:ring-orange-400 tw-focus:border-orange-400">
                         <p class="tw-mt-2 tw-text-sm tw-text-gray-500">Fichier PDF maximum 10MB</p>
                         @error('fichier_pdf')
                             <p class="tw-mt-2 tw-text-sm tw-text-red-600">{{ $message }}</p>
@@ -93,7 +93,7 @@
                         <label for="url_externe" class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Ou URL externe</label>
                         <input type="url" name="url_externe" id="url_externe" value="{{ old('url_externe') }}"
                                placeholder="https://..."
-                               class="tw-mt-1 focus:tw-ring-indigo-500 focus:tw-border-indigo-500 tw-block tw-w-full tw-shadow-sm sm:tw-text-sm tw-border-gray-300 tw-rounded-md">
+                               class="tw-w-full tw-px-4 tw-py-3 tw-border tw-border-gray-300 tw-rounded-lg tw-appearance-none tw-bg-white tw-text-gray-700 tw-shadow-sm tw-focus:outline-none tw-focus:ring-2 tw-focus:ring-orange-400 tw-focus:border-orange-400">
                         @error('url_externe')
                             <p class="tw-mt-2 tw-text-sm tw-text-red-600">{{ $message }}</p>
                         @enderror
@@ -115,13 +115,13 @@
                 <!-- Thématiques -->
                 <fieldset>
                     <legend class="tw-text-sm tw-font-medium tw-text-gray-700">Thématiques *</legend>
-                    <div class="tw-mt-4 tw-space-y-2">
+                    <div class="tw-mt-4  tw-grid md:tw-grid-cols-2">
                         @foreach($thematiques as $thematique)
                             <div class="tw-flex tw-items-center">
                                 <input id="thematique_{{ $thematique->id }}" name="thematiques[]" type="checkbox" 
                                        value="{{ $thematique->id }}"
                                        {{ in_array($thematique->id, old('thematiques', [])) ? 'checked' : '' }}
-                                       class="focus:tw-ring-indigo-500 tw-h-4 tw-w-4 tw-text-indigo-600 tw-border-gray-300 tw-rounded">
+                                       class="focus:tw-ring-gray-500 tw-h-4 tw-w-4 tw-text-gray-600 tw-border-gray-300 tw-rounded">
                                 <label for="thematique_{{ $thematique->id }}" class="tw-ml-3 tw-text-sm tw-font-medium tw-text-gray-700">
                                     {{ $thematique->nom }}
                                 </label>
@@ -140,11 +140,11 @@
     <div class="tw-flex tw-justify-end tw-space-x-3">
         <!-- { route('base_documentaire_documents_index') }} -->
         <a href="" 
-           class="tw-bg-white tw-py-2 tw-px-4 tw-border tw-border-gray-300 tw-rounded-md tw-shadow-sm tw-text-sm tw-font-medium tw-text-gray-700 hover:tw-bg-gray-50 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-indigo-500">
+           class="tw-bg-white tw-py-2 tw-px-4 tw-border tw-border-gray-300 tw-rounded-md tw-shadow-sm tw-text-sm tw-font-medium tw-text-gray-700 hover:tw-bg-gray-50 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-500">
             Annuler
         </a>
         <button type="submit" 
-                class="tw-inline-flex tw-justify-center tw-py-2 tw-px-4 tw-border tw-border-transparent tw-shadow-sm tw-text-sm tw-font-medium tw-rounded-md tw-text-white tw-bg-indigo-600 hover:tw-bg-indigo-700 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-indigo-500">
+                class="tw-inline-flex tw-justify-center tw-py-2 tw-px-4 tw-border tw-border-transparent tw-shadow-sm tw-text-sm tw-font-medium tw-rounded-md tw-text-white tw-bg-gray-600 hover:tw-bg-gray-700 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-500">
             Créer le document
         </button>
     </div>
