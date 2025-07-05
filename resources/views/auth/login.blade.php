@@ -9,6 +9,7 @@
 
 
 <x-auth>
+        
     <form id="login-form" action="{{ route('login') }}" class="ajax-form" method="POST">
         {{ csrf_field() }}
         <h3 class=" mb-4 f-w-500">@lang('app.login')</h3>
@@ -132,7 +133,7 @@
             @endif
 
             <button type="submit" id="submit-login"
-                    class="btn-primary f-w-500 rounded w-100 height-50 f-18">
+                    class="tw-bg-orange-400 hover:tw-bg-orange-500 tw-text-white tw-w-full tw-px-6 tw-flex tw-items-center tw-justify-center tw-py-2 tw-rounded-lg tw-font-medium tw-transition tw-duration-200 ">
                 @lang('app.login') <i class="fa fa-arrow-right pl-1"></i>
             </button>
             {{-- SAAS --}}
