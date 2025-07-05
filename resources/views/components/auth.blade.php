@@ -124,7 +124,7 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="tw-h-full tw-w-1/2">
+                        <div class=" tw-hidden md:tw-block tw-h-full tw-w-1/2">
                            <img src="{{ asset('image.png') }}"  class=" tw-h-full tw-w-full tw-object-cover"   alt="logo">
                         </div>
                     </div>
