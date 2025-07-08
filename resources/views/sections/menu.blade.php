@@ -85,7 +85,6 @@
             </x-slot>
         </x-menu-item>
     @endif
-    -- Nouveau menu start
     <!-- NOUVEAU MENU START -->
     <x-menu-item icon="hospital" :text="__('Visite médicale')" :link="route('medical-visits.index')">
         <x-slot name="iconPath">
@@ -134,7 +133,7 @@
 
 
 
-    -- Nouveau menu end
+    {{-- -- Nouveau menu end --}}
     <!-- NOUVEAU MENU END -->
 
     <!-- NAV ITEM - HR COLLAPASE MENU -->

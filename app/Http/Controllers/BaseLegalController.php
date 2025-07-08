@@ -30,13 +30,10 @@ class BaseLegalController extends AccountBaseController
     {
         parent::__construct();
         $this->pageTitle = 'Base Légale';
-        // $this->middleware(
-        //     function ($request, $next) {
-        //         in_array('client', user_roles()) ? abort_403(!(in_array('orders', $this->user->modules) && user()->permission('add_order') == 'all')) : abort_403(!in_array('products', $this->user->modules));
-
-        //         return $next($request);
-        //     }
-        // );
+        // $this->middleware(function ($request, $next) {
+        //     abort_403(user()->is_superadmin == 0);
+        //     return $next($request);
+        // });
     }
 
     /**
