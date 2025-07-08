@@ -51,6 +51,8 @@ class Controller extends BaseController
     public function __construct()
     {
 
+        //dd($this->data);
+
         $this->middleware(function ($request, $next) {
 
             $this->checkMigrateStatus();

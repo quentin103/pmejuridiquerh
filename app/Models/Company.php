@@ -307,6 +307,11 @@ class Company extends BaseModel
         return $this->belongsTo(Package::class, 'package_id');
     }
 
+    public function medicalVisits(): HasMany
+    {
+        return $this->hasMany(MedicalVisit::class);
+    }
+
     public function globalInvoices()
     {
         return $this->hasMany(GlobalInvoice::class, 'company_id', 'id');

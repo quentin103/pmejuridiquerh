@@ -70,7 +70,7 @@
         @if ($globalSetting->login_background_url) style="background: url('{{ $globalSetting->login_background_url }}') center center/cover no-repeat;" @endif>
         <div>
             <div>
-               <div class="tw-flex tw-h-screen ">
+               <div class="tw-flex tw-h-screen tw-bg-gray-100 ">
                         <div class=" tw-flex tw-flex-1 tw-flex-col tw-justify-center tw-py-12 tw-px-4 tw-sm:tw-px-6 tw-lg:tw-flex-none tw-lg:tw-px-20 tw-xl:tw-px-2">
                             <div class="tw-mx-auto tw-w-full tw-max-w-sm tw-lg:w-96">
                                 <div class="tw-mt-20">

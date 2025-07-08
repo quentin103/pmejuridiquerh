@@ -115,6 +115,9 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
 
+        // Envoyer les rappels tous les jours à 9h
+        $schedule->command('medical:send-reminders')->dailyAt('09:00');
+
         $schedule->command('recurring-task-create')->dailyAt('00:30');
         $schedule->command('auto-stop-timer')->everyThirtyMinutes();
         $schedule->command('birthday-notification')->dailyAt('09:00');

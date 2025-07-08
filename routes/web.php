@@ -19,7 +19,7 @@ use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\HospitalController;
+use App\Http\Controllers\MedicalVisitController;
 use App\Http\Controllers\RecrutementController;
 use App\Http\Controllers\AccidentController;
 use App\Http\Controllers\BaseLegalController;
@@ -346,8 +346,12 @@ Route::group(['middleware' => ['auth', 'multi-company-select', 'email_verified']
 
     
     /* hospital */
-    Route::resource('hospital', HospitalController::class);
-    /* recrutement */
+    
+    Route::resource('medical-visits', MedicalVisitController::class);
+    Route::get('medical-visits/{medicalVisit}/download-certificate', [MedicalVisitController::class, 'downloadCertificate'])
+        ->name('medical-visits.download-certificate');
+   
+        /* recrutement */
     Route::resource('recrutement', RecrutementController::class);
       /* baselegal */
     Route::resource('accident', AccidentController::class);

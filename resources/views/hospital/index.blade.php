@@ -1,285 +1,172 @@
 @extends('layouts.app')
 
-@push('datatable-styles')
-    @include('sections.datatable_css')
-@endpush
-
-@section('filter-section')
-
-    
-
-@endsection
-
-
-
 @section('content')
-    <!-- CONTENT WRAPPER START -->
-    <div class="content-wrapper">
-        <div class="flex justify-center items-center">
-            <h4>
-                En cours de developpement...
-            </h4>
+    <div class="tw-container tw-mx-auto tw-px-4 tw-py-6">
+        
+        <div class="tw-flex tw-justify-between tw-items-center tw-mb-6">
+            <h1 class="tw-text-3xl tw-font-bold tw-text-gray-900">Médecine du Travail</h1>
+            <a href="{{ route('medical-visits.create') }}"
+                class="tw-bg-orange-400 hover:tw-bg-orange-500 tw-text-white tw-px-6 tw-py-2 tw-rounded-lg tw-font-medium tw-transition tw-duration-200">
+                Programmer une visite
+            </a>
+        </div>
+
+        <!-- Statistiques -->
+        <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-3 tw-gap-6 tw-mb-6">
+
+            <div class="tw-bg-white tw-p-6 tw-rounded-lg tw-shadow">
+                <div class="tw-flex tw-items-center">
+                    <div class="tw-p-3 tw-rounded-full tw-bg-blue-500 tw-bg-opacity-75">
+                        <svg class="tw-w-8 tw-h-8 tw-text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="tw-ml-5 tw-w-0 tw-flex-1">
+                        <dl>
+                            <dt class="tw-text-sm tw-font-medium tw-text-gray-500 tw-truncate">Total visites</dt>
+                            <dd class="tw-text-lg tw-font-medium tw-text-gray-900">{{ $stats['total'] }}</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tw-bg-white tw-p-6 tw-rounded-lg tw-shadow">
+                <div class="tw-flex tw-items-center">
+                    <div class="tw-p-3 tw-rounded-full tw-bg-yellow-500 tw-bg-opacity-75">
+                        <svg class="tw-w-8 tw-h-8 tw-text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="tw-ml-5 tw-w-0 tw-flex-1">
+                        <dl>
+                            <dt class="tw-text-sm tw-font-medium tw-text-gray-500 tw-truncate">À venir</dt>
+                            <dd class="tw-text-lg tw-font-medium tw-text-gray-900">{{ $stats['upcoming'] }}</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tw-bg-white tw-p-6 tw-rounded-lg tw-shadow">
+                <div class="tw-flex tw-items-center">
+                    <div class="tw-p-3 tw-rounded-full tw-bg-red-500 tw-bg-opacity-75">
+                        <svg class="tw-w-8 tw-h-8 tw-text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="tw-ml-5 tw-w-0 tw-flex-1">
+                        <dl>
+                            <dt class="tw-text-sm tw-font-medium tw-text-gray-500 tw-truncate">En retard</dt>
+                            <dd class="tw-text-lg tw-font-medium tw-text-gray-900">{{ $stats['overdue'] }}</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tableau des visites -->
+        <div class="tw-bg-white tw-shadow tw-overflow-hidden tw-sm:rounded-md">
+            <div class="tw-px-4 tw-py-5 tw-sm:px-6">
+                <h3 class="tw-text-lg tw-leading-6 tw-font-medium tw-text-gray-900">Visites médicales</h3>
+            </div>
+            <ul class="tw-divide-y tw-divide-gray-200">
+                @forelse($medicalVisits as $visit)
+            
+                    <li class="tw-px-6 tw-py-4">
+                        <div class="tw-flex tw-items-center tw-justify-between">
+                            <div class="tw-flex tw-items-center">
+                                <div class="tw-flex-shrink-0">
+                                    <div
+                                        class="tw-h-10 tw-w-10 tw-rounded-full tw-bg-gray-300 tw-flex tw-items-center tw-justify-center">
+                                        <span class="tw-text-sm tw-font-medium tw-text-gray-700">
+                                            {{ $visit->user? substr($visit->user->name, 0, 1) : 'Insconnu' }}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="tw-ml-4">
+                                    <div class="tw-text-sm tw-font-medium tw-text-gray-900">
+                                        {{ $visit->user?$visit->user->name: 'Insconnu' }}
+                                    </div>
+                                    <div class="tw-text-sm tw-text-gray-500">
+                                        {{ $visit->visit_type }} - {{ $visit->doctor_name }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tw-flex tw-items-center tw-space-x-4">
+                                <div class="tw-text-right">
+                                    <div class="tw-text-sm tw-text-gray-900">
+                                        {{ $visit->scheduled_date->format('d/m/Y') }}
+                                    </div>
+                                    <div class="tw-text-xs">
+                                        @if ($visit->result === 'Apte')
+                                            <span
+                                                class="tw-inline-flex tw-items-center tw-px-2.5 tw-py-0.5 tw-rounded-full tw-text-xs tw-font-medium tw-bg-green-100 tw-text-green-800">
+                                                Apte
+                                            </span>
+                                        @elseif($visit->result === 'Inapte')
+                                            <span
+                                                class="tw-inline-flex tw-items-center tw-px-2.5 tw-py-0.5 tw-rounded-full tw-text-xs tw-font-medium tw-bg-red-100 tw-text-red-800">
+                                                Inapte
+                                            </span>
+                                        @else
+                                            <span
+                                                class="tw-inline-flex tw-items-center tw-px-2.5 tw-py-0.5 tw-rounded-full tw-text-xs tw-font-medium tw-bg-gray-100 tw-text-gray-800">
+                                                Non effectué
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="tw-flex tw-space-x-2">
+                                    <a href="{{ route('medical-visits.show', $visit) }}"
+                                        class="tw-bg-gray-200 hover:tw-bg-gray-300 tw-text-gray-700 tw-px-4 tw-py-2 tw-rounded-lg tw-font-medium tw-transition tw-duration-200">
+                                        Voir
+                                    </a>
+                                    <a href="{{ route('medical-visits.edit', $visit) }}"
+                                        class="tw-bg-gray-200 hover:tw-bg-gray-300 tw-text-gray-700 tw-px-4 tw-py-2 tw-rounded-lg tw-font-medium tw-transition tw-duration-200">
+                                        Modifier
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tw-mt-2">
+                            <p class="tw-text-sm tw-text-gray-600">{{ Str::limit($visit->visit_object, 100) }}</p>
+                        </div>
+                        {{-- @if ($visit && $visit->is_overdue)
+                            <div class="tw-mt-2">
+                                <span
+                                    class="tw-inline-flex tw-items-center tw-px-2.5 tw-py-0.5 tw-rounded-full tw-text-xs tw-font-medium tw-bg-red-100 tw-text-red-800">
+                                    En retard de {{ abs($visit->days_until_visit) }} jour(s)
+                                </span>
+                            </div>
+                        @endif --}}
+                    </li>
+                @empty
+                    <li class="tw-px-6 tw-py-12 tw-text-center">
+                        <svg class="tw-mx-auto tw-h-12 tw-w-12 tw-text-gray-400" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01">
+                            </path>
+                        </svg>
+                        <h3 class="tw-mt-2 tw-text-sm tw-font-medium tw-text-gray-900">Aucune visite médicale</h3>
+                        <p class="tw-mt-1 tw-text-sm tw-text-gray-500">Commencez par programmer une visite médicale.</p>
+                        <div class="tw-mt-6">
+                            <a href="{{ route('medical-visits.create') }}"
+                                class="tw-bg-orange-400 hover:tw-bg-orange-500 tw-text-white tw-px-6 tw-py-2 tw-rounded-lg tw-font-medium tw-transition tw-duration-200">
+                                Programmer une visite
+                            </a>
+                        </div>
+                    </li>
+                @endforelse
+            </ul>
+        </div>
+
+        <div class="tw-mt-6">
+            {{ $medicalVisits->links() }}
         </div>
     </div>
-    <!-- CONTENT WRAPPER END -->
-
 @endsection
-
-@push('scripts')
-    @include('sections.datatable_js')
-
-    {{-- <script>
-
-        $(window).on('load', function() {
-            @if($cartProductCount == 0)
-              $('#emptyCartBox').hide();
-            @endif
-        });
-
-        var subCategories = @json($subCategories);
-
-        $('#category_id').change(function(e) {
-            // get projects of selected users
-            var opts = '';
-
-            var subCategory = subCategories.filter(function(item) {
-                return item.category_id == e.target.value
-            });
-
-            subCategory.forEach(project => {
-                opts += `<option value='${project.id}'>${project.category_name}</option>`
-            })
-
-            $('#sub_category').html('<option value="all">@lang("app.all")</option>' + opts)
-            $("#sub_category").selectpicker("refresh");
-        });
-
-        $('#products-table').on('preXhr.dt', function(e, settings, data) {
-            var categoryID = $('#category_id').val();
-            var subCategoryID = $('#sub_category').val();
-            var searchText = $('#search-text-field').val();
-            var unitTypeID  = $('#unit_type_id').val();
-
-            data['category_id'] = categoryID;
-            data['sub_category_id'] = subCategoryID;
-            data['searchText'] = searchText;
-            data['unit_type_id'] = unitTypeID;
-        });
-        const showTable = () => {
-            window.LaravelDataTables["products-table"].draw(true);
-        }
-
-        $('#category_id, #sub_category, #unit_type_id').on('change keyup', function() {
-            if ($('#category_id').val() != "") {
-                $('#reset-filters').removeClass('d-none');
-                showTable();
-            } else if ($('#sub_category').val() != "") {
-                $('#reset-filters').removeClass('d-none');
-                showTable();
-            } else if ($('#unit_type_id').val() != "") {
-                $('#reset-filters').removeClass('d-none');
-                showTable();
-            }else{
-                $('#reset-filters').addClass('d-none');
-                showTable();
-            }
-        });
-
-        $('#search-text-field').on('keyup', function() {
-            if ($('#search-text-field').val() != "") {
-                $('#reset-filters').removeClass('d-none');
-                showTable();
-            }
-        });
-
-        $('#reset-filters').click(function() {
-            $('#filter-form')[0].reset();
-
-            $('#category_id').val('all');
-            $('.select-picker').val('all');
-
-            $('#sub_category').html('<option value="all">@lang("app.all")</option>');
-
-            $('#unit_type_id').val('all');
-
-            $('.select-picker').selectpicker("refresh");
-
-            $('#reset-filters').addClass('d-none');
-
-            showTable();
-        });
-
-        $('#quick-action-type').change(function() {
-            const actionValue = $(this).val();
-            if (actionValue != '') {
-                $('#quick-action-apply').removeAttr('disabled');
-
-                if (actionValue == 'change-purchase') {
-                    $('.quick-action-field').addClass('d-none');
-                    $('#change-status-action').removeClass('d-none');
-                } else {
-                    $('.quick-action-field').addClass('d-none');
-                }
-            } else {
-                $('#quick-action-apply').attr('disabled', true);
-                $('.quick-action-field').addClass('d-none');
-            }
-        });
-
-        $('#quick-action-apply').click(function() {
-            const actionValue = $('#quick-action-type').val();
-            if (actionValue == 'delete') {
-                Swal.fire({
-                    title: "@lang('messages.sweetAlertTitle')",
-                    text: "@lang('messages.recoverRecord')",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    focusConfirm: false,
-                    confirmButtonText: "@lang('messages.confirmDelete')",
-                    cancelButtonText: "@lang('app.cancel')",
-                    customClass: {
-                        confirmButton: 'btn btn-primary mr-3',
-                        cancelButton: 'btn btn-secondary'
-                    },
-                    showClass: {
-                        popup: 'swal2-noanimation',
-                        backdrop: 'swal2-noanimation'
-                    },
-                    buttonsStyling: false
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        applyQuickAction();
-                    }
-                });
-
-            } else {
-                applyQuickAction();
-            }
-        });
-
-        const applyQuickAction = () => {
-            var rowdIds = $("#products-table input:checkbox:checked").map(function() {
-                return $(this).val();
-            }).get();
-
-            var url = "{{ route('products.apply_quick_action') }}?row_ids=" + rowdIds;
-
-            $.easyAjax({
-                url: url,
-                container: '#quick-action-form',
-                type: "POST",
-                disableButton: true,
-                buttonSelector: "#quick-action-apply",
-                data: $('#quick-action-form').serialize(),
-                success: function(response) {
-                    if (response.status == 'success') {
-                        showTable();
-                        resetActionButtons();
-                        deSelectAll();
-                        $('#quick-action-form').hide();
-                    }
-                }
-            })
-        };
-
-        $('body').on('click', '.productView', function() {
-            let id = $(this).data('product-id');
-
-            var url = "{{ route('products.show', ':id') }}";
-            url = url.replace(':id', id);
-
-            $(MODAL_DEFAULT + ' ' + MODAL_HEADING).html('...');
-            $.ajaxModal(MODAL_DEFAULT, url);
-        });
-
-        $('body').on('click', '.delete-table-row', function() {
-            var id = $(this).data('product-id');
-            Swal.fire({
-                title: "@lang('messages.sweetAlertTitle')",
-                text: "@lang('messages.recoverRecord')",
-                icon: 'warning',
-                showCancelButton: true,
-                focusConfirm: false,
-                confirmButtonText: "@lang('messages.confirmDelete')",
-                cancelButtonText: "@lang('app.cancel')",
-                customClass: {
-                    confirmButton: 'btn btn-primary mr-3',
-                    cancelButton: 'btn btn-secondary'
-                },
-                showClass: {
-                    popup: 'swal2-noanimation',
-                    backdrop: 'swal2-noanimation'
-                },
-                buttonsStyling: false
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    var url = "{{ route('products.destroy', ':id') }}";
-                    url = url.replace(':id', id);
-
-                    var token = "{{ csrf_token() }}";
-
-                    $.easyAjax({
-                        type: 'POST',
-                        url: url,
-                        data: {
-                            '_token': token,
-                            '_method': 'DELETE'
-                        },
-                        success: function(response) {
-                            if (response.status == "success") {
-                                showTable();
-                            }
-                        }
-                    });
-                }
-            });
-        });
-
-        $('body').on('click', '.add-product', function() {
-            let cartItems = [];
-            var productId = $(this).data('product-id');
-            let url = "{{ route('products.add_cart_item') }}";
-
-            $.easyAjax({
-                url: url,
-                container: '.content-wrapper',
-                type: "POST",
-                data: {
-                    'productID': productId,
-                    '_token': "{{ csrf_token() }}"
-                },
-                success: function(response) {
-                         $('#emptyCartBox').show();
-                        cartItems = response.cartProduct;
-                        $('.productCounter').html(cartItems);
-
-                }
-            })
-
-        });
-
-        $('body').on('click', '.empty-cart', function() {
-            let id = $(this).data('user-id');
-
-            var url = "{{ route('products.remove_cart_item', ':id') }}";
-            url = url.replace(':id', id);
-            $.easyAjax({
-                url: url,
-                container: '#saveInvoiceForm',
-                type: "POST",
-                blockUI: true,
-                data: {
-                    _token: "{{ csrf_token() }}",
-                    type: "all_data",
-                },
-                success: function(response) {
-                    cartItems = response.productItems;
-                    $('.productCounter').html(cartItems);
-                    $('#emptyCartBox').hide();
-
-                }
-            });
-        });
-
-    </script> --}}
-@endpush

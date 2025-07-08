@@ -87,7 +87,7 @@
     @endif
     -- Nouveau menu start
     <!-- NOUVEAU MENU START -->
-    <x-menu-item icon="hospital" :text="__('Visite médicale')" :link="route('hospital.index')">
+    <x-menu-item icon="hospital" :text="__('Visite médicale')" :link="route('medical-visits.index')">
         <x-slot name="iconPath">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-boxes" viewBox="0 0 16 16">
