@@ -116,20 +116,48 @@
         </x-slot>
     </x-menu-item>
 
-   
-        <x-menu-item icon="baselegal" text="Base légale" :link="route('baselegal_consultation')">
+
+    <x-menu-item icon="baselegal" text="Base légale" :link="route('baselegal_consultation')">
+        <x-slot name="iconPath">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-journal-text" viewBox="0 0 16 16">
+                <path
+                    d="M5 10.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5" />
+                <path
+                    d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2" />
+                <path
+                    d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z" />
+            </svg>
+        </x-slot>
+    </x-menu-item>
+
+
+     <!-- NAV ITEM - PAIE -->
+        <x-menu-item icon="headset" :text="__('Gestion de paie')">
             <x-slot name="iconPath">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-journal-text" viewBox="0 0 16 16">
-                    <path
-                        d="M5 10.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5" />
-                    <path
-                        d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2" />
-                    <path
-                        d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z" />
-                </svg>
+                <path fill-rule="evenodd"
+                    d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z" />
+                <path
+                    d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z" />
             </x-slot>
+            <div class="accordionItemContent pb-2">
+                <x-sub-menu-item :link="route('paie.index')" text="Éditer un bulletin de paie" />
+                @if (!empty(array_intersect(['RH', 'admin'], user_roles())) || user()->permission('view_avance_acompte') != 'none')
+                    <x-sub-menu-item :link="route('salaireAVS.index')" text="Avance/acompte" />
+                @endif
+                @if (!empty(array_intersect(['RH', 'admin'], user_roles())) || user()->permission('view_registre_paiement') != 'none')
+                    <x-sub-menu-item :link="route('masse_salariale')" text="Registre de paiement" />
+                @endif
+                @if (!empty(array_intersect(['RH', 'admin'], user_roles())) || user()->permission('view_paiement_book') != 'none')
+                    <x-sub-menu-item :link="route('paieLivre.index')" :text="__('Livre de paie')" />
+                @endif
+                @if (!empty(array_intersect(['RH', 'admin'], user_roles())) || user()->permission('view_account_balance') != 'none')
+                    <x-sub-menu-item :link="route('accountBalance.index')" :text="__('Solde de tout compte')" />
+                @endif
+
+            </div>
         </x-menu-item>
+
 
 
 
@@ -455,6 +483,8 @@
     @endif
     <!-- Knowledge base -->
 
+
+   
 
     <!-- NAV ITEM - NOTES -->
     @if (in_array('client', user_roles()) && $sidebarUserPermissions['view_client_note'] != 5)

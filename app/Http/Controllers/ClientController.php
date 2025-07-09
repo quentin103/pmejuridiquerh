@@ -2,54 +2,57 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ProjectStatusSetting;
-use App\Models\Role;
-use App\Models\User;
-use App\Helper\Files;
-use App\Helper\Reply;
-use App\Models\Invoice;
-use App\Models\Payment;
-use App\Models\Project;
-use App\Models\BaseModel;
-use App\Models\ClientNote;
-use App\Scopes\ActiveScope;
-use App\Traits\ImportExcel;
-use App\Models\Notification;
-use App\Models\ContractType;
-use App\Models\UserAuth;
-use Illuminate\Http\Request;
-use App\Imports\ClientImport;
-use App\Jobs\ImportClientJob;
-use App\Models\ClientDetails;
-use App\Models\ClientCategory;
-use App\Models\PurposeConsent;
-use App\Models\LanguageSetting;
-use App\Models\UniversalSearch;
-use App\Models\ClientSubCategory;
-use App\Models\PurposeConsentUser;
-use Illuminate\Support\Facades\DB;
-use App\DataTables\TicketDataTable;
-use App\DataTables\ClientsDataTable;
-use App\DataTables\InvoicesDataTable;
-use App\DataTables\PaymentsDataTable;
-use App\DataTables\ProjectsDataTable;
-use App\DataTables\EstimatesDataTable;
+use App\DataTables\ClientContactsDataTable;
 use App\DataTables\ClientGDPRDataTable;
 use App\DataTables\ClientNotesDataTable;
+use App\DataTables\ClientsDataTable;
 use App\DataTables\CreditNotesDataTable;
-use App\DataTables\ClientContactsDataTable;
+use App\DataTables\EstimatesDataTable;
+use App\DataTables\InvoicesDataTable;
 use App\DataTables\OrdersDataTable;
+use App\DataTables\PaymentsDataTable;
+use App\DataTables\ProjectsDataTable;
+use App\DataTables\TicketDataTable;
 use App\Enums\Salutation;
 use App\Events\NewUserEvent;
-use App\Http\Requests\Admin\Employee\ImportRequest;
+use App\Helper\Files;
+use App\Helper\Reply;
+use App\Http\Controllers\AccountBaseController;
+use App\Http\Controllers\AppSettingController;
 use App\Http\Requests\Admin\Client\StoreClientRequest;
-use App\Http\Requests\Gdpr\SaveConsentUserDataRequest;
 use App\Http\Requests\Admin\Client\UpdateClientRequest;
 use App\Http\Requests\Admin\Employee\ImportProcessRequest;
+use App\Http\Requests\Admin\Employee\ImportRequest;
+use App\Http\Requests\Gdpr\SaveConsentUserDataRequest;
+use App\Imports\ClientImport;
+use App\Jobs\ImportClientJob;
+use App\Models\BaseModel;
+use App\Models\ClientCategory;
 use App\Models\ClientContact;
+use App\Models\ClientDetails;
+use App\Models\ClientNote;
+use App\Models\ClientSubCategory;
+use App\Models\ContractType;
+use App\Models\Invoice;
+use App\Models\LanguageSetting;
 use App\Models\Lead;
+use App\Models\Notification;
+use App\Models\Payment;
+use App\Models\Project;
+use App\Models\ProjectStatusSetting;
+use App\Models\PurposeConsent;
+use App\Models\PurposeConsentUser;
+use App\Models\RegimeImpot;
+use App\Models\Role;
+use App\Models\UniversalSearch;
+use App\Models\User;
+use App\Models\UserAuth;
+use App\Scopes\ActiveScope;
 use App\Scopes\CompanyScope;
 use App\Traits\EmployeeActivityTrait;
+use App\Traits\ImportExcel;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ClientController extends AccountBaseController
 {
@@ -143,6 +146,41 @@ class ClientController extends AccountBaseController
 
         return view('clients.create', $this->data);
     }
+
+
+
+      public function createTiers($leadID = null)
+    {
+        $this->addPermission = user()->permission('add_clients');
+
+        abort_403 (!($this->addPermission == 'all' || $this->addPermission == 'added' || $this->addPermission == 'both'));
+
+        if ($leadID) {
+            $this->leadDetail = Lead::findOrFail($leadID);
+        }
+
+        if (request('lead') != '') {
+            $this->leadId = request('lead');
+            $this->type = 'lead';
+            $this->lead = Lead::findOrFail($this->leadId);
+        }
+
+        $this->pageTitle = __('app.add') . ' ' . __('app.client');
+        $this->countries = countries();
+        $this->categories = ClientCategory::all();
+        $this->RegimeImpots = RegimeImpot::all();
+        $this->salutations = ['mr','miss', 'madam'];
+
+        $client = new ClientDetails();
+
+        if (!empty($client->getCustomFieldGroupsWithFields())) {
+            $this->fields = $client->getCustomFieldGroupsWithFields()->fields;
+        }
+
+        return view('tiers.create', $this->data);
+        
+    }
+
 
     /**
      * XXXXXXXXXXX

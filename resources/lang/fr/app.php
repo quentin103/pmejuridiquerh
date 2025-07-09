@@ -1,5 +1,6 @@
 <?php 
 return [
+   'paie-livre' => 'Livre de paie',
   'dealWatcher' => 'Observateur des transactions',
   'signBy' => 'Signer par',
   'leaveArchive' => 'Inactif',

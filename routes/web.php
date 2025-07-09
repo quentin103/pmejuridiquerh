@@ -1,142 +1,205 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\GdprController;
-use App\Http\Controllers\DealController;
-use App\Http\Controllers\TaskController;
-use App\Http\Controllers\AwardController;
-use App\Http\Controllers\ImageController;
-use App\Http\Controllers\LeaveController;
-use App\Http\Controllers\OrderController;
-use App\Http\Controllers\ClientController;
-use App\Http\Controllers\ImportController;
-use App\Http\Controllers\NoticeController;
-use App\Http\Controllers\SearchController;
-use App\Http\Controllers\TicketController;
-use App\Http\Controllers\ExpenseController;
-use App\Http\Controllers\HolidayController;
-use App\Http\Controllers\InvoiceController;
-use App\Http\Controllers\MessageController;
-use App\Http\Controllers\PaymentController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\MedicalVisitController;
-use App\Http\Controllers\RecrutementController;
 use App\Http\Controllers\AccidentController;
-use App\Http\Controllers\BaseLegalController;
-use App\Http\Controllers\HRDashboardController;
-use App\Http\Controllers\JobOfferController;
-use App\Http\Controllers\JobApplicationController;
-use App\Http\Controllers\InterviewController;
-use App\Http\Controllers\ProjectController;
-use App\Http\Controllers\SubTaskController;
-use App\Http\Controllers\TimelogController;
-use App\Http\Controllers\ContractController;
-use App\Http\Controllers\EmployeeController;
-use App\Http\Controllers\EstimateController;
-use App\Http\Controllers\LeadFileController;
-use App\Http\Controllers\LeadNoteController;
-use App\Http\Controllers\PassportController;
-use App\Http\Controllers\ProposalController;
-use App\Http\Controllers\SettingsController;
-use App\Http\Controllers\TaskFileController;
-use App\Http\Controllers\TaskNoteController;
-use App\Http\Controllers\ClientDocController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\EventFileController;
-use App\Http\Controllers\LeadBoardController;
-use App\Http\Controllers\LeaveFileController;
-use App\Http\Controllers\HospitalFileController;
-use App\Http\Controllers\QuickbookController;
-use App\Http\Controllers\TaskBoardController;
-use App\Http\Controllers\TaskLabelController;
-use App\Http\Controllers\AttendanceController;
-use App\Http\Controllers\ClientNoteController;
-use App\Http\Controllers\CreditNoteController;
-use App\Http\Controllers\DepartmentController;
-use App\Http\Controllers\DiscussionController;
-use App\Http\Controllers\LeadReportController;
-use App\Http\Controllers\StickyNoteController;
-use App\Http\Controllers\TaskReportController;
-use App\Http\Controllers\TicketFileController;
-use App\Http\Controllers\BankAccountController;
-use App\Http\Controllers\DesignationController;
-use App\Http\Controllers\EmployeeDocController;
-use App\Http\Controllers\LeadCategoryController;
-use App\Http\Controllers\LeaveReportController;
-use App\Http\Controllers\LeavesQuotaController;
-use App\Http\Controllers\HospitalReportController;
-use App\Http\Controllers\HospitalsQuotaController;
-use App\Http\Controllers\MessageFileController;
-use App\Http\Controllers\ProductFileController;
-use App\Http\Controllers\ProjectFileController;
-use App\Http\Controllers\ProjectNoteController;
-use App\Http\Controllers\SalesReportController;
-use App\Http\Controllers\SubTaskFileController;
-use App\Http\Controllers\TaskCommentController;
-use App\Http\Controllers\TicketReplyController;
+use App\Http\Controllers\accountBalanceController;
+use App\Http\Controllers\annualLeaveController;
 use App\Http\Controllers\AppreciationController;
-use App\Http\Controllers\ContractFileController;
-use App\Http\Controllers\ContractTypeController;
-use App\Http\Controllers\EmployeeVisaController;
-use App\Http\Controllers\GdprSettingsController;
-use App\Http\Controllers\NotificationController;
-use App\Http\Controllers\TaskCalendarController;
-use App\Http\Controllers\TaskCategoryController;
-use App\Http\Controllers\InvoiceFilesController;
-use App\Http\Controllers\ClientContactController;
-use App\Http\Controllers\ContractRenewController;
-use App\Http\Controllers\EventCalendarController;
-use App\Http\Controllers\ExpenseReportController;
-use App\Http\Controllers\FinanceReportController;
-use App\Http\Controllers\KnowledgeBaseController;
-use App\Http\Controllers\ProjectMemberController;
-use App\Http\Controllers\ProjectRatingController;
-use App\Http\Controllers\TimelogReportController;
+use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\AttendanceReportController;
+use App\Http\Controllers\AwardController;
+use App\Http\Controllers\BankAccountController;
+use App\Http\Controllers\BaseLegalController;
 use App\Http\Controllers\ClientCategoryController;
-use App\Http\Controllers\LeadCustomFormController;
-use App\Http\Controllers\UserPermissionController;
+use App\Http\Controllers\ClientContactController;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ClientDocController;
+use App\Http\Controllers\ClientNoteController;
+use App\Http\Controllers\ClientSubCategoryController;
+use App\Http\Controllers\ContractController;
+use App\Http\Controllers\ContractDiscussionController;
+use App\Http\Controllers\ContractFileController;
+use App\Http\Controllers\ContractRenewController;
+use App\Http\Controllers\ContractTemplateController;
+use App\Http\Controllers\ContractTypeController;
+use App\Http\Controllers\CreditNoteController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DealController;
+use App\Http\Controllers\DealNoteController;
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\DesignationController;
+use App\Http\Controllers\DiscussionCategoryController;
+use App\Http\Controllers\DiscussionController;
 use App\Http\Controllers\DiscussionFilesController;
 use App\Http\Controllers\DiscussionReplyController;
+use App\Http\Controllers\EmergencyContactController;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\EmployeeDocController;
+use App\Http\Controllers\EmployeeShiftChangeRequestController;
+use App\Http\Controllers\EmployeeShiftScheduleController;
+use App\Http\Controllers\EmployeeVisaController;
+use App\Http\Controllers\EstimateController;
+use App\Http\Controllers\EstimateRequestController;
+use App\Http\Controllers\EstimateTemplateController;
+use App\Http\Controllers\EventCalendarController;
+use App\Http\Controllers\EventFileController;
 use App\Http\Controllers\ExpenseCategoryController;
+use App\Http\Controllers\ExpenseController;
+use App\Http\Controllers\ExpenseReportController;
+use App\Http\Controllers\FinanceReportController;
+use App\Http\Controllers\GanttLinkController;
+use App\Http\Controllers\GdprController;
+use App\Http\Controllers\GdprSettingsController;
+use App\Http\Controllers\HolidayController;
+use App\Http\Controllers\HospitalFileController;
+use App\Http\Controllers\HospitalReportController;
+use App\Http\Controllers\HRDashboardController;
+use App\Http\Controllers\ImageController;
+use App\Http\Controllers\ImportController;
+use App\Http\Controllers\IncomeVsExpenseReportController;
+use App\Http\Controllers\InterviewController;
+use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\InvoiceFilesController;
+use App\Http\Controllers\InvoicePaymentDetailController;
+use App\Http\Controllers\JobApplicationController;
+use App\Http\Controllers\JobOfferController;
+use App\Http\Controllers\KnowledgeBaseCategoryController;
+use App\Http\Controllers\KnowledgeBaseController;
+use App\Http\Controllers\KnowledgeBaseFileController;
+// use App\Http\Controllers\HospitalsQuotaController;
+use App\Http\Controllers\LeadBoardController;
+use App\Http\Controllers\LeadCategoryController;
+use App\Http\Controllers\LeadContactController;
+use App\Http\Controllers\LeadCustomFormController;
+use App\Http\Controllers\LeadFileController;
+use App\Http\Controllers\LeadNoteController;
+use App\Http\Controllers\LeadReportController;
+use App\Http\Controllers\LeaveController;
+use App\Http\Controllers\LeaveFileController;
+use App\Http\Controllers\LeaveReportController;
+use App\Http\Controllers\LeavesQuotaController;
+use App\Http\Controllers\MedicalVisitController;
+use App\Http\Controllers\MessageController;
+use App\Http\Controllers\MessageFileController;
+use App\Http\Controllers\MyCalendarController;
+use App\Http\Controllers\NoticeController;
+use App\Http\Controllers\NoticeFileController;
+use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PaieController;
+use App\Http\Controllers\paieLivreController;
+use App\Http\Controllers\PassportController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductCategoryController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductFileController;
+use App\Http\Controllers\ProductSubCategoryController;
 use App\Http\Controllers\ProjectCalendarController;
 use App\Http\Controllers\ProjectCategoryController;
-use App\Http\Controllers\ProjectTemplateController;
-use App\Http\Controllers\TimelogCalendarController;
-use App\Http\Controllers\AttendanceReportController;
-use App\Http\Controllers\ContractTemplateController;
-use App\Http\Controllers\EmergencyContactController;
-use App\Http\Controllers\EstimateTemplateController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ProjectFileController;
+use App\Http\Controllers\ProjectMemberController;
 use App\Http\Controllers\ProjectMilestoneController;
-use App\Http\Controllers\ProposalTemplateController;
-use App\Http\Controllers\RecurringExpenseController;
-use App\Http\Controllers\RecurringInvoiceController;
-use App\Http\Controllers\TicketCustomFormController;
-use App\Http\Controllers\ClientSubCategoryController;
-use App\Http\Controllers\KnowledgeBaseFileController;
-use App\Http\Controllers\ContractDiscussionController;
-use App\Http\Controllers\DealNoteController;
-use App\Http\Controllers\DiscussionCategoryController;
-use App\Http\Controllers\ProductSubCategoryController;
-use App\Http\Controllers\ProjectTemplateTaskController;
-use App\Http\Controllers\ProjectTimelogBreakController;
-use App\Http\Controllers\EmployeeShiftScheduleController;
-use App\Http\Controllers\IncomeVsExpenseReportController;
-use App\Http\Controllers\KnowledgeBaseCategoryController;
+use App\Http\Controllers\ProjectNoteController;
+use App\Http\Controllers\ProjectRatingController;
+use App\Http\Controllers\ProjectTemplateController;
 use App\Http\Controllers\ProjectTemplateMemberController;
 use App\Http\Controllers\ProjectTemplateSubTaskController;
-use App\Http\Controllers\EmployeeShiftChangeRequestController;
-use App\Http\Controllers\EstimateRequestController;
-use App\Http\Controllers\GanttLinkController;
-use App\Http\Controllers\LeadContactController;
-use App\Http\Controllers\NoticeFileController;
-use App\Http\Controllers\InvoicePaymentDetailController;
-use App\Http\Controllers\MyCalendarController;
+use App\Http\Controllers\ProjectTemplateTaskController;
+use App\Http\Controllers\ProjectTimelogBreakController;
 use App\Http\Controllers\PromotionController;
+use App\Http\Controllers\ProposalController;
+use App\Http\Controllers\ProposalTemplateController;
+use App\Http\Controllers\QuickbookController;
+use App\Http\Controllers\RecrutementController;
+use App\Http\Controllers\RecurringExpenseController;
+use App\Http\Controllers\RecurringInvoiceController;
+use App\Http\Controllers\salaireAVSController;
+use App\Http\Controllers\salaireCategorielController;
+use App\Http\Controllers\salairePrimeController;
+use App\Http\Controllers\salaireTaxeController;
+use App\Http\Controllers\SalesReportController;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\secteurActiviteController;
+use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\StickyNoteController;
+use App\Http\Controllers\SubTaskController;
+use App\Http\Controllers\SubTaskFileController;
+use App\Http\Controllers\TaskBoardController;
+use App\Http\Controllers\TaskCalendarController;
+use App\Http\Controllers\TaskCategoryController;
+use App\Http\Controllers\TaskCommentController;
+use App\Http\Controllers\TaskController;
+use App\Http\Controllers\TaskFileController;
+use App\Http\Controllers\TaskLabelController;
+use App\Http\Controllers\TaskNoteController;
+use App\Http\Controllers\TaskReportController;
+use App\Http\Controllers\TicketController;
+use App\Http\Controllers\TicketCustomFormController;
+use App\Http\Controllers\TicketFileController;
+use App\Http\Controllers\TicketReplyController;
+use App\Http\Controllers\TimelogCalendarController;
+use App\Http\Controllers\TimelogController;
+use App\Http\Controllers\TimelogReportController;
+use App\Http\Controllers\UserPermissionController;
 use App\Http\Controllers\WeeklyTimesheetController;
+use Illuminate\Support\Facades\Route;
+
+
+
+
+
+
+
+
+
 
 
 Route::group(['middleware' => ['auth', 'multi-company-select', 'email_verified'], 'prefix' => 'account'], function () {
+   
+   
+    // PAIE
+    Route::post('paie/apply-quick-action', [PaieController::class, 'applyQuickAction'])->name('paie.apply_quick_action');
+    Route::post('paie/updateOtherData/{id}', [PaieController::class, 'updateOtherData'])->name('paie.update_other_data');
+    Route::post('paie/refreshCount', [PaieController::class, 'refreshCount'])->name('paie.refresh_count');
+    Route::resource('paie', PaieController::class);
+    Route::get('masse_salariale', [PaieController::class, 'masse_salariale'])->name('masse_salariale');
+    Route::get('generate-bulletin-paie', [PaieController::class, 'generatePDF'])->name('generate-bulletin-paie');
+    Route::get('download-bulletin', [PaieController::class, 'downloadPDF'])->name('download-bulletin');
+    Route::get('calculate_anciennete', [PaieController::class, 'Anciennete'])->name('calculate_anciennete');
+    Route::get('calculate_gratification', [PaieController::class, 'Gratification'])->name('calculate_gratification');
+
+
+    Route::resource('salaireCategoriel', salaireCategorielController::class);
+    Route::resource('salairePrime', salairePrimeController::class);
+    Route::resource('salaireTaxe', salaireTaxeController::class);
+    Route::resource('salaireAVS', salaireAVSController::class);
+    Route::get('salaireAVS/showAVS', [salaireAVSController::class, 'showAVS'])->name('showAVS');
+    Route::resource('paieLivre', paieLivreController::class);
+    Route::resource('accountBalance', accountBalanceController::class);
+    Route::post('calcul-solde-tout-compte', [accountBalanceController::class, 'calcul'])->name('calcul-solde-tout-compte');
+    Route::get('employee-leaves-check/{id}', [annualLeaveController::class, 'employeeCheck'])->name('employee-leaves-check');
+
+    /*Finance*/
+    Route::resource('tiers', ClientController::class);
+    Route::get('createTiers', [ClientController::class, 'createTiers'])->name('tiers.createTiers');
+
+    
+
+
+    Route::resource('secteurActivite', secteurActiviteController::class);
+    
+    Route::get('annualLeave/personal', [annualLeaveController::class, 'personalLeaves'])->name('annualLeave.personal');
+    Route::get('annualLeave/calendar', [annualLeaveController::class, 'leaveCalendar'])->name('annualLeave.calendar');
+    Route::post('annualLeave/data', [annualLeaveController::class, 'data'])->name('leaves.data');
+    Route::post('annualLeave/leaveAction', [annualLeaveController::class, 'leaveAction'])->name('annualLeave.leave_action');
+    Route::get('annualLeave/show-reject-modal', [annualLeaveController::class, 'rejectLeave'])->name('annualLeave.show_reject_modal');
+    Route::post('annualLeave/apply-quick-action', [annualLeaveController::class, 'applyQuickAction'])->name('annualLeave.apply_quick_action');
+    Route::get('annualLeave/download_demande_fiche/{id}', [annualLeaveController::class, 'downloadAnnualLeaveFiche'])->name('annualLeave.download_demande_fiche');
+    Route::resource('annualLeave', annualLeaveController::class);
+
+
+
+
     Route::post('image/upload', [ImageController::class, 'store'])->name('image.store');
 
 
@@ -220,8 +283,8 @@ Route::group(['middleware' => ['auth', 'multi-company-select', 'email_verified']
     Route::get('employee-leaves/employeeLeaveTypes/{id}', [LeavesQuotaController::class, 'employeeLeaveTypes'])->name('employee-leaves.employee_leave_types');
     Route::resource('employee-leaves', LeavesQuotaController::class);
 
-    Route::get('employee-hospitals/employeeLeaveTypes/{id}', [HospitalsQuotaController::class, 'employeeLeaveTypes'])->name('employee-hospitals.employee_leave_types');
-    Route::resource('employee-hospitals', HospitalsQuotaController::class);
+    // Route::get('employee-hospitals/employeeLeaveTypes/{id}', [HospitalsQuotaController::class, 'employeeLeaveTypes'])->name('employee-hospitals.employee_leave_types');
+    // Route::resource('employee-hospitals', HospitalsQuotaController::class);
 
     Route::get('designations/designation-hierarchy', [DesignationController::class, 'hierarchyData'])->name('designation.hierarchy');
     Route::post('designations/changeParent', [DesignationController::class, 'changeParent'])->name('designation.changeParent');
@@ -414,8 +477,8 @@ Route::group(['middleware' => ['auth', 'multi-company-select', 'email_verified']
     Route::post('/interviews/reschedule/{interview}', [InterviewController::class, 'reschedule'])->name('interviews.reschedule');
     Route::get('/interviews/calendar/view', [InterviewController::class, 'calendar'])->name('interviews.calendar');
     
-    // Workflows de recrutement
-    Route::resource('recruitment-workflows', RecruitmentWorkflowController::class)->only(['index', 'show', 'update']);
+    // // Workflows de recrutement
+    // Route::resource('recruitment-workflows', RecruitmentWorkflowController::class)->only(['index', 'show', 'update']);
 
 
 // Routes publiques pour les candidatures
@@ -632,9 +695,9 @@ Route::post('/careers/{jobOffer}/apply', [JobApplicationController::class, 'appl
     Route::get('leave-files/download/{id}', [LeaveFileController::class, 'download'])->name('leave-files.download');
     Route::resource('leave-files', LeaveFileController::class);
     
-    // hospital files routes
-    Route::get('hospital-files/download/{id}', [HospitalFileController::class, 'download'])->name('hospital-files.download');
-    Route::resource('hospital-files', HospitalFileController::class);
+    // // hospital files routes
+    // Route::get('hospital-files/download/{id}', [HospitalFileController::class, 'download'])->name('hospital-files.download');
+    // Route::resource('hospital-files', HospitalFileController::class);
 
     /* LEAVES */
     Route::get('leaves/leaves-date', [LeaveController::class, 'getDate'])->name('leaves.date');
@@ -907,10 +970,10 @@ Route::post('/careers/{jobOffer}/apply', [JobApplicationController::class, 'appl
     Route::get('leave-report/leave-quota/{id}/{year}/{month}', [LeaveReportController::class, 'employeeLeaveQuota'])->name('leave-report.employee-leave-quota');
     Route::resource('leave-report', LeaveReportController::class);
 
-    Route::get('hospital-report/leave-quota', [HospitalReportController::class, 'leaveQuota'])->name('hospital-report.leave_quota');
-    Route::get('hospital-report/leave-quota/export-all-leave-quota/{id}/{year}/{month}', [HospitalsQuotaController::class, 'exportAllLeaveQuota'])->name('hospital_quota.export_all_leave_quota');
-    Route::get('hospital-report/leave-quota/{id}/{year}/{month}', [HospitalReportController::class, 'employeeLeaveQuota'])->name('hospital-report.employee-leave-quota');
-    Route::resource('hospital-report', HospitalReportController::class);
+    // Route::get('hospital-report/leave-quota', [HospitalReportController::class, 'leaveQuota'])->name('hospital-report.leave_quota');
+    // Route::get('hospital-report/leave-quota/export-all-leave-quota/{id}/{year}/{month}', [HospitalsQuotaController::class, 'exportAllLeaveQuota'])->name('hospital_quota.export_all_leave_quota');
+    // Route::get('hospital-report/leave-quota/{id}/{year}/{month}', [HospitalReportController::class, 'employeeLeaveQuota'])->name('hospital-report.employee-leave-quota');
+    // Route::resource('hospital-report', HospitalReportController::class);
 
     Route::resource('attendance-report', AttendanceReportController::class);
 
