@@ -350,10 +350,10 @@ class PaieEmployeesDataTable extends BaseDataTable
      *
      * @return string
      */
-    protected function filename()
-    {
-        return 'employees_' . date('YmdHis');
-    }
+    // protected function filename()
+    // {
+    //     return 'employees_' . date('YmdHis');
+    // }
 
     public function pdf()
     {

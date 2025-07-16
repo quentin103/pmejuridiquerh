@@ -53,12 +53,10 @@ class PaieController extends AccountBaseController
      */
     public function index(PaieEmployeesDataTable $dataTable)
     {
-        $viewPermission = user()->permission('view_pay');
-        abort_403(!in_array($viewPermission, ['all', 'added', 'owned', 'both']) && empty(array_intersect(['RH', 'admin'], user_roles())));
-        //dd($viewPermission);
+    
         if (!request()->ajax()) {
             $this->employees = User::allEmployees();
-            $this->salaireCategoriel = salaire_categoriel::allSalaireCategoriel();
+            //$this->salaireCategoriel = salaire_categoriel::allSalaireCategoriel();
             $this->totalEmployees = count($this->employees);
             $this->designations = Designation::allDesignations();
             $this->roles = Role::where('name', '<>', 'client')

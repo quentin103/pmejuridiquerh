@@ -150,6 +150,10 @@ return [
     'December' => 'Décembre',
   ],
   'menu' => [
+    'paie' => 'Gestion de paie',
+    'accountBalance' => 'Solde de tout compte',
+    'operations' => 'Gestion des opérations',
+    'budget' => 'Gestion du budget',
     'units' => 'Unités',
     'prefixSettings' => 'Paramètres de préfixe',
     'parent_id' => 'Parent',
