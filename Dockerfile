@@ -27,8 +27,7 @@ COPY ./docker/supervisord.conf /etc/supervisord.conf
 
 EXPOSE 8080
 
-# Ajouter le script cron
-COPY ./docker/crontab /etc/cron.d/laravel-cron
+
 # Configurer la tâche cron pour exécuter le scheduler Laravel chaque minute
 RUN echo '* * * * * /usr/local/bin/php /var/www/artisan schedule:run >> /dev/null 2>&1' > /etc/cron.d/laravel-cron \
     && chmod 0644 /etc/cron.d/laravel-cron \
