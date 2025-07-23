@@ -8,7 +8,7 @@ return [
     'skill' => 'Compétence',
     'add' => 'Ajouter',
     'footerlinks' => 'Liens de pied de page',
-    'department' => 'Département',
+    'department' => 'Effectif/Département',
     'edit' => 'Modifier',
     'details' => 'Détails',
     'delete' => 'Supprimer',

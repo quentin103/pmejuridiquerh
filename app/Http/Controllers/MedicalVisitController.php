@@ -19,7 +19,7 @@ class MedicalVisitController extends AccountBaseController
     public function __construct()
     {
         parent::__construct();
-        $this->pageTitle = 'Visite Medical';
+        $this->pageTitle = 'Santé et sécurité';
         // $this->middleware(
         //     function ($request, $next) {
         //         in_array('client', user_roles()) ? abort_403(!(in_array('orders', $this->user->modules) && user()->permission('add_order') == 'all')) : abort_403(!in_array('products', $this->user->modules));

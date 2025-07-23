@@ -366,7 +366,7 @@ return [
     'requirements' => 'Exigences',
     'offerDetail' => 'Détails de l\'offre',
     'workExperience' => 'L\'expérience professionnelle',
-    'designation' => 'Désignation',
+    'designation' => 'Effectifs par contrat',
     'offerPer' => 'Salaire offert',
     'joiningDate' => 'Date d\'inscription',
     'lastDate' => 'Dernière date d\'acceptation',

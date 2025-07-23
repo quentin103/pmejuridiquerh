@@ -117,7 +117,7 @@
     </x-menu-item>
 
 
-    <x-menu-item icon="baselegal" text="Base légale" :link="route('baselegal_consultation')">
+    <x-menu-item icon="baselegal" text="Bibliothèque" :link="route('baselegal_consultation')">
         <x-slot name="iconPath">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-journal-text" viewBox="0 0 16 16">

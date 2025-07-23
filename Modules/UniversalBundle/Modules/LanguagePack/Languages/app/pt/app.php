@@ -365,7 +365,7 @@ return [
     'labelName' => 'Nome do rótulo',
     'color' => 'Cor',
     'columnStatus' => 'Status',
-    'hr' => 'Ressources Humaines',
+    'hr' => 'Dossiers du personnel',
     'work' => 'Trabalhar',
     'contractType' => 'tipo de contrato',
     'contract' => 'Contrato',
