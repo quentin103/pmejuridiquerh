@@ -22,11 +22,12 @@ WORKDIR /var/www
 RUN chown -R www-data:www-data /var/www \
     && chmod -R 775 storage bootstrap/cache
 
-# Copier la configuration crontab
-COPY ./docker/crontab /etc/crontabs/root
+# Créer les répertoires de logs nécessaires
+RUN mkdir -p /var/log/supervisor
 
-# Donner les bonnes permissions aux fichiers cron
-RUN chmod 0644 /etc/crontabs/root
+# Créer directement la crontab dans le Dockerfile
+RUN echo "* * * * * cd /var/www && su -s /bin/sh www-data -c 'php artisan schedule:run' >> /var/log/cron.log 2>&1" > /etc/crontabs/root \
+    && chmod 0644 /etc/crontabs/root
 
 # Ajouter les configs
 COPY ./docker/nginx.conf /etc/nginx/http.d/default.conf
