@@ -15,24 +15,27 @@ RUN apk add --no-cache \
 
 # Copier le projet Laravel (avec /vendor déjà présent)
 COPY . /var/www
-WORKDIR /var/www 
+WORKDIR /var/www
 
 # Donner les bonnes permissions
 RUN chown -R www-data:www-data /var/www \
     && chmod -R 775 storage bootstrap/cache
 
-# Ajouter les configs
+# Ajouter les configs Nginx et Supervisor
 COPY ./docker/nginx.conf /etc/nginx/http.d/default.conf
 COPY ./docker/supervisord.conf /etc/supervisord.conf
 
+# Copier la crontab personnalisée
+COPY ./docker/crontab /etc/crontabs/root
+
+# Donner les permissions nécessaires au script artisan
+RUN chmod +x /var/www/artisan
+
+# Créer le fichier de log pour cron
+RUN touch /var/log/cron.log \
+    && chown www-data:www-data /var/log/cron.log
+
 EXPOSE 8080
 
-
-# Configurer la tâche cron pour exécuter le scheduler Laravel chaque minute
-RUN echo '* * * * * /usr/local/bin/php /var/www/artisan schedule:run >> /dev/null 2>&1' > /etc/cron.d/laravel-cron \
-    && chmod 0644 /etc/cron.d/laravel-cron \
-    && crontab /etc/cron.d/laravel-cron
-
-
-# Démarrer Nginx + PHP-FPM via supervisord
+# Lancer Nginx, PHP-FPM et cron via supervisord
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
