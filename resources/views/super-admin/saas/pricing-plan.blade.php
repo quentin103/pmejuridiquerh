@@ -49,12 +49,12 @@
                 @if(!$item->is_free)
                     <div class="tw-text-sm tw-text-gray-500">
                         <span>
-                            @lang('superadmin.packages.perMonth'):
+                            @lang('Mois'):
                             <strong>{!! $currencyMonthly !!}</strong>
                         </span>
                         <span class="tw-mx-2">|</span>
                         <span>
-                            @lang('superadmin.packages.perYear'):
+                            @lang('année'):
                             <strong>{!! $currencyAnnual !!}</strong>
                         </span>
                     </div>
