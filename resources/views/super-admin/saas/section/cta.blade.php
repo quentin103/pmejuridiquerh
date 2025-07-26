@@ -1,4 +1,4 @@
-<section class="cta-section position-relative">
+{{-- <section class="cta-section position-relative">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-8 col-12 mb-30">
@@ -13,4 +13,4 @@
             @endif
         </div>
     </div>
-</section>
+</section> --}}

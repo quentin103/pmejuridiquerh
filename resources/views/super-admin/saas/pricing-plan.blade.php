@@ -1,245 +1,84 @@
-<div class="text-center mb-5">
-    <div class="nav price-tabs justify-content-center" role="tablist">
-        @if ($monthlyPlan > 0)
-            <a class="nav-link active" href="#monthly" role="tab" data-toggle="tab">@lang('app.monthly')</a>
-        @endif
-        @if ($annualPlan > 0)
-            <a class="nav-link annual_package @if (!($monthlyPlan > 0)) active @endif" href="#yearly" role="tab" data-toggle="tab">@lang('app.annually')</a>
-        @endif
-    </div>
-</div>
-<div class="tab-content wow fadeIn">
-    <div role="tabpanel" class="tab-pane @if ($monthlyPlan > 0) active @endif" id="monthly">
-        <div class="container">
-            <div class="price-wrap row no-gutters border-left">
-                <div class="diff-table col-6 col-md-3 border-top border-bottom">
-                    <div class="price-top">
-                        <div class="price-top title">
-                            <h3>@lang('superadmin.pickUp') <br> @lang('superadmin.yourPlan')</h3>
-                        </div>
-                        <div class="price-content">
-
-                            <ul>
-                                <li>
-                                    @lang('superadmin.max') @lang('app.active') @lang('app.menu.employees')
-                                </li>
-                                <li>
-                                    @lang('superadmin.fileStorage')
-                                </li>
-                                @foreach ($packageFeatures as $packageFeature)
-                                    @if (in_array($packageFeature, $activeModule))
-                                        <li>
-                                            {{ __('modules.module.' . $packageFeature) }}
-                                        </li>
-                                    @endif
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
+<div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-4 tw-gap-8">
+    @foreach ($packages as $item)
+        @php
+            $isPro = $item->is_recommended == 1;
+            $isEnterprise = $item->name === 'Enterprise';
+            $isStarter = $item->name === 'Starter';
+            $monthlyPrice = $item->monthly_price;
+            $annualPrice = $item->annual_price;
+            $currencyMonthly = $item->currency_id ? global_currency_format($monthlyPrice, $item->currency_id) : $monthlyPrice;
+            $currencyAnnual = $item->currency_id ? global_currency_format($annualPrice, $item->currency_id) : $annualPrice;
+            $features = [];
+            $notAvailable = [];
+            // Build features list
+            $features[] = $item->max_employees == -1 ? __('superadmin.unlimited') . ' ' . __('app.menu.employees') : $item->max_employees . ' ' . __('app.menu.employees');
+            $features[] = ($item->max_storage_size == -1 ? __('superadmin.unlimited') : $item->max_storage_size . ($item->storage_unit == 'mb' ? 'MB' : 'GB')) . ' ' . __('superadmin.fileStorage');
+            $packageModules = (array) json_decode($item->module_in_package);
+            foreach ($packageFeatures as $packageFeature) {
+                if (in_array($packageFeature, $activeModule)) {
+                    if (in_array($packageFeature, $packageModules)) {
+                        $features[] = __('modules.module.' . $packageFeature);
+                    } else {
+                        $notAvailable[] = __('modules.module.' . $packageFeature);
+                    }
+                }
+            }
+        @endphp
+        <div class="pricing-card tw-rounded-2xl tw-p-8 tw-text-center
+            @if($isPro) tw-transform tw-scale-105 tw-border-2 tw-border-orange-400 @endif">
+            @if($isPro)
+                <div class="tw-bg-orange-400 tw-text-white tw-px-4 tw-py-1 tw-rounded-full tw-inline-block tw-mb-4 tw-text-sm tw-font-semibold">
+                    @lang('superadmin.popular')
                 </div>
-
-                <div class="all-plans col-6 col-md-9">
-                    <div class="row no-gutters flex-nowrap flex-wrap overflow-x-auto row-scroll">
-                        @foreach ($packages as $key => $item)
-                            @if ($item->monthly_status == '1' || $item->default == 'lifetime')
-                                <div class="col-md-3 package-column border-top border-bottom">
-                                    <div class="pricing-table price-@if ($item->is_recommended == 1) price-pro @endif ">
-                                        <div class="price-top">
-                                            <div class="price-head text-center">
-                                                <h5 class="mb-0">{{ $item->name }}</h5>
-                                            </div>
-                                            <div class="rate">
-                                                @if (!$item->is_free)
-                                                    <h2 class="mb-2">
-
-
-                                                    @if ($item->package == 'lifetime' )
-                                                        <span class="font-weight-bolder">{{ global_currency_format($item->price, $item->currency_id) }}</span>
-                                                    @else
-                                                    <span
-                                                            class="font-weight-bolder">{{ global_currency_format($item->monthly_price, $item->currency_id) }}</span>
-                                                    @endif
-                                                    </h2>
-                                                    @if ($item->default == 'lifetime')
-                                                        <p class="mb-0">@lang('superadmin.packages.lifeTimepackgeInfo')</p>
-                                                    @else
-                                                         <p class="mb-0">@lang('superadmin.billedMonthly')</p>
-                                                    @endif
-
-                                                @else
-                                                    <h2 class="mb-2">
-
-                                                        <span class="font-weight-bolder">@lang('superadmin.packages.free')</span>
-
-                                                    </h2>
-                                                    <p class="mb-0">@lang('superadmin.packages.freeForever')</p>
-                                                @endif
-                                            </div>
-                                        </div>
-                                        <div class="price-content">
-                                            <ul>
-                                                <li>
-                                                    {{ $item->max_employees }}
-                                                </li>
-
-                                                @if ($item->max_storage_size == -1)
-                                                    <li>
-                                                        @lang('superadmin.unlimited')
-                                                    </li>
-                                                @else
-                                                    <li>
-                                                        {{ $item->max_storage_size }}
-
-                                                        @if($item->storage_unit == 'mb')
-                                                            @lang('superadmin.mb')
-                                                        @else
-                                                            @lang('superadmin.gb')
-                                                        @endif
-                                                    </li>
-                                                @endif
-
-                                                @php
-                                                    $packageModules = (array) json_decode($item->module_in_package);
-                                                @endphp
-                                                @foreach ($packageFeatures as $packageFeature)
-                                                    @if (in_array($packageFeature, $activeModule))
-                                                        <li>
-                                                            @if (in_array($packageFeature, $packageModules))
-                                                                <i class="zmdi zmdi-check-circle blue"></i>
-                                                            @else
-                                                                <i class="zmdi zmdi-close-circle"></i>
-                                                            @endif
-                                                            &nbsp;
-                                                        </li>
-                                                    @endif
-                                                @endforeach
-                                            </ul>
-                                        </div>
-                                        {{-- <div class="price-bottom py-4 px-2"> --}}
-                                        {{-- <a href="#" class="btn btn-border shadow-none">buy now</a> --}}
-                                        {{-- </div> --}}
-                                    </div>
-                                </div>
-                            @endif
-                        @endforeach
-                    </div>
+            @endif
+            <div class="tw-mb-6">
+                <h4 class="tw-text-2xl tw-font-bold tw-text-gray-800 tw-mb-2">{{ $item->name }}</h4>
+                <div class="tw-text-4xl tw-font-bold tw-text-orange-400 tw-mb-2">
+                    @if($item->is_free)
+                        @lang('superadmin.packages.free')
+                    @else
+                        @if($monthlyPlan > 0)
+                            {!! $currencyMonthly !!}
+                            <span class="tw-text-base tw-text-gray-500">/@lang('app.month')</span>
+                        @elseif($annualPlan > 0)
+                            {!! $currencyAnnual !!}
+                            <span class="tw-text-base tw-text-gray-500">/@lang('app.year')</span>
+                        @endif
+                    @endif
                 </div>
-
+                @if(!$item->is_free)
+                    <div class="tw-text-sm tw-text-gray-500">
+                        <span>
+                            @lang('superadmin.packages.perMonth'):
+                            <strong>{!! $currencyMonthly !!}</strong>
+                        </span>
+                        <span class="tw-mx-2">|</span>
+                        <span>
+                            @lang('superadmin.packages.perYear'):
+                            <strong>{!! $currencyAnnual !!}</strong>
+                        </span>
+                    </div>
+                @endif
+                <span class="tw-text-gray-500">
+                    @if($item->default == 'lifetime')
+                        @lang('superadmin.packages.lifeTimepackgeInfo')
+                    @endif
+                </span>
             </div>
+            <ul class="tw-space-y-3 tw-mb-8 tw-text-left">
+                @foreach($features as $feature)
+                    <li class="tw-flex tw-items-center">
+                        <i class="fas fa-check tw-text-green-500 tw-mr-3"></i>
+                        <span>{{ $feature }}</span>
+                    </li>
+                @endforeach
+                @foreach($notAvailable as $feature)
+                    <li class="tw-flex tw-items-center tw-opacity-50">
+                        <i class="fas fa-times tw-text-red-400 tw-mr-3"></i>
+                        <span>{{ $feature }}</span>
+                    </li>
+                @endforeach
+            </ul>
         </div>
-    </div>
-    <div role="tabpanel" class="tab-pane @if (!($monthlyPlan > 0)) active @endif" id="yearly">
-        <div class="container">
-            <div class="price-wrap border-left row no-gutters">
-                <div class="diff-table col-6 col-md-3 border-top border-bottom">
-                    <div class="price-top">
-                        <div class="price-top title">
-                            <h3>@lang('superadmin.pickUp') <br> @lang('superadmin.yourPlan')</h3>
-                        </div>
-                        <div class="price-content">
-
-                            <ul>
-                                <li>
-                                    @lang('superadmin.max') @lang('app.active') @lang('app.menu.employees')
-                                </li>
-                                <li>
-                                    @lang('superadmin.fileStorage')
-                                </li>
-                                @foreach ($packageFeatures as $packageFeature)
-                                    @if (in_array($packageFeature, $activeModule))
-                                        <li>
-                                            {{ __('modules.module.' . $packageFeature) }}
-                                        </li>
-                                    @endif
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="all-plans col-6 col-md-9">
-                    <div class="row no-gutters flex-nowrap flex-wrap overflow-x-auto row-scroll">
-                        @foreach ($packages as $key => $item)
-                            @if ($item->annual_status == '1' || $item->default == 'lifetime')
-                                <div class="col-md-3 package-column border-top border-bottom">
-                                    <div class="pricing-table @if ($item->is_recommended == 1) price-pro @endif">
-                                        <div class="price-top">
-                                            <div class="price-head text-center">
-                                                <h5 class="mb-0">{{ $item->name }}</h5>
-                                            </div>
-                                            <div class="rate">
-                                                @if (!$item->is_free)
-                                                    <h2 class="mb-2">
-                                                    @if ($item->package == 'lifetime' )
-                                                        <span class="font-weight-bolder">{{ global_currency_format($item->price, $item->currency_id) }}</span>
-                                                    @else
-                                                        <span class="font-weight-bolder">{{ global_currency_format($item->annual_price, $item->currency_id) }}</span>
-                                                    @endif
-                                                    </h2>
-                                                    @if ($item->default == 'lifetime')
-                                                        <p class="mb-0">@lang('superadmin.packages.lifeTimepackgeInfo')</p>
-                                                    @else
-                                                         <p class="mb-0">@lang('superadmin.billedAnnually')</p>
-                                                    @endif
-                                                @else
-                                                    <h2 class="mb-2">
-
-                                                        <span class="font-weight-bolder">@lang('superadmin.packages.free')</span>
-
-                                                    </h2>
-                                                    <p class="mb-0">@lang('superadmin.packages.freeForever')</p>
-                                                @endif
-
-                                            </div>
-                                        </div>
-                                        <div class="price-content">
-                                            <ul>
-                                                <li>
-                                                    {{ $item->max_employees }}
-                                                </li>
-                                                @if ($item->max_storage_size == -1)
-                                                    <li>
-                                                        @lang('superadmin.unlimited')
-                                                    </li>
-                                                @else
-                                                    <li>
-                                                        {{ $item->max_storage_size }}
-
-                                                        @if($item->storage_unit == 'mb')
-                                                            @lang('superadmin.mb')
-                                                        @else
-                                                            @lang('superadmin.gb')
-                                                        @endif
-                                                    </li>
-                                                @endif
-                                                @php
-                                                    $packageModules = (array) json_decode($item->module_in_package);
-                                                @endphp
-                                                @foreach ($packageFeatures as $packageFeature)
-                                                    @if (in_array($packageFeature, $activeModule))
-                                                        <li>
-                                                            @if (in_array($packageFeature, $packageModules))
-                                                                <i class="zmdi zmdi-check-circle blue"></i>
-                                                            @else
-                                                                <i class="zmdi zmdi-close-circle"></i>
-                                                            @endif
-                                                            &nbsp;
-                                                        </li>
-                                                    @endif
-                                                @endforeach
-                                            </ul>
-                                        </div>
-                                        {{-- <div class="price-bottom py-4 px-2"> --}}
-                                        {{-- <a href="#" class="btn btn-border shadow-none">buy now</a> --}}
-                                        {{-- </div> --}}
-                                    </div>
-                                </div>
-                            @endif
-                        @endforeach
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
+    @endforeach
 </div>
