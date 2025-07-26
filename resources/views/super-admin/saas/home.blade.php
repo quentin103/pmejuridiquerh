@@ -377,7 +377,6 @@
             <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-3 tw-gap-8">
                 <div class="tw-bg-white tw-rounded-2xl tw-shadow-lg tw-p-8 fade-in stagger-1 hover-scale">
                     <div class="tw-flex tw-items-center tw-mb-4">
-                        <img src="{{ asset('assets/img/avatar1.png') }}" alt="Client 1" class="tw-w-12 tw-h-12 tw-rounded-full tw-mr-4">
                         <div>
                             <div class="tw-font-semibold tw-text-[#0c195e]">Sophie Martin</div>
                             <div class="tw-text-sm tw-text-gray-400">@lang('CEO, StartUpX')</div>
@@ -394,7 +393,6 @@
                 </div>
                 <div class="tw-bg-white tw-rounded-2xl tw-shadow-lg tw-p-8 fade-in stagger-2 hover-scale">
                     <div class="tw-flex tw-items-center tw-mb-4">
-                        <img src="{{ asset('assets/img/avatar2.png') }}" alt="Client 2" class="tw-w-12 tw-h-12 tw-rounded-full tw-mr-4">
                         <div>
                             <div class="tw-font-semibold tw-text-[#0c195e]">Lucas Dubois</div>
                             <div class="tw-text-sm tw-text-gray-400">@lang('Responsable IT, AgenceWeb')</div>
@@ -411,7 +409,6 @@
                 </div>
                 <div class="tw-bg-white tw-rounded-2xl tw-shadow-lg tw-p-8 fade-in stagger-3 hover-scale">
                     <div class="tw-flex tw-items-center tw-mb-4">
-                        <img src="{{ asset('assets/img/avatar3.png') }}" alt="Client 3" class="tw-w-12 tw-h-12 tw-rounded-full tw-mr-4">
                         <div>
                             <div class="tw-font-semibold tw-text-[#0c195e]">Emma Leroy</div>
                             <div class="tw-text-sm tw-text-gray-400">@lang('Directrice, Leroy Consulting')</div>
