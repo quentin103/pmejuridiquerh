@@ -11,7 +11,7 @@
                         <div class="tw-flex-shrink-0">
                             <a class="logo" href="{{ route('front.home') }}">
                                 <div class="tw-flex tw-items-center">
-                                    <img class="tw-mr-2 tw-rounded tw-max-h-8"
+                                    <img class="tw-mr-2 tw-rounded tw-max-h-10"
                                         src="{{ global_setting()->logo_front_url }}" alt="Logo" />
                                 </div>
                             </a>
