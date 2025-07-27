@@ -30,7 +30,7 @@
                                       fieldId="app_name" :fieldValue="global_setting()->global_app_name" />
                     </div>
 
-                    {{-- <div class="col-lg-12">
+                    <div class="col-lg-12">
                         <div class="form-group">
                             <x-forms.label fieldId="sidebar_logo_style"
                                            :fieldLabel="__('modules.themeSettings.sidebarBrandingStyle')" fieldRequired="true" :popover="__('messages.brandingStyleToolTip')">
@@ -44,7 +44,7 @@
                                 </option>
                             </select>
                         </div>
-                    </div> --}}
+                    </div>
 
 
                     <div class="col-lg-4">
@@ -79,7 +79,7 @@
                                       fieldName="favicon" fieldId="favicon"
                                       :popover="__('messages.fileFormat.ImageFile')" />
                     </div>
-{{-- 
+
                     <div class="col-lg-6">
                         <div class="form-group my-3">
                             <x-forms.label fieldId="logo_background_color"
@@ -95,9 +95,9 @@
                                 </x-slot>
                             </x-forms.input-group>
                         </div>
-                    </div> --}}
+                    </div>
 
-                    {{-- <div class="col-sm-12 mt-3">
+                    <div class="col-sm-12 mt-3">
                         <x-alert type="info" icon="info-circle">@lang('messages.darkThemeRestrictionInfo')</x-alert>
                     </div>
                     <div class="col-lg-12 mt-3">
@@ -159,7 +159,7 @@
                                 </x-slot>
                             </x-forms.input-group>
                         </div>
-                    </div> --}}
+                    </div>
 
                     <div class="col-lg-2">
                         <div class="form-group my-3">
@@ -184,6 +184,7 @@
 
                 </div>
             </div>
+                {{-- Yannick --}}
             <x-slot name="action">
                 <!-- Buttons Start -->
                 <div class="w-100 border-top-grey">
