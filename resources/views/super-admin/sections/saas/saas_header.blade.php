@@ -42,11 +42,11 @@
             <div id="mobile-menu" class="tw-hidden md:tw-hidden glass-effect">
                 <div class="tw-px-2 tw-pt-2 tw-pb-3 tw-space-y-1">
                     <a href="{{ route('front.home') }}"
-                        class="tw-block tw-px-3 tw-py-2 hover:tw-bg-orange-400 tw-rounded tw-text-gray-700 hover:tw-text-white tw-transition-all">Home</a>
+                        class="tw-block tw-px-3 tw-py-2 hover:tw-bg-orange-400 tw-rounded tw-text-gray-700 hover:tw-text-white tw-transition-all">Accueil</a>
                     <a href="{{ route('front.feature') }}"
-                        class="tw-block tw-px-3 tw-py-2 hover:tw-bg-orange-400 tw-rounded tw-text-gray-700 hover:tw-text-white tw-transition-all">Features</a>
+                        class="tw-block tw-px-3 tw-py-2 hover:tw-bg-orange-400 tw-rounded tw-text-gray-700 hover:tw-text-white tw-transition-all">Fonctionnalités</a>
                     <a href="{{ route('front.pricing') }}"
-                        class="tw-block tw-px-3 tw-py-2 hover:tw-bg-orange-400 tw-rounded tw-text-gray-700 hover:tw-text-white tw-transition-all">Pricing</a>
+                        class="tw-block tw-px-3 tw-py-2 hover:tw-bg-orange-400 tw-rounded tw-text-gray-700 hover:tw-text-white tw-transition-all">Tarification</a>
                     <a href="{{ route('front.contact') }}"
                         class="tw-block tw-px-3 tw-py-2 hover:tw-bg-orange-400 tw-rounded tw-text-gray-700 hover:tw-text-white tw-transition-all">Contact</a>
                 </div>

@@ -34,11 +34,11 @@
                     @endif
                     <li>
                         <a class="tw-text-[#0c195e] hover:tw-text-orange-400 tw-transition-colors"
-                           href="{{ route('front.feature') }}">{{ $frontMenu->feature }}</a>
+                           href="{{ route('front.feature') }}">Fonctionnalités</a>
                     </li>
                     <li>
                         <a class="tw-text-[#0c195e] hover:tw-text-orange-400 tw-transition-colors"
-                           href="{{ route('front.pricing') }}">{{ $frontMenu->price }}</a>
+                           href="{{ route('front.pricing') }}">Tarification</a>
                     </li>
                     <li>
                         @if (module_enabled('Subdomain'))
