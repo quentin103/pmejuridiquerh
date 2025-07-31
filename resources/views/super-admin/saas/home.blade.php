@@ -284,14 +284,14 @@
             <div class="floating">
                 <i class="fas fa-rocket tw-text-6xl tw-mb-8 tw-text-orange-400"></i>
             </div>
-            <h1 class="tw-text-2xl md:tw-text-6xl tw-mb-8 tw-font-bold tw-text-white fade-in text-glow">
+            <h1 class="tw-text-2xl md:tw-text-6xl tw-mb-8 tw-font-bold tw-text-white fade-in ">
                 Révolutionnez votre <span class="tw-text-orange-400 typewriter">Expérience</span>
             </h1>
             <p class="tw-text-xl md:tw-text-2xl tw-mb-8 tw-text-white fade-in stagger-1">
                 Découvrez la prochaine génération de solutions technologiques qui transforment votre façon de travailler
             </p>
             <div class="tw-flex tw-flex-col sm:tw-flex-row tw-gap-4 tw-justify-center fade-in stagger-2">
-                <a href="{{ route('front.signup.index') }}" class="animated-button tw-bg-orange-400 tw-text-white tw-px-8 tw-py-4 tw-rounded-full tw-font-semibold hover:tw-bg-white hover:tw-text-[#0c195e] pulse-glow">
+                <a href="{{ route('front.signup.index') }}" class="animated-button tw-bg-orange-400 tw-text-white tw-px-8 tw-py-4 tw-rounded-full tw-font-semibold hover:tw-bg-white hover:tw-text-[#0c195e]">
                     Essayer Gratuitement
                 </a>
             </div>

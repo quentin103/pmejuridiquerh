@@ -27,7 +27,7 @@
                         <a class="hover:tw-text-orange-400 tw-transition-colors tw-text-gray-700"
                             href="{{ route('front.contact') }}">{{ $frontMenu->contact }}</a>
                         <button
-                            class="tw-bg-gradient-to-r tw-from-orange-400 tw-to-blue-900 tw-px-4 tw-py-2 tw-rounded-full hover:tw-shadow-lg tw-transition-all tw-text-white">
+                            class=" tw-px-4 tw-py-2 tw-rounded-full hover:tw-shadow-lg tw-transition-all tw-text-white">
                             Commencer
                         </button>
                     </div>
@@ -108,18 +108,18 @@
                     <div class="my-3 my-lg-0">
                         @guest
                             <a href="{{ module_enabled('Subdomain') ? route('front.workspace') : route('login') }}"
-                                class="tw-bg-gradient-to-r tw-from-orange-400 tw-to-blue-900 tw-px-4 tw-py-2 tw-rounded-full hover:tw-text-white hover:tw-shadow-lg tw-transition-all tw-text-white">
+                                class=" tw-bg-blue-900 tw-px-5 tw-py-2 tw-rounded-full hover:tw-text-white hover:tw-shadow-lg tw-transition-all tw-text-white">
                                 {{ $frontMenu->login }}
                             </a>
                             @if ($global->enable_register)
                                 <a href="{{ route('front.signup.index') }}"
-                                    class="tw-bg-gradient-to-r tw-from-orange-400 tw-to-blue-900 tw-px-4 tw-py-2 tw-rounded-full hover:tw-text-white hover:tw-shadow-lg tw-transition-all tw-text-white ml-2">
+                                    class=" tw-bg-blue-900 tw-px-5 tw-py-2 tw-rounded-full hover:tw-text-white hover:tw-shadow-lg tw-transition-all tw-text-white ml-2">
                                     {{ $frontMenu->get_start }}
                                 </a>
                             @endif
                         @else
                             <a href="{{ module_enabled('Subdomain') ? (user()->is_superadmin ? \App\Providers\RouteServiceProvider::SUPER_ADMIN_HOME : \App\Providers\RouteServiceProvider::HOME) : route('login') }}"
-                                class="tw-bg-gradient-to-r tw-from-orange-400 tw-to-blue-900 tw-px-4 tw-py-2 tw-rounded-full hover:tw-text-white hover:tw-shadow-lg tw-transition-all tw-text-white flex items-center">
+                                class=" tw-bg-blue-900 tw-px-5 tw-py-2 tw-rounded-full hover:tw-text-white hover:tw-shadow-lg tw-transition-all tw-text-white flex items-center">
                                 @if (isset(user()->image_url))
                                     <img src="{{ user()->image_url }}" class="rounded mr-2" width="25"
                                         alt="@lang('superadmin.myAccount')">
