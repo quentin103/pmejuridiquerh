@@ -56,14 +56,13 @@ class PaieController extends AccountBaseController
     
         if (!request()->ajax()) {
             $this->employees = User::allEmployees();
-            //$this->salaireCategoriel = salaire_categoriel::allSalaireCategoriel();
+            $this->salaireCategoriel = salaire_categoriel::allSalaireCategoriel();
             $this->totalEmployees = count($this->employees);
             $this->designations = Designation::allDesignations();
             $this->roles = Role::where('name', '<>', 'client')
                 ->orderBy('id', 'asc')->get();
 
         }
-        //dd($this->data);
         return $dataTable->render('paie.index', $this->data);
     }
 

@@ -20,9 +20,9 @@ class PaieEmployeesDataTable extends BaseDataTable
     public function __construct()
     {
         parent::__construct();
-        $this->editEmployeePaiePermission = user()->permission('add_pay');
-        $this->deleteEmployeePermission = user()->permission('delete_employees');
-        $this->viewEmployeePermission = user()->permission('view_employees');
+        // $this->editEmployeePaiePermission = user()->permission('add_pay');
+        // $this->deleteEmployeePermission = user()->permission('delete_employees');
+        // $this->viewEmployeePermission = user()->permission('view_employees');
         // $this->changeEmployeeRolePermission = user()->permission('change_employee_role');
     }
 
@@ -35,7 +35,7 @@ class PaieEmployeesDataTable extends BaseDataTable
     public function dataTable($query)
     {
 
-        $roles = Role::where('name', '<>', 'client')->get();
+        $roles = Role::get();
         return datatables()
             ->eloquent($query)
             ->addColumn('check', function ($row) {
@@ -111,30 +111,7 @@ class PaieEmployeesDataTable extends BaseDataTable
                     $action .= '<a href="' . route('paie.show', [$row->id]) . '?tab=calcul" class="dropdown-item"><i class="fa fa-credit-card  mr-2"></i>' . __('app.paieSalaire') . '</a>';
 
                 }
-                // $action .= '<a href="' . route('paie.show', [$row->id]) . '?tab=calcul" class="dropdown-item"><i class="fa fa-credit-card  mr-2"></i>' . __('app.paieSalaire') . '</a>';
-
-
-                /*if ($this->editEmployeePermission == 'all'
-                    || ($this->editEmployeePermission == 'added' && user()->id == $row->added_by)
-                    || ($this->editEmployeePermission == 'owned' && user()->id == $row->id)
-                    || ($this->editEmployeePermission == 'both' && (user()->id == $row->id || user()->id == $row->added_by))
-                ) {
-                    $action .= '<a class="dropdown-item openRightModal" href="' . route('employees.edit', [$row->id]) . '">
-                                <i class="fa fa-edit mr-2"></i>
-                                ' . trans('app.edit') . '
-                            </a>';
-                }*/
-
-                /*if ($this->deleteEmployeePermission == 'all' || ($this->deleteEmployeePermission == 'added' && user()->id == $row->added_by)) {
-                    if (user()->id !== $row->id) {
-                        $action .= '<a class="dropdown-item delete-table-row" href="javascript:;" data-user-id="' . $row->id . '">
-                                <i class="fa fa-trash mr-2"></i>
-                                ' . trans('app.delete') . '
-                            </a>';
-                    }
-                }*/
-
-
+    
                 $action .= '</div>
                     </div>
                 </div>';
@@ -196,11 +173,12 @@ class PaieEmployeesDataTable extends BaseDataTable
             ->leftJoin('employee_details', 'employee_details.user_id', '=', 'users.id')
             ->leftJoin('designations', 'employee_details.designation_id', '=', 'designations.id')
             ->join('roles', 'roles.id', '=', 'role_user.role_id')
-            ->select('users.id', 'employee_details.added_by', 'users.name', 'users.lastname', 'users.email', 'users.created_at', 'roles.name as roleName', 'roles.id as roleId', 'users.image', 'users.status', DB::raw('(select user_roles.role_id from role_user as user_roles where user_roles.user_id = users.id ORDER BY user_roles.role_id DESC limit 1) as `current_role`'), DB::raw('(select roles.name from roles as roles where roles.id = current_role limit 1) as `current_role_name`'), 'designations.name as designation_name', 'employee_details.employee_id')
+            ->select('users.id', 'employee_details.added_by', 'users.name', 'users.email', 'users.created_at', 'roles.name as roleName', 'roles.id as roleId', 'users.image', 'users.status', DB::raw('(select user_roles.role_id from role_user as user_roles where user_roles.user_id = users.id ORDER BY user_roles.role_id DESC limit 1) as `current_role`'), DB::raw('(select roles.name from roles as roles where roles.id = current_role limit 1) as `current_role_name`'), 'designations.name as designation_name', 'employee_details.employee_id')
             ->where('roles.name', '<>', 'client')
             ->orderBy('users.name')
-            ->orderBy('users.lastname')
             ->where('users.company_id', global_setting()->id);
+
+    
 
         if ($request->status != 'all' && $request->status != '') {
 
@@ -333,7 +311,6 @@ class PaieEmployeesDataTable extends BaseDataTable
             '#' => ['data' => 'DT_RowIndex', 'orderable' => false, 'searchable' => false, 'visible' => false],
             __('modules.employees.employeeId') => ['data' => 'employee_id', 'name' => 'employee_id', 'title' => __('modules.employees.employeeId')],
             __('app.name') => ['data' => 'name', 'name' => 'name', 'exportable' => false, 'title' => __('app.name')],
-            __('app.lastname') => ['data' => 'lastname', 'lastname' => 'lastname', 'exportable' => false, 'title' => __('app.lastname')],
             __('app.employee') => ['data' => 'employee_name', 'name' => 'name', 'visible' => false, 'title' => __('app.employee')],
             __('app.email') => ['data' => 'email', 'name' => 'email', 'title' => __('app.email')],
             Column::computed('action', __('app.action'))

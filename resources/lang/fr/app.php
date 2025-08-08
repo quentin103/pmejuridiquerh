@@ -4,6 +4,11 @@ return [
   'dealWatcher' => 'Observateur des transactions',
   'signBy' => 'Signer par',
   'leaveArchive' => 'Inactif',
+   'salCat'=>'Salaire Catégoriel',
+   'salaireAVS'=>'Gestion des Avances & Acompte',
+     'salPrime'=>'Primes et indemnités',
+       'salTaxe'=>'Types de retenues sur salaire',
+
   'owner' => 'Propriétaire principal',
   'addUnit' => 'Ajouter une nouvelle unité',
   'taskStatusChangeReason' => 'Raison du changement de statut',

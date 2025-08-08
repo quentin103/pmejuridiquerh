@@ -4,18 +4,23 @@
     @include('sections.datatable_css')
 @endpush
 
-@php
 
+@php
+    // $addEmployeePermission = user()->permission('add_employees');
+    // $addsalaireCategoriel = user()->permission('add_salaire_categoriel');
+    // $addDesignationPermission = user()->permission('add_designation');
+    // $viewDesignationPermission = user()->permission('view_designation');
+    // $addDepartmentPermission = user()->permission('add_department');
+    // $addPrimePermission =user()->permission('add_primes_indemites');
+    // $addTypeRetenueSalaire =user()->permission('add_type_retenue_salaire');
 @endphp
 @section('filter-section')
-
     <x-filters.filter-box>
         <!-- CLIENT START -->
         <div class="select-box py-2 d-flex pr-2 border-right-grey border-right-grey-sm-0">
             <p class="mb-0 pr-3 f-14 text-dark-grey d-flex align-items-center">@lang('app.employee')</p>
             <div class="select-status">
-                <select class="form-control select-picker" name="employee" id="employee" data-live-search="true"
-                    data-size="8">
+                <select class="form-control select-picker" name="employee" id="employee" data-live-search="true" data-size="8">
                     @if ($employees->count() > 1)
                         <option value="all">@lang('app.all')</option>
                     @endif
@@ -59,39 +64,78 @@
                 </div>
             </form>
         </div>
-        
-    
 
-        
+
+
+
         <!-- MORE FILTERS END -->
     </x-filters.filter-box>
-
 @endsection
 @section('content')
     <!-- CONTENT WRAPPER START -->
-    
-    <!-- CONTENT WRAPPER END -->
+    <div class="content-wrapper">
+        <!-- Add Task Export Buttons Start -->
+        <div class="d-flex justify-content-between action-bar">
 
+            <div id="table-actions" class="d-block d-lg-flex align-items-center">
+
+                <x-forms.button-secondary class="mr-3 mb-2 mb-lg-0" icon="plus" id="salaireCategoriel">
+                    @lang('app.add') @lang('app.salCat')
+                </x-forms.button-secondary>
+                <x-forms.button-secondary class="mr-3 mb-2 mb-lg-0" icon="plus" id="salairePrime">
+                    @lang('app.add') @lang('app.salPrime')
+                </x-forms.button-secondary>
+                <x-forms.button-secondary class="mr-3 mb-2 mb-lg-0" icon="plus" id="salaireTaxe">
+                    @lang('app.add') @lang('app.salTaxe')
+                </x-forms.button-secondary>
+
+
+            </div>
+
+            <x-datatable.actions>
+                <div class="select-status mr-3 pl-3">
+                    <select name="action_type" class="form-control select-picker" id="quick-action-type" disabled>
+                        <option value="">@lang('app.selectAction')</option>
+                        <option value="change-status">@lang('modules.tasks.changeStatus')</option>
+                        <option value="delete">@lang('app.delete')</option>
+                    </select>
+                </div>
+                <div class="select-status mr-3 d-none quick-action-field" id="change-status-action">
+                    <select name="status" class="form-control select-picker">
+                        <option value="deactive">@lang('app.inactive')</option>
+                        <option value="active">@lang('app.active')</option>
+                    </select>
+                </div>
+            </x-datatable.actions>
+
+        </div>
+        <!-- Add Task Export Buttons End -->
+        <!-- Task Box Start -->
+        <div class="d-flex flex-column w-tables rounded mt-3 bg-white">
+            {!! $dataTable->table(['class' => 'table table-hover border-0 w-100']) !!}
+
+        </div>
+        <!-- Task Box End -->
+    </div>
+    <!-- CONTENT WRAPPER END -->
 @endsection
 
 @push('scripts')
     @include('sections.datatable_js')
-
     <script>
-
         var startDate = null;
         var endDate = null;
         var lastStartDate = null;
         var lastEndDate = null;
 
-        @if(request('startDate') != '' && request('endDate') != '' )
-            startDate = '{{ request("startDate") }}';
-            endDate = '{{ request("endDate") }}';
+        @if (request('startDate') != '' && request('endDate') != '')
+            startDate = '{{ request('startDate') }}';
+            endDate = '{{ request('endDate') }}';
         @endif
 
-        @if(request('lastStartDate') !=='' && request('lastEndDate') !=='' )
-            lastStartDate = '{{ request("lastStartDate") }}';
-            lastEndDate = '{{ request("lastEndDate") }}';
+        @if (request('lastStartDate') !== '' && request('lastEndDate') !== '')
+            lastStartDate = '{{ request('lastStartDate') }}';
+            lastEndDate = '{{ request('lastEndDate') }}';
         @endif
 
         $('#employees-table').on('preXhr.dt', function(e, settings, data) {
@@ -111,7 +155,7 @@
             data['searchText'] = searchText;
 
             /* If any of these following filters are applied, then dashboard conditions will not work  */
-            if(status == "all" || employee == "all" || role == "all"  || designation == "all" || searchText == ""){
+            if (status == "all" || employee == "all" || role == "all" || designation == "all" || searchText == "") {
                 data['startDate'] = startDate;
                 data['endDate'] = endDate;
                 data['lastStartDate'] = lastStartDate;
@@ -119,8 +163,7 @@
             }
 
         });
-
-        const showTable = () => {
+         const showTable = () => {
             window.LaravelDataTables["employees-table"].draw();
         }
 
@@ -306,13 +349,14 @@
                 })
             }
 
-        });
+        }); 
 
         $('#salaireCategoriel').click(function() {
             const url = "{{ route('salaireCategoriel.create') }}";
             $(MODAL_LG + ' ' + MODAL_HEADING).html('...');
             $.ajaxModal(MODAL_LG, url);
         })
+
         $('#salairePrime').click(function() {
             const url = "{{ route('salairePrime.create') }}";
             $(MODAL_LG + ' ' + MODAL_HEADING).html('...');
@@ -324,6 +368,6 @@
             $(MODAL_LG + ' ' + MODAL_HEADING).html('...');
             $.ajaxModal(MODAL_LG, url);
         });
-        
+
     </script>
 @endpush

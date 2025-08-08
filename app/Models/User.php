@@ -673,6 +673,7 @@ class User extends BaseModel
 
     public static function allEmployees($exceptId = null, $active = false, $overRidePermission = null, $companyId = null)
     {
+
         if (!isRunningInConsoleOrSeeding() && !is_null($overRidePermission)) {
             $viewEmployeePermission = $overRidePermission;
 
@@ -685,7 +686,7 @@ class User extends BaseModel
             ->join('employee_details', 'employee_details.user_id', '=', 'users.id')
             ->leftJoin('designations', 'employee_details.designation_id', '=', 'designations.id')
             ->select('users.id', 'users.company_id', 'users.name', 'users.email', 'users.created_at', 'users.image', 'designations.name as designation_name', 'users.email_notifications', 'users.mobile', 'users.country_id', 'users.status');
-
+  
         if (!is_null($exceptId)) {
             if (is_array($exceptId)) {
                 $users->whereNotIn('users.id', $exceptId);
