@@ -6,7 +6,7 @@
 
 @push('styles')
     <style>
-        .content-wrapper{
+        .tw-p-2 quentin-9-08_2025{
             padding: 15px 18px !important;
         }
     </style>
@@ -53,7 +53,7 @@
 
 @section('content')
     <!-- CONTENT WRAPPER START -->
-    <div class="content-wrapper">
+    <div class="tw-p-2 quentin-9-08_2025">
         <div class="row">
             <div class="col-lg-6">
                 <div id="table-actions" class="flex-grow-1 align-items-center mt-1">

@@ -3,7 +3,7 @@
 @section('content')
 
     <!-- CONTENT WRAPPER START -->
-    <div class="content-wrapper">
+    <div class="tw-p-2 quentin-9-08_2025">
         <div class="row">
             <div class="col-md-12 text-center mt-4">
                 <h2 class="heading-h2">@lang('app.welcome') {{ user()->name }}</h2>

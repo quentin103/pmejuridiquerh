@@ -10,7 +10,7 @@
 
 @section('content')
 
-    <div class="content-wrapper ssssssssssss">
+    <div class="tw-p-2 quentin-9-08_2025 ssssssssssss">
         <!-- CREATE INVOICE START -->
         <div class="bg-white rounded b-shadow-4 create-inv">
             <!-- HEADING START -->

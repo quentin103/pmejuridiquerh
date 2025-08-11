@@ -106,7 +106,7 @@
 
 <body id="body" class="h-100 bg-additional-grey {{ isRtl('rtl') }}">
 
-<div class="container content-wrapper">
+<div class="container tw-p-2 quentin-9-08_2025">
 
     <div class="border-0 card invoice">
         <!-- CARD BODY START -->

@@ -1,4 +1,4 @@
-<?php 
+<?php
 return [
   'dashboard' => [
     'totalClients' => 'Nombre total de clients',
@@ -221,6 +221,13 @@ return [
     'contactName' => 'Nom du contact',
   ],
   'employees' => [
+    'type_contrat' => 'Type de contrat',
+    'date_end_contrat' => 'Date de fin de contrat',
+    'nbre_heure_semaine' => 'Nbre d\'heure/semaine',
+    'marital_status' => 'État civil',
+    'birth_place' => 'Lieu de naissance',
+    'children_number' => 'Nbre d\'enfants',
+    'num_cnps' => 'Numéro CNPS',
     'addNewEmployee' => 'Ajouter un nouvel employé',
     'createTitle' => 'Ajouter des informations sur les employés',
     'employeeName' => 'Nom de l\'employé',
@@ -229,6 +236,9 @@ return [
     'employeePassword' => 'Mot de passe',
     'passwordNote' => 'L\'employé se connectera en utilisant ce mot de passe.',
     'jobTitle' => 'Titre d\'emploi',
+    'type_ID' => 'Type de pièce d\'identitée',
+    'num_ID' => 'Numéro pièce ID',
+    'bank_account_num' => 'N° de compte bancaire',
     'hourlyRate' => 'Taux horaire',
     'updateTitle' => 'mettre à jour les informations sur les employés',
     'updatePasswordNote' => 'L\'employé se connectera en utilisant ce mot de passe. (Laissez vide pour conserver le mot de passe actuel)',
@@ -237,6 +247,7 @@ return [
     'activity' => 'Activité',
     'profile' => 'Profil',
     'fullName' => 'Nom et prénom',
+    'lastname' => "Nom de famille",
     'startTime' => 'Heure de début',
     'endTime' => 'Heure de fin',
     'employeeIdHelp' => '<p>ID unique que vous utilisez pour identifier les employés de votre organisation.</p><p>Pour les employés créés via <b>Inviter</b>, un identifiant d\'employé est automatiquement généré, que vous pouvez modifier ultérieurement.</p >',
@@ -1729,13 +1740,13 @@ return [
     'manualTimelog' => 'Autoriser les journaux de temps manuels',
     'dropFallbackMessage' => 'Votre navigateur ne prend pas en charge les téléchargements de fichiers par glisser-déposer.',
     'dropFallbackText' => 'Veuillez utiliser le formulaire de secours ci-dessous pour télécharger vos fichiers comme autrefois.',
-    'dropFileTooBig' => 'Le fichier est trop volumineux ({{filesize}} Mio). Taille maximale du fichier : {{maxFilesize}} Mio.',
+    'dropFileTooBig' => 'Le fichier est trop volumineux ({{ filesize }} Mio). Taille maximale du fichier : {{ maxFilesize }} Mio.',
     'dropInvalidFileType' => 'Vous ne pouvez pas télécharger de fichiers de ce type.',
-    'dropResponseError' => 'Le serveur a répondu avec le code {{statusCode}}.',
+    'dropResponseError' => 'Le serveur a répondu avec le code {{ statusCode }}.',
     'dropCancelUpload' => 'Annuler le téléchargement',
     'dropCancelUploadConfirmation' => 'Êtes-vous sûr de vouloir annuler ce téléchargement ?',
     'dropRemoveFile' => 'Effacer le fichier',
-    'dropMaxFilesExceeded' => 'Vous ne pouvez pas télécharger plus de {{maxFiles}} fichiers.',
+    'dropMaxFilesExceeded' => 'Vous ne pouvez pas télécharger plus de {{ maxFiles }} fichiers.',
   ],
   'templateTasks' => [
     'newTask' => 'Nouvelle tâche de modèle',

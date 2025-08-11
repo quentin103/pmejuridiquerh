@@ -10,7 +10,7 @@
     display: none;
 }
 </style>
-<div class="content-wrapper">
+<div class="tw-p-2 quentin-9-08_2025">
     <x-form id="report-payroll-form">
         <div class="row">
             <div class="col-md-3">
@@ -52,7 +52,7 @@
     </x-form>
 </div>
 <!-- CONTENT WRAPPER START -->
-<div class="content-wrapper"id="paidTds">
+<div class="tw-p-2 quentin-9-08_2025"id="paidTds">
     <!-- Widget Start -->
     <div class="d-flex flex-column">
         <div class="row mb-4">

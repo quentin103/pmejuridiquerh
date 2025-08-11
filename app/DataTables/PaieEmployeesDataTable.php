@@ -20,9 +20,9 @@ class PaieEmployeesDataTable extends BaseDataTable
     public function __construct()
     {
         parent::__construct();
-        // $this->editEmployeePaiePermission = user()->permission('add_pay');
-        // $this->deleteEmployeePermission = user()->permission('delete_employees');
-        // $this->viewEmployeePermission = user()->permission('view_employees');
+        $this->editEmployeePaiePermission = user()->permission('add_pay');
+        $this->deleteEmployeePermission = user()->permission('delete_employees');
+        $this->viewEmployeePermission = user()->permission('view_employees');
         // $this->changeEmployeeRolePermission = user()->permission('change_employee_role');
     }
 
@@ -121,12 +121,13 @@ class PaieEmployeesDataTable extends BaseDataTable
             ->addColumn('employee_name', function ($row) {
                 return $row->name;
             })
-            ->editColumn(
-                'created_at',
-                function ($row) {
-                    return Carbon::parse($row->created_at)->format($this->global->date_format);
-                }
-            )
+            // ->editColumn(
+            //     'created_at',
+            //     function ($row) {
+            //         return $row->created_at;
+            //         //return Carbon::parse($row->created_at)->format($this->global->date_format);
+            //     }
+            // )
             ->editColumn(
                 'status',
                 function ($row) {
@@ -174,9 +175,12 @@ class PaieEmployeesDataTable extends BaseDataTable
             ->leftJoin('designations', 'employee_details.designation_id', '=', 'designations.id')
             ->join('roles', 'roles.id', '=', 'role_user.role_id')
             ->select('users.id', 'employee_details.added_by', 'users.name', 'users.email', 'users.created_at', 'roles.name as roleName', 'roles.id as roleId', 'users.image', 'users.status', DB::raw('(select user_roles.role_id from role_user as user_roles where user_roles.user_id = users.id ORDER BY user_roles.role_id DESC limit 1) as `current_role`'), DB::raw('(select roles.name from roles as roles where roles.id = current_role limit 1) as `current_role_name`'), 'designations.name as designation_name', 'employee_details.employee_id')
-            ->where('roles.name', '<>', 'client')
+            // ->where('roles.name', '<>', 'client')
             ->orderBy('users.name')
-            ->where('users.company_id', global_setting()->id);
+            ->where('users.company_id', user()->company_id);
+
+
+            
 
     
 
@@ -256,7 +260,6 @@ class PaieEmployeesDataTable extends BaseDataTable
                     ->orWhere('employee_details.employee_id', 'like', '%' . request('searchText') . '%');
             });
         }
-
         return $users->groupBy('users.id');
     }
 

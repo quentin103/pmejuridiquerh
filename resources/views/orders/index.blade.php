@@ -114,7 +114,7 @@ $addOrderPermission = user()->permission('add_order');
 
 @section('content')
     <!-- CONTENT WRAPPER START -->
-    <div class="content-wrapper">
+    <div class="tw-p-2 quentin-9-08_2025">
         <!-- Add Task Export Buttons Start -->
         <div class="d-flex">
             <div id="table-actions" class="flex-grow-1 align-items-center">
@@ -272,7 +272,7 @@ tw-border-none quentin">
                                     $.easyAjax({
                                         url: url,
                                         type: "POST",
-                                        container: '.content-wrapper',
+                                        container: '.tw-p-2 quentin-9-08_2025',
                                         blockUI: true,
                                         data: {
                                             '_token': token,
@@ -290,7 +290,7 @@ tw-border-none quentin">
                             $.easyAjax({
                                 url: url,
                                 type: "POST",
-                                container: '.content-wrapper',
+                                container: '.tw-p-2 quentin-9-08_2025',
                                 blockUI: true,
                                 data: {
                                     '_token': token,

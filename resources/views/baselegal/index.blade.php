@@ -11,7 +11,7 @@
 
 @section('content')
     <!-- CONTENT WRAPPER START -->
-    <div class="content-wrapper">
+    <div class="tw-p-2 quentin-9-08_2025">
         <div class="flex justify-center items-center">
             <div class="space-y-6">
                 <!-- Statistiques principales -->
@@ -397,7 +397,7 @@
 
             $.easyAjax({
                 url: url,
-                container: '.content-wrapper',
+                container: '.tw-p-2 quentin-9-08_2025',
                 type: "POST",
                 data: {
                     'productID': productId,

@@ -1,6 +1,6 @@
 @section('content')
 <!-- CONTENT WRAPPER START -->
-<div class="content-wrapper">
+<div class="tw-p-2 quentin-9-08_2025">
     <form action="" id="filter-form">
             <div class="d-flex my-3">
                 <!-- DATE START -->

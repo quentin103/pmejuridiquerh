@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 use PDF;
 use Illuminate\Http\Request;
-use Response;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\Helper\Reply;
@@ -15,9 +14,6 @@ use App\Models\Designation;
 use App\Models\salaire_categoriel;
 use App\Models\salaire_primeIndemnite;
 use App\Models\salaire_taxe;
-use App\Models\salaire_bulletin;
-use App\Models\salaire_bulletin_prime;
-use App\Models\salaire_bulletin_taxe;
 use App\Models\salaire_avance;
 
 use App\Models\EmployeeDetails;

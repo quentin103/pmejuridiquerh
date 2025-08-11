@@ -192,6 +192,17 @@ $addDepartmentPermission = user()->permission('add_department');
                         </div>
                     @endif
 
+                    <div class="col-lg-3 col-md-6">
+                        <x-forms.select fieldId="id_niveau_etude" fieldLabel="Niveau d'étude"
+                            fieldName="id_niveau_etude">
+                            <option value="">--</option>
+                            @foreach($niveaux as $niveau)
+
+                              <option @if ($employee->employeeDetail->id_niveau_etude == $niveau->id) selected @endif value="{{$niveau->id}}">{{$niveau->name }}</option>
+                            @endforeach
+                        </x-forms.select>
+                    </div>
+
                     <div class="col-md-12">
                         <div class="form-group my-3">
                             <x-forms.textarea class="mr-0 mr-lg-2 mr-md-2" :fieldLabel="__('app.address')"

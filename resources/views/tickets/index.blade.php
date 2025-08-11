@@ -208,7 +208,7 @@ $addTicketPermission = user()->permission('add_tickets');
 
 @section('content')
     <!-- CONTENT WRAPPER START -->
-    <div class="content-wrapper">
+    <div class="tw-p-2 quentin-9-08_2025">
         <div class="row row-cols-lg-5">
 
             <div class="col mb-4">
@@ -664,7 +664,7 @@ tw-border-none quentin table-responsive">
                     $.easyAjax({
                         url: url,
                         type: "POST",
-                        container: '.content-wrapper',
+                        container: '.tw-p-2 quentin-9-08_2025',
                         blockUI: true,
                         data: {
                             '_token': token,

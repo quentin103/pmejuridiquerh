@@ -234,7 +234,7 @@
         $.easyAjax({
             url: url,
             type: 'POST',
-            container: '.content-wrapper',
+            container: '.tw-p-2 quentin-9-08_2025',
             disableButton: true,
             blockUI: true,
             buttonSelector: "#apply-invoice",

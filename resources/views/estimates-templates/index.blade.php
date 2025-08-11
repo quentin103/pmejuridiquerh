@@ -38,7 +38,7 @@
 @endsection
 
 @section('content')
-<div class="content-wrapper">
+<div class="tw-p-2 quentin-9-08_2025">
     <!-- Add Task Export Buttons Start -->
     <div class="d-flex" id="table-actions">
         @if($addPermission == 'all')

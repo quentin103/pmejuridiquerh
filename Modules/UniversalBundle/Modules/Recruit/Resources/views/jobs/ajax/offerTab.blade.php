@@ -189,7 +189,7 @@ tw-border-none quentin">
             $.easyAjax({
                 url: url,
                 type: "POST",
-                container: '.content-wrapper',
+                container: '.tw-p-2 quentin-9-08_2025',
                 blockUI: true,
                 data: {
                     '_token': token,
@@ -214,7 +214,7 @@ tw-border-none quentin">
         $.easyAjax({
             url: url,
             type: "POST",
-            container: '.content-wrapper',
+            container: '.tw-p-2 quentin-9-08_2025',
             blockUI: true,
             data: {
                 '_token': token,
@@ -236,7 +236,7 @@ tw-border-none quentin">
         $.easyAjax({
             url: url,
             type: "POST",
-            container: '.content-wrapper',
+            container: '.tw-p-2 quentin-9-08_2025',
             blockUI: true,
             data: {
                 '_token': token,

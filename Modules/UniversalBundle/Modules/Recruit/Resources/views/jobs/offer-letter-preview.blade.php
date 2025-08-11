@@ -124,7 +124,7 @@
 
             <x-app-title class="d-block d-lg-none" :pageTitle="$pageTitle"></x-app-title>
 
-            <div class="content-wrapper container">
+            <div class="tw-p-2 quentin-9-08_2025 container">
 
                 <!-- CARD START -->
 

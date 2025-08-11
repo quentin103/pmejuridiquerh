@@ -74,7 +74,7 @@
 
 @section('content')
     <!-- CONTENT WRAPPER START -->
-    <div class="content-wrapper px-4">
+    <div class="tw-p-2 quentin-9-08_2025 px-4">
 
         <div class="d-flex justify-content-end">
 
@@ -165,7 +165,7 @@
                 },
                 url: url,
                 blockUI: loading,
-                container: '.content-wrapper',
+                container: '.tw-p-2 quentin-9-08_2025',
                 success: function(response) {
                     $('#attendance-data').html(response.data);
                 }

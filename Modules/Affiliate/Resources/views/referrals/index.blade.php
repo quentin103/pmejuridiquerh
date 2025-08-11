@@ -71,7 +71,7 @@ $addReferralPermission = user()->permission('add_referrals');
 
 @section('content')
     <!-- CONTENT WRAPPER START -->
-    <div class="content-wrapper">
+    <div class="tw-p-2 quentin-9-08_2025">
         <!-- Add Referral Buttons Start -->
         <input type="hidden" name="user_id" class="user_id" value={{user()->id}}>
         <div class="d-flex justify-content-between action-bar">

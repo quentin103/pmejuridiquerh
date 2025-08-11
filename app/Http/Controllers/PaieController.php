@@ -12,8 +12,6 @@ use App\Models\BaseModel;
 use App\Models\Designation;
 use App\Models\EmployeeDetails;
 use App\Models\niveau_etude;
-use App\Models\ProjectTimeLog;
-use App\Models\ProjectTimeLogBreak;
 use App\Models\Role;
 use App\Models\salaire_avance;
 use App\Models\salaire_bulletin;
@@ -22,10 +20,7 @@ use App\Models\salaire_bulletin_taxe;
 use App\Models\salaire_categoriel;
 use App\Models\salaire_primeIndemnite;
 use App\Models\salaire_taxe;
-use App\Models\Task;
-use App\Models\TaskboardColumn;
 use App\Models\User;
-use App\Models\UserActivity;
 use Auth;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -264,6 +259,8 @@ class PaieController extends AccountBaseController
 
     public function show($id)
     {
+
+
         $this->employee = User::with(['employeeDetail', 'employeeDetail.designation', 'employeeDetail.department', 'leaveTypes', 'country', 'emergencyContacts'])->withoutGlobalScope('active')->with('employee')->withCount('member', 'openTasks')->findOrFail($id);
         $this->salaireAVS =  DB::table('salaire_avances')
           ->select(DB::raw('SUM(reste_avs) as resteAVS'))
@@ -302,7 +299,7 @@ class PaieController extends AccountBaseController
                $this->primeAncienete=round($annees*$montant_salaire_cat/100);
             }
         }
-        
+        //dd($this->employee);
 
         $this->DateStart = Carbon::now()->timezone($this->global->timezone)->startOfMonth()->toDateString();
         $this->DateEnd = Carbon::now()->timezone($this->global->timezone)->endOfMonth()->toDateString();
@@ -344,7 +341,7 @@ class PaieController extends AccountBaseController
                 ->where('salaire_bulletins.user_id', $id)
                 ->orderBy('salaire_debut', 'DESC')
                 ->get();
-                //dd($this->bulletin);
+                 //dd($this->bulletin);
                 $this->view = 'paie.ajax.liste_paie';
                 break;
             case 'calcul':
@@ -657,20 +654,16 @@ class PaieController extends AccountBaseController
     public function masse_salariale(Request $request)
     {
         
-        $viewPermission = user()->permission('view_registre_paiement');
-        abort_403(!in_array($viewPermission, ['all', 'added', 'owned', 'both']) && empty(array_intersect(['RH', 'admin'], user_roles())));
-        // !empty(array_intersect(['RH', 'admin'], user_roles())) || user()->permission('view_avance_acompte')
-      $this->listMasseSalariale = DB::table('salaire_bulletins')
-        
+        // $viewPermission = user()->permission('view_registre_paiement');
+        // abort_403(!in_array($viewPermission, ['all', 'added', 'owned', 'both']) && empty(array_intersect(['RH', 'admin'], user_roles())));
+       $this->listMasseSalariale = DB::table('salaire_bulletins')
         ->select(DB::raw('DATE_FORMAT(salaire_fin, "%m") as mois'),
           DB::raw('DATE_FORMAT(salaire_fin, "%Y") as annee'),
           DB::raw('SUM(net_a_payer) as totalNet'))
-        //->where('salaire_bulletins.id', $refBulletin)
         ->groupBy('mois', 'annee')
         ->orderBy('annee', 'desc')
         ->orderBy('mois', 'desc')
         ->get();
-        //dd($this->listMasseSalariale);
         return view('paie.ajax.masse_salariale', $this->data);
     }
 }

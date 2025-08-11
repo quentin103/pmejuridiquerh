@@ -10,7 +10,7 @@ $viewBankAccount = user()->permission('view_bankaccount');
 
 @section('content')
 
-    <div class="content-wrapper border-top-0">
+    <div class="tw-p-2 quentin-9-08_2025 border-top-0">
         @include($view)
     </div>
 

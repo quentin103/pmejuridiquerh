@@ -118,7 +118,7 @@ $addCompanyPermission = user()->permission('add_companies');
 $deleteCompanyPermission = user()->permission('delete_companies');
 @endphp
     <!-- CONTENT WRAPPER START -->
-    <div class="content-wrapper">
+    <div class="tw-p-2 quentin-9-08_2025">
 
         <!-- Add Task Export Buttons Start -->
         <div class="d-block d-lg-flex d-md-flex justify-content-between action-bar dd">

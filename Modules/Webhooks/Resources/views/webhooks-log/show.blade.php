@@ -12,7 +12,7 @@
 @endpush
 
 @section('content')
-    <div class="content-wrapper border-top-0 client-detail-wrapper">
+    <div class="tw-p-2 quentin-9-08_2025 border-top-0 client-detail-wrapper">
         <div class="row">
             <div class="col-md-6 mb-4">
                 <x-cards.data >

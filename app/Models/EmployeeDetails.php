@@ -96,7 +96,9 @@ class EmployeeDetails extends BaseModel
         'last_date' => 'datetime',
         'date_of_birth' => 'datetime',
         'calendar_view	' => 'array',
-        'marital_status' => MaritalStatus::class,
+         'date_end_contrat', 
+         'date_maj_fiche_de_poste'
+        // 'marital_status' => MaritalStatus::class,
     ];
 
     protected $with = ['company:id'];

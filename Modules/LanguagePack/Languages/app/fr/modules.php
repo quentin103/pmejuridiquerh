@@ -251,7 +251,7 @@ return [
     'title' => 'Sélectionnez un employé',
     'role' => 'Rôle',
     'lastDate' => 'Date de sortie',
-    'employeeId' => 'ID d\'employé',
+    'employeeId' => 'Matricule employé',
     'chooseDepartment' => 'Choisir un département',
     'chooseDesignation' => 'Choisissez la désignation',
     'chooseStatus' => 'Choisissez le statut',

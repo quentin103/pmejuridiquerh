@@ -58,7 +58,7 @@
 @endsection
 
 @section('content')
-    <div class="content-wrapper border-top-0 client-detail-wrapper">
+    <div class="tw-p-2 quentin-9-08_2025 border-top-0 client-detail-wrapper">
         <div class="tab-content" id="nav-tabContent">
             <div class="card border-0 invoice">
                 <!-- CARD BODY START -->

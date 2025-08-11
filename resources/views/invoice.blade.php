@@ -95,7 +95,7 @@
         <x-app-title class="d-block d-lg-none" :pageTitle="$pageTitle"></x-app-title>
 
         <!-- CONTENT WRAPPER START -->
-        <div class="container content-wrapper">
+        <div class="container tw-p-2 quentin-9-08_2025">
             <!-- INVOICE CARD START -->
             @if (!is_null($invoice->project) && !is_null($invoice->project->client) && !is_null($invoice->project->client->clientDetails))
                 @php

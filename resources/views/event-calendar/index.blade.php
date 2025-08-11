@@ -88,7 +88,7 @@ $addEventsPermission = user()->permission('add_events');
 @endphp
 
 @section('content')
-    <div class="content-wrapper">
+    <div class="tw-p-2 quentin-9-08_2025">
         <!-- Add Task Export Buttons Start -->
         <div class="d-flex my-3">
             <div id="table-actions" class="flex-grow-1 align-items-center">

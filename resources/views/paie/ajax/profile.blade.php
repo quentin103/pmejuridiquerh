@@ -28,7 +28,7 @@ $editEmployeePermission = user()->permission('edit_employees');
               <div class="row">
                 <div class="col-10">
                   <h4 class="card-title f-15 f-w-500 text-darkest-grey mb-0">
-                    {{ ucfirst($employee->salutation) . ' ' . ucwords($employee->name) . ' ' . ucwords($employee->lastname)}}
+                    {{ ucfirst($employee->salutation) . ' ' . ucwords($employee->name)}}
                     @isset($employee->country)
                       <x-flag :iso="$employee->country->iso" />
                     @endisset
@@ -69,32 +69,7 @@ $editEmployeePermission = user()->permission('edit_employees');
                   <x-status :value="__('app.inactive')" color="red" />
                 </p>
               @endif
-              {{--
-              <div class="card-footer bg-white border-top-grey pl-0">
-                <div class="d-flex flex-wrap justify-content-between">
-                  <span>
-                    <label class="f-11 text-dark-grey mb-12 text-capitalize"
-                      for="usr">@lang('app.open') @lang('app.menu.tasks')</label>
-                    <p class="mb-0 f-18 f-w-500">{{ $employee->open_tasks_count }}</p>
-                  </span>
-                  <span>
-                    <label class="f-11 text-dark-grey mb-12 text-capitalize"
-                    for="usr">@lang('app.menu.projects')</label>
-                    <p class="mb-0 f-18 f-w-500">{{ $employee->member_count }}</p>
-                  </span>
-                  <span>
-                    <label class="f-11 text-dark-grey mb-12 text-capitalize"
-                    for="usr">@lang('modules.employees.hoursLogged')</label>
-                    <p class="mb-0 f-18 f-w-500">{{ $hoursLogged }}</p>
-                  </span>
-                  <span>
-                    <label class="f-11 text-dark-grey mb-12 text-capitalize"
-                    for="usr">@lang('app.menu.tickets')</label>
-                    <p class="mb-0 f-18 f-w-500">{{ $employee->agents_count }}</p>
-                  </span>
-                </div>
-              </div>
-              --}}
+       
             </x-cards.user>
             <x-cards.data :title="__('modules.client.profileInfo')" class=" mt-4">
               <x-cards.data-row :label="__('modules.employees.employeeId')"
@@ -128,7 +103,6 @@ $editEmployeePermission = user()->permission('edit_employees');
               <x-cards.data-row :label="__('modules.employees.num_cnps')" :value="$employee->employeeDetail->num_cnps" />
               <x-cards.data-row :label="__('modules.employees.bank_account_num')" :value="$employee->employeeDetail->bank_account_num" />
 
-                {{-- Custom fields data --}}
                 @if (isset($fields))
                     @foreach ($fields as $field)
                         @if ($field->type == 'text' || $field->type == 'password' || $field->type == 'number')
@@ -152,7 +126,7 @@ $editEmployeePermission = user()->permission('edit_employees');
                         @endif
                     @endforeach
                 @endif
-            </x-cards.data>
+            </x-cards.data> 
           </div>
           <div class="col-xl-6 col-md-6 mb-4 mb-lg-0">
           
@@ -189,19 +163,7 @@ $editEmployeePermission = user()->permission('edit_employees');
 
             <div class="col-xl-12 col-lg-12 col-md-12 mt-5">
               <div class="row">
-                {{--@if (in_array('attendance', user_modules()))
-                  <div class="col-xl-6 col-sm-12 mb-4">
-                    <x-cards.widget :title="__('modules.dashboard.lateAttendanceMark')"
-                    :value="$lateAttendance" :info="__('modules.dashboard.thisMonth')"
-                    icon="map-marker-alt" />
-                  </div>
-                @endif
-                @if (in_array('leaves', user_modules()))
-                  <div class="col-xl-6 col-sm-12 mb-4">
-                    <x-cards.widget :title="__('modules.dashboard.leavesTaken')" :value="$leavesTaken"
-                    :info="__('modules.dashboard.thisMonth')" icon="sign-out-alt" />
-                  </div>
-                @endif--}}
+          
               </div>
             </div>
           </div>
@@ -219,51 +181,5 @@ $editEmployeePermission = user()->permission('edit_employees');
     <!-- ROW END -->
   </div>
 
-    <!-- PROJECT RIGHT START -->
-    {{--<div class="project-right my-4 my-lg-0">
-        <div class="bg-white">
-            <!-- ACTIVITY HEADING START -->
-            <div class="p-activity-heading d-flex align-items-center justify-content-between b-shadow-4 p-20">
-                <p class="mb-0 f-18 f-w-500">@lang('modules.employees.activity')</p>
-            </div>
-            <!-- ACTIVITY HEADING END -->
-            <!-- ACTIVITY DETAIL START -->
-            <div class="p-activity-detail cal-info b-shadow-4" data-menu-vertical="1" data-menu-scroll="1"
-                data-menu-dropdown-timeout="500" id="projectActivityDetail">
 
-                @forelse($activities as $key=>$activity)
-                    <div class="card border-0 b-shadow-4 p-20 rounded-0">
-                        <div class="card-horizontal">
-                            <div class="card-header m-0 p-0 bg-white rounded">
-                                <x-date-badge :month="$activity->created_at->timezone(global_setting()->timezone)->format('M')"
-                                    :date="$activity->created_at->timezone(global_setting()->timezone)->format('d')" />
-                            </div>
-                            <div class="card-body border-0 p-0 ml-3">
-                                <h4 class="card-title f-14 font-weight-normal text-capitalize">{!! __($activity->activity) !!}
-                                </h4>
-                                <p class="card-text f-12 text-dark-grey">
-                                    {{ $activity->created_at->timezone(global_setting()->timezone)->format(global_setting()->time_format) }}
-                                </p>
-                            </div>
-                        </div>
-                    </div><!-- card end -->
-                @empty
-                    <div class="card border-0 p-20 rounded-0">
-                        <div class="card-horizontal">
-
-                            <div class="card-body border-0 p-0 ml-3">
-                                <h4 class="card-title f-14 font-weight-normal">
-                                    @lang('messages.noActivityByThisUser')</h4>
-                                <p class="card-text f-12 text-dark-grey"></p>
-                            </div>
-                        </div>
-                    </div><!-- card end -->
-                @endforelse
-
-
-            </div>
-            <!-- ACTIVITY DETAIL END -->
-        </div>
-    </div>--}}
-    <!-- PROJECT RIGHT END -->
 </div>

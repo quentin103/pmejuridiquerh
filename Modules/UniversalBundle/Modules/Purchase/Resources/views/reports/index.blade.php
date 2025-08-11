@@ -36,7 +36,7 @@
 @endsection
 
 @section('content')
-    <div class="content-wrapper pt-0 border-top-0 client-detail-wrapper">
+    <div class="tw-p-2">
         @include($view)
     </div>
 @endsection
@@ -56,12 +56,12 @@
             $.easyAjax({
                 url: requestUrl,
                 blockUI: true,
-                container: ".content-wrapper",
+                container: ".tw-p-2 quentin-9-08_2025",
                 historyPush: true,
                 success: function(response) {
                     if (response.status == "success") {
-                        $('.content-wrapper').html(response.html);
-                        init('.content-wrapper');
+                        $('.tw-p-2 quentin-9-08_2025').html(response.html);
+                        init('.tw-p-2 quentin-9-08_2025');
                     }
                 }
             });

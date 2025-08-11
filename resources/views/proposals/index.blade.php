@@ -95,7 +95,7 @@ $addProposalTemplatePermission = user()->permission('manage_proposal_template');
 
 @section('content')
     <!-- CONTENT WRAPPER START -->
-    <div class="content-wrapper">
+    <div class="tw-p-2 quentin-9-08_2025">
 
         <x-alert type="info" icon="info-circle">
             @lang('messages.proposalInfo')

@@ -31,7 +31,7 @@ $addDepartmentPermission = user()->permission('add_department');
   </div>
 </div>
 <!-- CONTENT WRAPPER START -->
-<div class="content-wrapper">
+<div class="tw-p-2 quentin-9-08_2025">
     <!-- Add Task Export Buttons Start -->
 
     <div class="d-flex justify-content-between action-bar">
@@ -60,9 +60,9 @@ $addDepartmentPermission = user()->permission('add_department');
               <x-slot name="thead">
                   <th>#</th>
                   <th class="w-25">période Salaire</th>
-                  <th class="w-20 text-left">Salaire de base</th>
-                  <th class="w-20 text-left">Salaire brut</th>
-                  <th class="w-20 text-left">Salaire Net</th>
+                  <th class="w-20 text-left" style="width: 200px">Salaire de base</th>
+                  <th class="text-left" style="width: 200px" >Salaire brut</th>
+                  <th class="w-20 text-left" style="width: 200px">Salaire Net</th>
                   <th class="w-10 text-center">Action</th>
               </x-slot>
 

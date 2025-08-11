@@ -54,7 +54,7 @@
 @endphp
 @section('content')
     <!-- CONTENT WRAPPER START -->
-    <div class="content-wrapper">
+    <div class="tw-p-2 quentin-9-08_2025">
         <div class="row row-cols-lg-4 my-3">
 
             <div class="col mb-4">

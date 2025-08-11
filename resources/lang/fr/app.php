@@ -1,14 +1,17 @@
-<?php 
+<?php
 return [
-   'paie-livre' => 'Livre de paie',
+  'paie-livre' => 'Livre de paie',
+  'avs' => 'Avance/Acompte',
+  'salaireAVS' => 'Gestion des Avances & Acompte',
+  'priority' => 'Niveau de priorité',
   'dealWatcher' => 'Observateur des transactions',
   'signBy' => 'Signer par',
   'leaveArchive' => 'Inactif',
-   'salCat'=>'Salaire Catégoriel',
-   'salaireAVS'=>'Gestion des Avances & Acompte',
-     'salPrime'=>'Primes et indemnités',
-       'salTaxe'=>'Types de retenues sur salaire',
-
+  'salCat' => 'Salaire Catégoriel',
+  'salaireAVS' => 'Gestion des Avances & Acompte',
+  'salPrime' => 'Primes et indemnités',
+  'salTaxe' => 'Types de retenues sur salaire',
+  'other_mobile'=>'Autre contact',
   'owner' => 'Propriétaire principal',
   'addUnit' => 'Ajouter une nouvelle unité',
   'taskStatusChangeReason' => 'Raison du changement de statut',
@@ -155,6 +158,7 @@ return [
     'December' => 'Décembre',
   ],
   'menu' => [
+    'paie-livre' => 'Livre de paie',
     'paie' => 'Gestion de paie',
     'accountBalance' => 'Solde de tout compte',
     'operations' => 'Gestion des opérations',

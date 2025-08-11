@@ -156,6 +156,7 @@ $addDepartmentPermission = user()->permission('add_department');
                             @endforeach
                         </x-forms.select>
                     </div>
+
                     <div class="col-lg-3 col-md-6">
                         <x-forms.select fieldId="role" :fieldLabel="__('app.role')" fieldName="role">
                             @foreach ($roles as $role)
@@ -163,6 +164,16 @@ $addDepartmentPermission = user()->permission('add_department');
                             @endforeach
                         </x-forms.select>
                     </div>
+                    <div class="col-lg-3 col-md-6">
+                        <x-forms.select fieldId="id_niveau_etude" fieldLabel="Niveau d'étude"
+                            fieldName="id_niveau_etude">
+                            <option value="">--</option>
+                            @foreach($niveaux as $niveau)
+                                <option value="{{$niveau->id}}">{{$niveau->name }}</option>
+                            @endforeach
+                        </x-forms.select>
+                    </div>
+
                     <div class="col-md-12">
                         <div class="my-3 form-group">
                             <x-forms.textarea class="mr-0 mr-lg-2 mr-md-2" :fieldLabel="__('app.address')"
@@ -479,8 +490,8 @@ $addDepartmentPermission = user()->permission('add_department');
                             }
                             else {
 
-                                $('.content-wrapper').html(response.html.html);
-                                init('.content-wrapper');
+                                $('.tw-p-2 quentin-9-08_2025').html(response.html.html);
+                                init('.tw-p-2 quentin-9-08_2025');
                                 $('#add_more').val(false);
                             }
 

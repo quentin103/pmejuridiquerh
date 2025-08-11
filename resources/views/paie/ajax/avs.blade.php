@@ -14,7 +14,7 @@ $addDepartmentPermission = user()->permission('add_department');
   </div>
 </div>
 <!-- CONTENT WRAPPER START -->
-<div class="content-wrapper">
+<div class="tw-p-2 quentin-9-08_2025">
     <!-- Add Task Export Buttons Start -->
 
     <div class="d-flex justify-content-between action-bar">
@@ -60,9 +60,9 @@ $addDepartmentPermission = user()->permission('add_department');
                   <th>#</th>
                   <th class="w-10">Date d'emprunt</th>
                   <th class="w-30">Motif</th>
-                  <th class="w-20">Montant emprunté</th>
-                  <th class="w-20">Montant remboursé</th>
-                  <th class="w-20">Reste à remboursé</th>
+                  <th class="w-20" style="width: 200px">Montant emprunté</th>
+                  <th class="w-20" style="width: 200px">Montant remboursé</th>
+                  <th class="w-20" style="width: 200px">Reste à remboursé</th>
                   <th class="text-right">@lang('app.action')</th>
               </x-slot>
 
@@ -88,7 +88,7 @@ $addDepartmentPermission = user()->permission('add_department');
                   <tr>
                       <td class="text-center" colspan="7">@lang('messages.noRecordFound')</td>
                   </tr>
-              @endforelse
+              @endforelse 
           </x-table>
 
     </div>

@@ -381,7 +381,7 @@ class CPdf
         'courier-boldoblique',
         'helvetica',
         'helvetica-bold',
-        'helvetica-oblique',
+        'Helvetica, sans-serif',
         'helvetica-boldoblique',
         'times-roman',
         'times-bold',

@@ -56,7 +56,7 @@ $manageShiftPermission = user()->permission('view_shift_roster');
 
 
 @section('content')
-<div class="content-wrapper pt-0 border-top-0 client-detail-wrapper">
+<div class="tw-p-2">
     <x-filters.filter-box>
         <form action="route('paieLivre.index')" method="GET">
            <!-- DATE START -->
@@ -86,7 +86,7 @@ $manageShiftPermission = user()->permission('view_shift_roster');
 </div>
 
 <!-- CONTENT WRAPPER START -->
-<div class="content-wrapper">
+<div class="tw-p-2 quentin-9-08_2025">
     <!-- Add Task Export Buttons Start -->
 
     <div class="d-flex justify-content-between action-bar">
@@ -445,14 +445,6 @@ $manageShiftPermission = user()->permission('view_shift_roster');
             }
         };
     
-
-        // Définir une date par défaut (mois précédent)
-        //var defaultDate = new Date();
-        //defaultDate.setMonth(defaultDate.getMonth() - 1);
-
-
-
-
         // Initialiser le datepicker avec la langue française
         $.datepicker.setDefaults($.datepicker.regional['fr']);
         // Initialiser le datepicker avec la date par défaut

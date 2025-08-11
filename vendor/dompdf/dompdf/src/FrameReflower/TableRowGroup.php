@@ -1,12 +1,12 @@
 <?php
 /**
  * @package dompdf
- * @link    https://github.com/dompdf/dompdf
+ * @link    http://dompdf.github.com/
+ * @author  Benj Carson <benjcarson@digitaljunkies.ca>
  * @license http://www.gnu.org/copyleft/lesser.html GNU Lesser General Public License
  */
 namespace Dompdf\FrameReflower;
 
-use Dompdf\Exception;
 use Dompdf\FrameDecorator\Block as BlockFrameDecorator;
 use Dompdf\FrameDecorator\Table as TableFrameDecorator;
 use Dompdf\FrameDecorator\TableRowGroup as TableRowGroupFrameDecorator;
@@ -56,9 +56,6 @@ class TableRowGroup extends AbstractFrameReflower
         }
 
         $table = TableFrameDecorator::find_parent_table($frame);
-        if ($table === null) {
-            throw new Exception("Parent table not found for table row group");
-        }
         $cellmap = $table->get_cellmap();
 
         // Stop reflow if a page break has occurred before the frame, in which
@@ -67,8 +64,8 @@ class TableRowGroup extends AbstractFrameReflower
             return;
         }
 
-        $style->set_used("width", $cellmap->get_frame_width($frame));
-        $style->set_used("height", $cellmap->get_frame_height($frame));
+        $style->width = $cellmap->get_frame_width($frame);
+        $style->height = $cellmap->get_frame_height($frame);
 
         $frame->set_position($cellmap->get_frame_position($frame));
     }

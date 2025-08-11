@@ -40,7 +40,7 @@
 </x-alert>
 @else
 
-    <div class="content-wrapper">
+    <div class="tw-p-2 quentin-9-08_2025">
         <!-- CREATE INVOICE START -->
         <div class="bg-white rounded b-shadow-4 create-inv">
             <!-- HEADING START -->

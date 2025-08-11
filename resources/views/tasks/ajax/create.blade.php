@@ -858,8 +858,8 @@
                                 $('#add_more').val(false);
                             } else {
 
-                                $('.content-wrapper').html(response.html.html);
-                                init('.content-wrapper');
+                                $('.tw-p-2 quentin-9-08_2025').html(response.html.html);
+                                init('.tw-p-2 quentin-9-08_2025');
                                 $('#add_more').val(false);
                             }
 

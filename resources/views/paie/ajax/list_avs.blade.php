@@ -79,14 +79,10 @@ $manageShiftPermission = user()->permission('view_shift_roster');
                 </div>
             </form>
         </div>
-        
-    
-
-        
         <!-- MORE FILTERS END -->
     </x-filters.filter-box>
-<div class="content-wrapper pt-0 border-top-0 client-detail-wrapper">
-
+<div class="tw-p-2">
+{{-- 
 <link rel="stylesheet" href="{{ asset('vendor/css/tagify.css') }}">
 
 <div class="row add-client bg-white rounded">
@@ -96,10 +92,10 @@ $manageShiftPermission = user()->permission('view_shift_roster');
   
     
   </div>
-</div>
+</div> --}}
 
 <!-- CONTENT WRAPPER START -->
-<div class="content-wrapper">
+<div class="tw-p-2 quentin-9-08_2025">
     <!-- Add Task Export Buttons Start -->
 
     <div class="d-flex justify-content-between action-bar">
@@ -389,12 +385,12 @@ $manageShiftPermission = user()->permission('view_shift_roster');
             $.easyAjax({
                 url: requestUrl,
                 blockUI: true,
-                container: ".content-wrapper",
+                container: ".tw-p-2 quentin-9-08_2025",
                 historyPush: true,
                 success: function(response) {
                     if (response.status == "success") {
-                        $('.content-wrapper').html(response.html);
-                        init('.content-wrapper');
+                        $('.tw-p-2 quentin-9-08_2025').html(response.html);
+                        init('.tw-p-2 quentin-9-08_2025');
                     }
                 }
             });

@@ -29,7 +29,7 @@
 
         <x-app-title class="d-block d-lg-none" :pageTitle="$pageTitle"></x-app-title>
 
-        <div class="content-wrapper">
+        <div class="tw-p-2 quentin-9-08_2025">
             <div class="card border-0 invoice">
                 <div class="card-body">
                     <div class="invoice-table-wrapper">

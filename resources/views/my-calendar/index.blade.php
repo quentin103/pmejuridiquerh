@@ -33,7 +33,7 @@
 @endsection
 
 @section('content')
-    <div class="content-wrapper">
+    <div class="tw-p-2 quentin-9-08_2025">
         <x-cards.data>
             <div id="calendar"></div>
         </x-cards.data>

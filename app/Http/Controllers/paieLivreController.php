@@ -48,8 +48,8 @@ class paieLivreController extends AccountBaseController
      */
     public function index(Request $request)
     {
-        $viewPermission = user()->permission('view_paiement_book');
-        abort_403(!in_array($viewPermission, ['all', 'added', 'owned', 'both']));
+        // $viewPermission = user()->permission('view_paiement_book');
+        // abort_403(!in_array($viewPermission, ['all', 'added', 'owned', 'both']));
         $parts = explode(' ', $request->daterange);
         $mois = $parts[0];
         $moisFR = array(
@@ -350,17 +350,15 @@ class paieLivreController extends AccountBaseController
     public function masse_salariale(Request $request)
     {
       
-      $this->listMasseSalariale = DB::table('salaire_bulletins')
+       $this->listMasseSalariale = DB::table('salaire_bulletins')
         
         ->select(DB::raw('DATE_FORMAT(salaire_fin, "%m") as mois'),
           DB::raw('DATE_FORMAT(salaire_fin, "%Y") as annee'),
           DB::raw('SUM(net_a_payer) as totalNet'))
-        //->where('salaire_bulletins.id', $refBulletin)
         ->groupBy('mois', 'annee')
         ->orderBy('annee', 'desc')
         ->orderBy('mois', 'desc')
         ->get();
-        //dd($this->listMasseSalariale);
         return view('paie.ajax.masse_salariale', $this->data);
     }
 }

@@ -5,13 +5,7 @@
 @endpush
 
 @php
-$viewEmployeeTasks = user()->permission('view_employee_tasks');
-$viewTickets = user()->permission('view_tickets');
-$viewEmployeeProjects = user()->permission('view_employee_projects');
-$viewEmployeeTimelogs = user()->permission('view_employee_timelogs');
-$manageEmergencyContact = user()->permission('manage_emergency_contact');
-$manageRolePermissionSetting = user()->permission('manage_role_permission_setting');
-$manageShiftPermission = user()->permission('view_shift_roster');
+
 
 @endphp
 
@@ -19,6 +13,7 @@ $manageShiftPermission = user()->permission('view_shift_roster');
     <!-- FILTER START -->
     <!-- PROJECT HEADER START -->
 
+    
     <div class="d-flex d-lg-block filter-box project-header bg-white">
         <div class="mobile-close-overlay w-100 h-100" id="close-client-overlay"></div>
 
@@ -53,34 +48,14 @@ $manageShiftPermission = user()->permission('view_shift_roster');
 @endsection
 
 @section('content')
-    <div class="content-wrapper pt-0 border-top-0 client-detail-wrapper">
+    <div class="tw-p-2">
         @include($view)
     </div>
 @endsection
 
 @push('scripts')
     <script>
-        $("body").on("click", ".project-menu .ajax-tab", function(event) {
-            event.preventDefault();
-            $('.project-menu .p-sub-menu').removeClass('active');
-            $(this).addClass('active');
-
-            const requestUrl = this.href;
-
-            $.easyAjax({
-                url: requestUrl,
-                blockUI: true,
-                container: ".content-wrapper",
-                historyPush: true,
-                success: function(response) {
-                    
-                    if (response.status == "success") {
-                        $('.content-wrapper').html(response.html);
-                        init('.content-wrapper');
-                    }
-                }
-            });
-        });
+      
 
     </script>
     <script>

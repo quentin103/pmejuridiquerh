@@ -38,7 +38,7 @@
 
 @section('content')
     <!-- CONTENT WRAPPER START -->
-    <div class="content-wrapper">
+    <div class="tw-p-2 quentin-9-08_2025">
         <div class="d-block d-lg-flex d-md-flex justify-content-between action-bar">
             <!-- Add Task Export Buttons Start -->
             <div class="d-flex" id="table-actions">

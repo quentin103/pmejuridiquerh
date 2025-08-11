@@ -129,7 +129,7 @@
             $.easyAjax({
                 url: requestUrl,
                 blockUI: true,
-                container: ".content-wrapper",
+                container: ".tw-p-2 quentin-9-08_2025",
                 historyPush: true,
                 success: function(response) {
                     if (response.status == "success") {

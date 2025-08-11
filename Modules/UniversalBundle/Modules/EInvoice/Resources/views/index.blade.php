@@ -114,7 +114,7 @@ $manageRecurringInvoicesPermission = user()->permission('manage_recurring_invoic
 
 @section('content')
     <!-- CONTENT WRAPPER START -->
-    <div class="content-wrapper">
+    <div class="tw-p-2 quentin-9-08_2025">
         @if(user()->permission('manage_finance_setting') == 'all' && (in_array('invoices', user_modules())))
             <x-alert type="primary">
                 <span class="mb-12"><strong>Note:</strong></span>

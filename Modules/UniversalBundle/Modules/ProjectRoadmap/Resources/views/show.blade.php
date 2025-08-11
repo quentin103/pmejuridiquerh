@@ -51,7 +51,7 @@ $projectArchived = $project->trashed();
 
 @section('content')
 
-    <div class="pt-0 content-wrapper border-top-0 client-detail-wrapper">
+    <div class="pt-0 tw-p-2 quentin-9-08_2025 border-top-0 client-detail-wrapper">
         @include('projectroadmap::ajax.overview')
         <div class="d-lg-flex">
             <div class="py-0 w-100 py-lg-3 py-md-0 ">
@@ -84,12 +84,12 @@ $projectArchived = $project->trashed();
             $.easyAjax({
                 url: requestUrl,
                 blockUI: true,
-                container: ".content-wrapper",
+                container: ".tw-p-2 quentin-9-08_2025",
                 historyPush: true,
                 success: function(response) {
                     if (response.status == "success") {
-                        $('.content-wrapper').html(response.html);
-                        init('.content-wrapper');
+                        $('.tw-p-2 quentin-9-08_2025').html(response.html);
+                        init('.tw-p-2 quentin-9-08_2025');
                     }
                 }
             });

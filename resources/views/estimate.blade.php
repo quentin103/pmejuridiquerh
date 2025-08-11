@@ -116,7 +116,7 @@
 
         <x-app-title class="d-block d-lg-none" :pageTitle="$pageTitle"></x-app-title>
 
-        <div class="container content-wrapper">
+        <div class="container tw-p-2 quentin-9-08_2025">
 
             <!-- INVOICE CARD START -->
             <div class="border-0 card invoice">

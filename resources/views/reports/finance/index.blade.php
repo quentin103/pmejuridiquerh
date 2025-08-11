@@ -64,7 +64,7 @@
 
 @section('content')
     <!-- CONTENT WRAPPER START -->
-    <div class="content-wrapper">
+    <div class="tw-p-2 quentin-9-08_2025">
         <div class="row mb-4">
             <div class="col-lg-4">
                 <x-cards.widget :title="__('modules.dashboard.totalEarnings')" value="0" icon="coins"

@@ -70,7 +70,7 @@
     <!-- CONTENT WRAPPER START -->
 
 
-    <div class="px-4 content-wrapper">
+    <div class="px-4 tw-p-2 quentin-9-08_2025">
 
 
         <div class="d-lg-flex d-md-flex d-block my-3 justify-content-between action-bar">

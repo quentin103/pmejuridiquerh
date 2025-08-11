@@ -432,7 +432,7 @@
         $.easyAjax({
             type: 'POST',
             url: url,
-            container: '.content-wrapper',
+            container: '.tw-p-2 quentin-9-08_2025',
             blockUI: true,
             data: {
                 '_token': token,

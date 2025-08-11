@@ -66,7 +66,7 @@ return [
   'date' => 'Date',
   'apply' => 'Appliquer',
   'change' => 'Changement',
-  'employeeId' => 'ID d\'employé',
+  'employeeId' => 'Matricule employé',
   'logout' => 'Se déconnecter',
   'active' => 'Actif',
   'license_expired' => 'Licence expirée',

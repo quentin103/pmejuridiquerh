@@ -14,7 +14,7 @@ $addTaskPermission = ($project->project_admin == user()->id) ? 'all' : user()->p
         min-height: 90%;
     }
 
-    .content-wrapper {
+    .tw-p-2 quentin-9-08_2025 {
         padding: 0;
     }
 

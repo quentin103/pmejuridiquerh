@@ -38,21 +38,21 @@ class salaireAVSController extends AccountBaseController
 
     public function create(Request $request)
     {
-        return redirect()->route('dashboard');
-        // $this->addPermission = user()->permission('add_pay');
+        //return redirect()->route('dashboard');
+        $this->addPermission = user()->permission('add_pay');
         // abort_403(!in_array($this->addPermission, ['all', 'added']));
-        // $this->employees = User::allEmployees();
-        // $this->user_id=$request->id;
-        // $this->salaireAVS = salaire_avance::all();
-        // $this->mode_reglement=mode_reglement::all();
-        // $this->teams = Team::all();
-        // $this->budget_categories=budget_categorie::all();
-        // $this->operation_types=operation_type::all();
-        // $this->budget_categories=budget_categorie::all();
+        $this->employees = User::allEmployees();
+        $this->user_id=$request->id;
+        $this->salaireAVS = salaire_avance::all();
+        $this->mode_reglement=mode_reglement::all();
+        $this->teams = Team::all();
+        $this->budget_categories=budget_categorie::all();
+        $this->operation_types=operation_type::all();
+        $this->budget_categories=budget_categorie::all();
 
-        // $this->exerciceActif=exercice_comptable::where('code_statut', 1)->firstOrFail();
-        // $this->view = 'salaireAVS.ajax.create';
-        // return view('salaireAVS.create', $this->data);
+        $this->exerciceActif=exercice_comptable::where('code_statut', 1)->firstOrFail();
+       $this->view = 'salaireAVS.ajax.create';
+        return view('salaireAVS.create', $this->data);
     }
 
     /**
@@ -65,20 +65,8 @@ class salaireAVSController extends AccountBaseController
      */
     public function index(AvanceDataTable $dataTable)
     {
-        $viewPermission = user()->permission('view_avance_acompte');
-        abort_403(!in_array($viewPermission, ['all', 'added', 'owned', 'both']));
-        //dd(1);
-        /*$this->listAVS = DB::table('salaire_avances')
-        ->join('users', 'salaire_avances.user_id', '=', 'users.id')
-        ->select('salaire_avances.*', 'users.name', 'users.lastname', DB::raw('DATE_FORMAT(date_avs, "%d-%m-%Y") as dateAVS'))
-        //->where('salaire_bulletins.id', $refBulletin)
-        ->get();*/
-        //dd($dataTable);
-        
         $this->employees = User::allEmployees();
         return $dataTable->render('paie.ajax.list_avs', $this->data);
-        //return view(s', $this->data);
-
     }
     public function store(Request $request)
     {
@@ -169,7 +157,6 @@ class salaireAVSController extends AccountBaseController
                 $operation->montant_recette_HT = 0;
 
             }else{
-                $montant_verse=$montant_verse;
                 $operation->montant_recette = round($montantEmprunt, 2);
                 $operation->montant_recette_HT = round($montantEmprunt, 2);
                 $operation->montant_depense = 0;

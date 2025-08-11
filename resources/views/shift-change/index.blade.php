@@ -70,7 +70,7 @@ $addTimelogPermission = user()->permission('add_timelogs');
 
 @section('content')
     <!-- CONTENT WRAPPER START -->
-    <div class="content-wrapper">
+    <div class="tw-p-2 quentin-9-08_2025">
         <!-- Add Task Export Buttons Start -->
         <div class="d-grid d-lg-flex d-md-flex action-bar">
             <div id="table-actions" class="flex-grow-1 align-items-center mb-2 mb-lg-0 mb-md-0">
@@ -232,7 +232,7 @@ tw-border-none quentin">
                 url: url,
                 type: "POST",
                 blockUI: true,
-                container: '.content-wrapper',
+                container: '.tw-p-2 quentin-9-08_2025',
                 data: {
                     id: id,
                     _token: token
@@ -253,7 +253,7 @@ tw-border-none quentin">
                 url: url,
                 type: "POST",
                 blockUI: true,
-                container: '.content-wrapper',
+                container: '.tw-p-2 quentin-9-08_2025',
                 data: {
                     id: id,
                     _token: token

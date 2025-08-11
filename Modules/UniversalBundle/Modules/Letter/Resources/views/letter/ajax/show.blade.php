@@ -1,4 +1,4 @@
-<div class="content-wrapper border-top-0 client-detail-wrapper">
+<div class="tw-p-2 quentin-9-08_2025 border-top-0 client-detail-wrapper">
     <div class="card bg-white rounded">
         <h4 class="mb-0 p-20 f-21 font-weight-normal border-bottom">
             @lang('letter::app.letterDetails')

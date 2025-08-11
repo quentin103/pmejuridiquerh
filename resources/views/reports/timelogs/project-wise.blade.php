@@ -58,7 +58,7 @@
 @endsection
 
 @section('content')
-    <div class="content-wrapper">
+    <div class="tw-p-2 quentin-9-08_2025">
         <div class="d-grid d-lg-flex d-md-flex action-bar mb-4">
             <div id="table-actions" class="flex-grow-1 align-items-center">
                 @if (canDataTableExport())

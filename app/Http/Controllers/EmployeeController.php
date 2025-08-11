@@ -25,6 +25,10 @@ use App\Http\Requests\Admin\Employee\StoreRequest;
 use App\Http\Requests\Admin\Employee\UpdateRequest;
 use App\Http\Requests\User\CreateInviteLinkRequest;
 use App\Http\Requests\User\InviteEmailRequest;
+use App\Models\niveau_etude;
+use App\Models\salaire_categoriel;
+use App\Models\typeContrat;
+
 use App\Imports\EmployeeImport;
 use App\Models\ModuleSetting;
 use App\Jobs\ImportEmployeeJob;
@@ -119,6 +123,7 @@ class EmployeeController extends AccountBaseController
         $this->skills = Skill::all()->pluck('name')->toArray();
         $this->countries = countries();
         $this->lastEmployeeID = EmployeeDetails::count();
+        $this->niveaux = niveau_etude::all();
         $this->checkifExistEmployeeId = EmployeeDetails::select('id')->where('employee_id', ($this->lastEmployeeID + 1))->first();
         $this->employees = User::allEmployees(null, true);
         $this->languages = LanguageSetting::where('status', 'enabled')->get();
@@ -142,7 +147,7 @@ class EmployeeController extends AccountBaseController
         }
 
         $this->view = 'employees.ajax.create';
-
+ 
         if (request()->ajax()) {
             $html = view($this->view, $this->data)->render();
 
@@ -439,6 +444,7 @@ class EmployeeController extends AccountBaseController
         $this->designations = Designation::allDesignations();
         $this->countries = countries();
         $this->languages = LanguageSetting::where('status', 'enabled')->get();
+        $this->niveaux = niveau_etude::all();
         $exceptUsers = [$id];
         $this->roles = Role::where('name', '<>', 'client')->get();
         $this->userRoles = $this->employee->roles->pluck('name')->toArray();
@@ -655,6 +661,14 @@ class EmployeeController extends AccountBaseController
             ->withCount(['member', 'agents', 'openTasks'])
             ->findOrFail($id);
 
+      $id_superieur=$this->employee->employeeDetail->id_superieur;
+        $id_niveau_etude=$this->employee->employeeDetail->id_niveau_etude;
+        $salaire_categoriel=$this->employee->employeeDetail->salaire_categoriel;
+        $id_type_contrat=$this->employee->employeeDetail->typeContrat_id;
+        $this->type_contrats = typeContrat::where('id', $id_type_contrat)->first();
+        $this->superieur = User::allEmployees()->where('id', $id_superieur)->first();
+        $this->niveau = niveau_etude::where('id', $id_niveau_etude)->first();
+        $this->salaire_categoriel = salaire_categoriel::where('id', $salaire_categoriel)->first();
         if ($this->employee->employeeDetail->company_address_id) {
             $this->companyAddress = CompanyAddress::where('id', $this->employee->employeeDetail->company_address_id)->first();
         } else {
@@ -1240,6 +1254,10 @@ class EmployeeController extends AccountBaseController
         $employee->employment_type = $request->employment_type;
         $employee->internship_end_date = $request->internship_end_date ? companyToYmd($request->internship_end_date) : null;
         $employee->contract_end_date = $request->contract_end_date ? companyToYmd($request->contract_end_date) : null;
+        //
+         $employee->id_niveau_etude = $request->id_niveau_etude;
+         $employee->salaire_categoriel = $request->salaire_categoriel;
+
     }
 
     public function importMember()

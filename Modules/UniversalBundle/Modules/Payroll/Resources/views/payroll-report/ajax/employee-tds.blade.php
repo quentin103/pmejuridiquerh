@@ -1,5 +1,5 @@
 @section('content')
-<div class="content-wrapper">
+<div class="tw-p-2 quentin-9-08_2025">
     <form action="" id="filter-form">
         <div class="select-box d-flex py-2 px-lg-2 px-md-2 px-0 border-right-grey border-right-grey-sm-0 ">
             <p class="mb-0 pr-2 f-14 text-dark-grey d-flex align-items-center">@lang('modules.messages.chooseMember')</p>
@@ -16,7 +16,7 @@
     </form>
 </div>
 <!-- CONTENT WRAPPER START -->
-<div class="content-wrapper"id="paidTds">
+<div class="tw-p-2 quentin-9-08_2025"id="paidTds">
     <!-- Widget Start -->
     <div class="d-flex flex-column">
         <div class="row mb-4">

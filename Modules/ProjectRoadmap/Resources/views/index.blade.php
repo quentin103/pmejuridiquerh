@@ -178,7 +178,7 @@ $deleteProjectPermission = user()->permission('delete_projects');
 
 @section('content')
     <!-- CONTENT WRAPPER START -->
-    <div class="content-wrapper">
+    <div class="tw-p-2 quentin-9-08_2025">
         <!-- Add Task Export Buttons Start -->
         <div class="d-grid d-lg-flex d-md-flex action-bar">
             <div id="table-actions" class="flex-grow-1 align-items-center mb-2 mb-lg-0 mb-md-0"></div>
@@ -336,7 +336,7 @@ tw-border-none quentin table-responsive">
                 $.easyAjax({
                     url: url,
                     type: "POST",
-                    container: '.content-wrapper',
+                    container: '.tw-p-2 quentin-9-08_2025',
                     blockUI: true,
                     data: {
                         '_token': token,
@@ -429,7 +429,7 @@ tw-border-none quentin table-responsive">
                     $.easyAjax({
                         type: 'POST',
                         url: url,
-                        container: '.content-wrapper',
+                        container: '.tw-p-2 quentin-9-08_2025',
                         blockUI: true,
                         data: {
                             '_token': token,
@@ -474,7 +474,7 @@ tw-border-none quentin table-responsive">
                     $.easyAjax({
                         type: 'POST',
                         url: url,
-                        container: '.content-wrapper',
+                        container: '.tw-p-2 quentin-9-08_2025',
                         blockUI: true,
                         data: {
                             '_token': token,

@@ -74,7 +74,7 @@
 
 @section('content')
     <!-- CONTENT WRAPPER START -->
-    <div class="content-wrapper">
+    <div class="tw-p-2 quentin-9-08_2025">
 
         @if($addPayrollPermission == 'all' || $addPayrollPermission == 'added')
             <div class= "card-quentin  bg-white ">

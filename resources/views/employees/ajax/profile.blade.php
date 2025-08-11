@@ -218,7 +218,7 @@ $viewAppreciationPermission = user()->permission('view_appreciation');
                                 :value="$employee->employeeDetail->notice_period_end_date ? Carbon\Carbon::parse($employee->employeeDetail->notice_period_end_date)->translatedFormat(company()->date_format) : '--'" />
 
                                 <x-cards.data-row :label="__('modules.employees.maritalStatus')"
-                                :value="$employee?->employeeDetail?->marital_status ? $employee->employeeDetail->marital_status->label() : '--'" />
+                                :value="$employee?->employeeDetail?->marital_status ? $employee->employeeDetail->marital_status : '--'" />
 
                                 <x-cards.data-row :label="__('app.menu.businessAddresses')" :value="$companyAddress ? $companyAddress->location : '--'" />
 

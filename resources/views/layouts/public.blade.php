@@ -123,7 +123,7 @@
         <x-app-title class="d-block d-lg-none" :pageTitle="$pageTitle"></x-app-title>
 
         <!-- CONTENT WRAPPER START -->
-        <div class="content-wrapper">
+        <div class="tw-p-2 quentin-9-08_2025">
 
             <div class="row">
                 <div class="mb-4 col-12">

@@ -158,7 +158,7 @@
 
 @section('content')
 
-<div class="content-wrapper">
+<div class="tw-p-2 quentin-9-08_2025">
 
     <div class="row d-block d-lg-none">
         <div class="col-sm-12">

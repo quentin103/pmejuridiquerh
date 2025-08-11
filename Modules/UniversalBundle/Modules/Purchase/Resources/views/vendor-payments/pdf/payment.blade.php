@@ -294,7 +294,7 @@
         @endif
     </head>
 
-    <body class="content-wrapper">
+    <body class="tw-p-2 quentin-9-08_2025">
         <table class="bg-white" width="100%" role="presentation">
             @forelse ($bills as $bill)
             <!-- Table Row Start -->
